@@ -1,0 +1,12 @@
+pre-commit:
+  parallel: true
+  commands:
+    tsc:
+      run: yarn typecheck
+    lint:
+      run: echo "TODO"
+commit-msg:
+  parallel: true
+  commands:
+    commitlint:
+      run: yarn commitlint --edit
