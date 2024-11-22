@@ -1,0 +1,897 @@
+{
+  "BlossomColor": {
+    "parent": []
+  },
+  "ColorVariants": {
+    "parent": []
+  },
+  "TransparentColorVariants": {
+    "parent": []
+  },
+  "ColorNames": {
+    "parent": []
+  },
+  "BlossomThemeColors": {
+    "parent": []
+  },
+  "BlossomContext": {
+    "properties": [
+      {
+        "name": "colors",
+        "dataType": "BlossomThemeColors",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "isDark",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "options",
+        "dataType": "BlossomUIOptions",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": []
+  },
+  "Children$1": {
+    "parent": []
+  },
+  "WithChildren": {
+    "parent": []
+  },
+  "BlossomThemeProviderProps": {
+    "parent": []
+  },
+  "TypographyValues": {
+    "parent": []
+  },
+  "BlossomUIOptions": {
+    "parent": []
+  },
+  "TypographyOptions": {
+    "parent": []
+  },
+  "BlossomStatus": {
+    "parent": []
+  },
+  "BlossomTransparentStatus": {
+    "parent": []
+  },
+  "BlossomSize": {
+    "parent": []
+  },
+  "BaseUIProps": {
+    "properties": [
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": []
+  },
+  "OmitSizeProps": {
+    "parent": []
+  },
+  "Children": {
+    "parent": []
+  },
+  "TextProps": {
+    "properties": [
+      {
+        "name": "typography",
+        "dataType": "TypographyOptions",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "TextProps$1",
+      "OmitSizeProps"
+    ]
+  },
+  "SizedTextProps": {
+    "properties": [
+      {
+        "name": "mode",
+        "dataType": "\"label\" | \"caption\"",
+        "defaultValue": "label",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "typography",
+        "dataType": "TypographyOptions",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "TextProps",
+      "BaseUIProps"
+    ]
+  },
+  "ViewProps": {
+    "properties": [
+      {
+        "name": "row",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "ViewProps$1"
+    ]
+  },
+  "ButtonMode": {
+    "parent": []
+  },
+  "ButtonProps": {
+    "properties": [
+      {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "mode",
+        "dataType": "ButtonMode",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "titleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Either view styles or a function that receives a boolean reflecting whetherthe component is currently pressed and returns view styles."
+      },
+      {
+        "name": "isLoading",
+        "dataType": "boolean",
+        "defaultValue": "false",
+        "description": null,
+        "comment": "To show the loader"
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Whether the press behavior is disabled."
+      },
+      {
+        "name": "left",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "right",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "loaderStyle",
+        "dataType": "ActivityIndicatorProps",
+        "description": null,
+        "comment": "Loader style"
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "PressableProps",
+      "BaseUIProps"
+    ]
+  },
+  "PressableState": {
+    "parent": []
+  },
+  "ActivityIndicatorProps": {
+    "properties": [
+      {
+        "name": "visible",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "number | BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "Omit<ActivityIndicatorProps$1, 'size'>",
+      "Omit<BaseUIProps, 'size'>"
+    ]
+  },
+  "TextInputMode": {
+    "parent": []
+  },
+  "TextInputProps": {
+    "properties": [
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "placeholder",
+        "dataType": "string",
+        "description": null,
+        "comment": "The string that will be rendered before text input has been entered"
+      },
+      {
+        "name": "caption",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "error",
+        "dataType": "string",
+        "description": "TextInput will always render this and take the space to fix the flicker issue in show/hide error",
+        "comment": ""
+      },
+      {
+        "name": "labelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "placeholderStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "captionStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "errorStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "inputStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "textStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "left",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "right",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "mode",
+        "dataType": "TextInputMode",
+        "defaultValue": "outlined",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "Omit<TextInputProps$1, 'style'>",
+      "BaseUIProps"
+    ]
+  },
+  "SearchInputProps": {
+    "properties": [
+      {
+        "name": "withClearIcon",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "onQueryChange",
+        "dataType": "(query: string) => void",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "debounceDelay",
+        "dataType": "number",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "placeholder",
+        "dataType": "string",
+        "description": null,
+        "comment": "The string that will be rendered before text input has been entered"
+      },
+      {
+        "name": "caption",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "error",
+        "dataType": "string",
+        "description": "TextInput will always render this and take the space to fix the flicker issue in show/hide error",
+        "comment": ""
+      },
+      {
+        "name": "labelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "placeholderStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "captionStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "errorStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "inputStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "textStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "left",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "right",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "mode",
+        "dataType": "TextInputMode",
+        "defaultValue": "outlined",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "TextInputProps"
+    ]
+  },
+  "DividerProps": {
+    "properties": [
+      {
+        "name": "width",
+        "dataType": "DimensionValue",
+        "defaultValue": "100%",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "height",
+        "dataType": "DimensionValue",
+        "defaultValue": "0.6",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "color",
+        "dataType": "string",
+        "defaultValue": "background900",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "row",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "ViewProps"
+    ]
+  },
+  "AvatarProps": {
+    "properties": [
+      {
+        "name": "size",
+        "dataType": "number | BlossomSize",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "mode",
+        "dataType": "\"circle\" | \"round\" | \"square\"",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "url",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "initials",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "initialStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "icon",
+        "dataType": "(size: number) => ReactNode",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "onPress",
+        "dataType": "() => void",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "Partial<ImageProps>",
+      "OmitSizeProps"
+    ]
+  },
+  "AvatarProps1": {
+    "parent": []
+  },
+  "IconFamily": {
+    "parent": []
+  },
+  "IconProps": {
+    "properties": [
+      {
+        "name": "family",
+        "dataType": "IconFamily",
+        "defaultValue": "Ionicons",
+        "description": null,
+        "comment": "Vector icons family"
+      },
+      {
+        "name": "size",
+        "dataType": "number",
+        "defaultValue": "12",
+        "description": null,
+        "comment": "Size of the icon, can also be passed as fontSize in the style object."
+      },
+      {
+        "name": "name",
+        "dataType": "string",
+        "description": null,
+        "comment": "Name of the icon to show"
+      },
+      {
+        "name": "color",
+        "dataType": "number | ColorValue",
+        "description": null,
+        "comment": "Color of the icon"
+      },
+      {
+        "name": "typography",
+        "dataType": "TypographyOptions",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "TextProps",
+      "OmitSizeProps"
+    ]
+  },
+  "BaseBooleanFieldProps": {
+    "properties": [
+      {
+        "name": "color",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "caption",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "error",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "position",
+        "dataType": "\"left\" | \"right\"",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "labelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "captionStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "errorStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "children",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "BaseUIProps",
+      "Children"
+    ]
+  },
+  "SwitchProps": {
+    "properties": [
+      {
+        "name": "color",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "caption",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "error",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "position",
+        "dataType": "\"left\" | \"right\"",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "labelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "captionStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "errorStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "SwitchProps$1",
+      "BaseBooleanFieldProps"
+    ]
+  },
+  "CheckboxProps": {
+    "properties": [
+      {
+        "name": "value",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "intermediate",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "onValueChange",
+        "dataType": "(value: boolean) => void | Promise<void>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "color",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "caption",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "error",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "position",
+        "dataType": "\"left\" | \"right\"",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "labelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "captionStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "errorStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "children",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "BaseBooleanFieldProps"
+    ]
+  }
+}
