@@ -7,15 +7,14 @@ sidebar_position: 1
 Blossom UI supports dark theme out of the box and also re-renders the component based on that.
 
 Wrap your root component into `BlossomThemeProvider` in your App.ts file.
-Generate your desired Theme from **[Theme Generator](/docs//design-system/theme-generator)** and create json file in your project.
+Generate your desired Theme from **[Theme Generator](/docs/design-system/theme-generator)** and create json file for your project.
 
 ```tsx
 import React, {useState} from 'react'
-import {StatusBar} from 'react-native';
 import {
   BlossomThemeProvider,
 } from '@react-native-blossom-ui/components'
-import MyNavigationStack 'src/navigation'
+import {MyNavigationStack} 'src/navigation'
 import {lightTheme, darkTheme, options} from 'src/themes'
 
 export default function App() {

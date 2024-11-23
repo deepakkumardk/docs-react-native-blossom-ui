@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Component Manager
 
-Component Manager is the API from which you can customize all the component and seed any default values, so that it suits your designer UI.
+Component Manager is the most powerful tool of this library and by using this you can customize all the component's default behavior and seed any default values, so that it suits your mobile app UI.
 
 Here's a simple code snippet of it.
 

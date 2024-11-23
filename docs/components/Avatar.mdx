@@ -1,0 +1,55 @@
+---
+sidebar_position: 1
+---
+
+# Avatar
+
+Component to show an image, initials or icon with different shapes.
+
+import {
+  AvatarDocs,
+  BlossomUIRenderer,
+  AvatarStatuses,
+  AvatarSizes,
+  AvatarModes,
+  AvatarModesSizes,
+  PropsTable,
+} from "@site/src/components";
+
+## Status
+
+<BlossomUIRenderer
+  componentName={"AvatarStatuses"}
+  children={<AvatarStatuses />}
+  fileName={"Avatar"}
+/>
+
+## Sizes
+
+<BlossomUIRenderer
+  componentName={"AvatarSizes"}
+  children={<AvatarSizes />}
+  fileName={"Avatar"}
+/>
+
+## Modes
+
+<BlossomUIRenderer
+  componentName={"AvatarModes"}
+  children={<AvatarModes />}
+  fileName={"Avatar"}
+/>
+
+## Modes and Sizes
+
+<BlossomUIRenderer
+  componentName={"AvatarModesSizes"}
+  children={<AvatarModesSizes />}
+  fileName={"Avatar"}
+  withFlex={false}
+  withCodeblock={false}
+/>
+
+## Props
+
+<PropsTable componentName="Avatar" />

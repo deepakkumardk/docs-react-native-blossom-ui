@@ -1,65 +1,76 @@
 import React from "react";
-import { Avatar, View } from "@react-native-blossom-ui/components";
-import { UIDocRenderer } from "@site/src/components/showcase/UIDocRenderer";
+import {
+  Avatar,
+  AvatarProps,
+  BlossomSize,
+  View,
+} from "@react-native-blossom-ui/components";
 
-const imgSrc = {
+export const imgSrc = {
   uri: "https://picsum.photos/200/300?random=1",
 };
 
-export const AvatarDocs = () => {
+export const AvatarModes = () => {
   return (
-    <>
-      <UIDocRenderer
-        title="Status"
-        componentName={"AvatarStatuses"}
-        children={<AvatarStatuses />}
-        fileName={"Avatar"}
-      />
-      <UIDocRenderer
-        title="Sizes"
-        componentName={"AvatarSizes"}
-        children={<AvatarSizes />}
-        fileName={"Avatar"}
-      />
-      <UIDocRenderer
-        title="Modes"
-        componentName={"AvatarModes"}
-        children={<AvatarModes />}
-        fileName={"Avatar"}
-      />
-    </>
+    <View row style={{ flex: 1, justifyContent: "space-evenly" }}>
+      <Avatar mode={"circle"} url="https://picsum.photos/200/300?random=1" />
+      <Avatar mode={"round"} url="https://picsum.photos/200/300?random=1" />
+      <Avatar mode={"square"} url="https://picsum.photos/200/300?random=1" />
+    </View>
   );
 };
 
-const AvatarModes = () => {
+export const AvatarSizes = () => {
   return (
-    <>
-      <Avatar mode={"circle"} initials="A" />
-      <Avatar mode={"round"} initials="A" />
-      <Avatar mode={"square"} initials="A" />
-    </>
-  );
-};
-
-const AvatarSizes = () => {
-  return (
-    <>
+    <View row style={{ flex: 1, justifyContent: "space-evenly" }}>
       <Avatar size={"small"} initials="A" />
       <Avatar size={"medium"} initials="A" />
       <Avatar size={"large"} initials="A" />
-    </>
+    </View>
   );
 };
 
-const AvatarStatuses = () => {
+export const AvatarStatuses = () => {
   return (
-    <>
+    <View row style={{ flex: 1, justifyContent: "space-evenly" }}>
       <Avatar status={"primary"} initials="AB" />
       <Avatar status={"accent"} initials="AB" />
       <Avatar status={"success"} initials="AB" />
       <Avatar status={"info"} initials="AB" />
       <Avatar status={"warning"} initials="AB" />
       <Avatar status={"error"} initials="AB" />
-    </>
+    </View>
   );
 };
+
+export const AvatarModesSizes = () => {
+  return (
+    <View style={{ flex: 1, justifyContent: "space-evenly" }}>
+      {MODES.map((mode) => (
+        <View
+          key={mode}
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            marginVertical: 6,
+          }}
+        >
+          {SIZES.map((size) => (
+            <Avatar
+              key={size}
+              status="accent"
+              mode={mode}
+              size={size}
+              initials="AB"
+            />
+          ))}
+        </View>
+      ))}
+    </View>
+  );
+};
+
+const MODES: AvatarProps["mode"][] = ["circle", "round", "square"];
+
+const SIZES: BlossomSize[] = ["small", "medium", "large"];

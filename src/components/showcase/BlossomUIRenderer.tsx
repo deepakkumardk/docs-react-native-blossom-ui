@@ -5,27 +5,32 @@ import CodeBlock from "@theme/CodeBlock";
 /**
  * React-Native component renderer along with it's description
  */
-export const UIDocRenderer = ({
+export const BlossomUIRenderer = ({
   title,
   description,
   children,
   componentName,
   fileName,
+  withFlex = true,
+  withCodeblock = true,
 }: {
   title?: string;
   description?: React.ReactNode | string;
   children?: React.ReactNode;
   componentName: string;
   fileName: string;
+  withFlex?: boolean;
+  withCodeblock?: boolean;
 }) => {
-  const [shouldShowCode, setShouldShowCode] = useState(true);
+  const [shouldShowCode, setShouldShowCode] = useState(false);
+
   return (
     <>
       <h3>{title}</h3>
       {typeof description === "string" ? <p>{description}</p> : description}
       <div
         style={{
-          display: "flex",
+          ...(withFlex && { display: "flex" }),
           flexDirection: "row",
           justifyContent: "space-evenly",
           alignItems: "center",
@@ -39,17 +44,20 @@ export const UIDocRenderer = ({
         }}
       >
         {children}
-        <button
-          type="button"
-          onClick={() => setShouldShowCode((prev) => !prev)}
-          style={{
-            position: "absolute",
-            bottom: 0,
-            right: 0,
-          }}
-        >
-          {"<> "}Show Code
-        </button>
+        {withCodeblock && (
+          <button
+            type="button"
+            onClick={() => setShouldShowCode((prev) => !prev)}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              right: 0,
+            }}
+          >
+            {shouldShowCode ? "</>" : "<>"} {shouldShowCode ? "Hide" : "Show"}
+            {" Code"}
+          </button>
+        )}
       </div>
       {shouldShowCode && (
         <CodeBlock language="tsx">
