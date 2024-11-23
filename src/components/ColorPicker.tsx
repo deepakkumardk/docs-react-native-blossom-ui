@@ -1,15 +1,17 @@
-import { Sketch } from "@uiw/react-color";
 import React, { useState } from "react";
+
+import { useBlossomTheme } from "@react-native-blossom-ui/components";
+import { Sketch } from "@uiw/react-color";
 
 const ColorPicker = ({
   inputColor,
-  background,
   onChange,
 }: {
   inputColor?: string;
-  background?: string;
   onChange: (color: string) => void;
 }) => {
+  const { colors, isDark } = useBlossomTheme();
+
   const [showColorPicker, setShowColorPicker] = useState(false);
 
   return (
@@ -17,29 +19,26 @@ const ColorPicker = ({
       <button
         type="button"
         style={{
-          background: background, // || colors[name],
+          background: inputColor || colors.background100,
           width: 30,
           height: 30,
           margin: 8,
           borderWidth: 1,
           borderRadius: 20,
-          alignSelf: "center",
-          borderColor: "gray",
+          borderColor: inputColor ? "gray" : undefined,
         }}
         onClick={() => {
-          setShowColorPicker((prev) => !prev);
+          inputColor ? setShowColorPicker((prev) => !prev) : undefined;
         }}
       />
-      {background && inputColor && showColorPicker ? (
+      {inputColor && showColorPicker ? (
         <Sketch
           style={{
             position: "absolute",
-            // top: 120,
           }}
           color={inputColor}
           onChange={(value) => {
             onChange(value.hexa);
-            //   setColors((prev) => ({...prev, [name]: value.hexa}))
           }}
         />
       ) : null}

@@ -1,17 +1,24 @@
-"use client";
-
-import React, { useRef, useState } from "react";
-
-import chroma from "chroma-js";
+import React, { useState } from "react";
 
 import {
   shadesArrayToObject,
   getColorShadesWithName,
-  getBgColors,
-  getTextColor,
-  textColorShade,
+  getTextColorShade,
+  getAlphaColorShadesWithName,
+  getTextColorShadesWithName,
 } from "../utils";
 import ColorPicker from "./ColorPicker";
+import { ColorShades } from "@site/src/components/ColorShades";
+import CodeBlock from "@theme/CodeBlock";
+
+const MAIN_COLORS = [
+  "primary",
+  "accent",
+  "success",
+  "info",
+  "warning",
+  "error",
+];
 
 function ThemeGenerator() {
   const [isDark, setIsDark] = useState(false);
@@ -25,90 +32,42 @@ function ThemeGenerator() {
     warning: "#f9e154",
     error: "#ff3333",
     bgLight: "#fff",
-    bgDark: "#000",
+    bgDark: "#1b1b1d",
   });
 
-  const themeObjRef = useRef({});
+  const [themeJson, setThemeJson] = useState({});
 
   const toggleTheme = () => {
     setIsDark((prev) => !prev);
   };
 
-  const renderColorShades = (
-    inputColor?: string,
-    name = "",
-    data: object = {}
+  const onColorChange = (
+    colorName: string,
+    colorValue: string,
+    data: object
   ) => {
-    if (!inputColor && !Object.keys(data).length) return null;
-    let colorsData = data;
-    if (!Object.keys(data).length) {
-      colorsData = getColorShadesWithName(inputColor, name);
-    }
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    const [showColorPicker, setShowColorPicker] = useState(false);
+    colorValue && setColors((prev) => ({ ...prev, [colorName]: colorValue }));
 
-    themeObjRef.current = {
-      ...themeObjRef.current,
-      ...colorsData,
-    };
+    setThemeJson((prev) => ({
+      ...prev,
+      ...data,
+    }));
+  };
 
-    return (
-      <div
-        style={{
-          flexDirection: "column",
-          display: "flex",
-          alignItems: "center",
-          margin: 8,
-        }}
-      >
-        <b>{name}</b>
-
-        <ColorPicker
-          inputColor={inputColor}
-          // @ts-ignore
-          background={colors[name]}
-          onChange={(value) => {
-            setColors((prev) => ({ ...prev, [name]: value }));
-          }}
-        />
-
-        {Object.entries(colorsData).map(
-          ([key, color]: [string, string], index) => (
-            <div
-              key={key}
-              // className="center"
-              style={{
-                width: index == 4 ? 100 : 90,
-                padding: index === 4 ? 4 : 0,
-                fontWeight: index === 4 ? "bold" : "normal",
-                backgroundColor: color,
-                justifyContent: "center",
-                display: "flex",
-              }}
-            >
-              <div>
-                <p
-                  style={{
-                    color: chroma(getTextColor(color)).alpha(0.8).hex(),
-                    marginBottom: 0,
-                  }}
-                >
-                  {(index + 1) * 100}
-                </p>
-                <p
-                  style={{
-                    color: getTextColor(color),
-                    marginBottom: 0,
-                  }}
-                >
-                  {color}
-                </p>
-              </div>
-            </div>
-          )
-        )}
-      </div>
+  const getDarkThemeJson = () => {
+    const bgShades = shadesArrayToObject(
+      getTextColorShade(colors.bgLight, colors.bgDark).reverse(),
+      "background"
     );
+    const textShades = shadesArrayToObject(
+      getTextColorShade("white", "black"),
+      "text"
+    );
+
+    return {
+      ...bgShades,
+      ...textShades,
+    };
   };
 
   return (
@@ -117,110 +76,124 @@ function ThemeGenerator() {
         alignItems: "center",
         alignSelf: "center",
         justifyContent: "center",
-        // display: "flex",
       }}
     >
-      <div>
-        <label>Dark Theme</label>
-        <input type="checkbox" onChange={toggleTheme} />
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+          marginTop: 16,
+          marginBottom: 16,
+        }}
+      >
+        <div>
+          <label>Dark Theme</label>
+          <input type="checkbox" onChange={toggleTheme} />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <ColorPicker
+            inputColor={colors["bgLight"]}
+            onChange={(value) => {
+              onColorChange("bgLight", value, {});
+            }}
+          />
+          <label>Choose Light Theme Surface Color</label>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
+          <ColorPicker
+            inputColor={colors["bgDark"]}
+            onChange={(value) => {
+              onColorChange("bgDark", value, {});
+            }}
+          />
+          <label>Choose Dark Theme Surface Color</label>
+        </div>
+      </div>
+
+      <div style={{ flexDirection: "row", display: "flex" }}>
+        {MAIN_COLORS.map((mainColorName) => (
+          <ColorShades
+            key={mainColorName}
+            inputColor={colors[mainColorName]}
+            name={mainColorName}
+            colorShades={getColorShadesWithName(
+              colors[mainColorName],
+              mainColorName
+            )}
+            transparentShades={getAlphaColorShadesWithName(
+              colors[mainColorName],
+              mainColorName + "Transparent"
+            )}
+            onColorChange={onColorChange}
+          />
+        ))}
+
+        <ColorShades
+          inputColor={undefined}
+          name={"background"}
+          colorShades={shadesArrayToObject(
+            isDark
+              ? getTextColorShade(colors.bgDark, colors.bgLight)
+              : getTextColorShade(colors.bgLight, colors.bgDark),
+            "background"
+          )}
+          onColorChange={onColorChange}
+        />
+        <ColorShades
+          inputColor={undefined}
+          name={"text"}
+          colorShades={shadesArrayToObject(
+            isDark
+              ? getTextColorShade("white", "black")
+              : getTextColorShade("black", "white"),
+            "text"
+          )}
+          onColorChange={onColorChange}
+        />
+
+        <ColorShades
+          inputColor={undefined}
+          name={"bgLight"}
+          colorShades={getTextColorShadesWithName("bgLight", "white", "gray")}
+        />
+        <ColorShades
+          inputColor={undefined}
+          name={"bgDark"}
+          colorShades={getTextColorShadesWithName("bgDark", "gray", "black")}
+        />
       </div>
       <div
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-evenly",
+          justifyContent: "space-between",
+          marginTop: 16,
         }}
       >
-        <div>
-          <label>Choose Light Theme Surface Color</label>
-
-          <ColorPicker
-            inputColor={colors["bgLight"]}
-            background={colors["bgLight"]}
-            onChange={(value) => {
-              setColors((prev) => ({ ...prev, bgLight: value }));
-            }}
-          />
-        </div>
-        <div>
-          <label>Choose Dark Theme Surface Color</label>
-
-          <ColorPicker
-            inputColor={colors["bgDark"]}
-            background={colors["bgDark"]}
-            onChange={(value) => {
-              setColors((prev) => ({ ...prev, bgDark: value }));
-            }}
-          />
-        </div>
-      </div>
-      <div style={{ flexDirection: "row", display: "flex" }}>
-        {renderColorShades(colors.primary, "primary")}
-        {renderColorShades(colors.accent, "accent")}
-
-        {renderColorShades(colors.success, "success")}
-        {renderColorShades(colors.info, "info")}
-        {renderColorShades(colors.warning, "warning")}
-        {renderColorShades(colors.error, "error")}
-
-        {renderColorShades(
-          undefined,
-          "background",
-          shadesArrayToObject(
-            isDark
-              ? textColorShade(colors.bgLight, colors.bgDark).reverse()
-              : textColorShade(colors.bgLight, colors.bgDark),
-            "background"
-          )
-        )}
-        {renderColorShades(
-          undefined,
-          "text",
-          shadesArrayToObject(
-            !isDark
-              ? textColorShade(colors.bgLight, colors.bgDark).reverse()
-              : textColorShade(colors.bgLight, colors.bgDark),
-            "text"
-          )
-        )}
-
-        {renderColorShades(
-          undefined,
-          "bgLight",
-          shadesArrayToObject(getBgColors("light"), "bgLight")
-        )}
-        {renderColorShades(
-          undefined,
-          "bgDark",
-          shadesArrayToObject(getBgColors("dark"), "bgDark")
-        )}
-      </div>
-      <div
-        style={{
-          justifyContent: "center",
-        }}
-      >
-        <pre>
-          <div
-            style={{
-              justifyContent: "flex-end",
-              display: "flex",
-            }}
-          >
-            <button
-              type="button"
-              onClick={async () => {
-                await navigator.clipboard.writeText(
-                  JSON.stringify(themeObjRef.current, null, 4)
-                );
-              }}
-            >
-              Copy
-            </button>
-          </div>
-
-          <div>{JSON.stringify(themeObjRef.current, null, 4)}</div>
-        </pre>
+        <CodeBlock
+          className={"codeblock"}
+          language="json"
+          title="lightTheme.json"
+        >
+          {JSON.stringify(themeJson, null, 4)}
+        </CodeBlock>
+        <CodeBlock language="json" title="darkTheme.json">
+          {JSON.stringify({ ...themeJson, ...getDarkThemeJson() }, null, 4)}
+        </CodeBlock>
       </div>
     </div>
   );

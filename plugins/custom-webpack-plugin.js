@@ -60,6 +60,10 @@ const config = function () {
               nodeModules,
               "@react-native-blossom-ui/components"
             ),
+            "@react-native-vector-icons": path.resolve(
+              nodeModules,
+              "@react-native-vector-icons"
+            ),
           },
           fallback: isServer
             ? {}

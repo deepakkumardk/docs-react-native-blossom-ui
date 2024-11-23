@@ -69,6 +69,10 @@ const config: Config = {
   plugins: ["./plugins/custom-webpack-plugin.js"],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: "light",
+      respectPrefersColorScheme: true,
+    },
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
     navbar: {
