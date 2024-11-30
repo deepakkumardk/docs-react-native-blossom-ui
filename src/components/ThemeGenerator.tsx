@@ -8,8 +8,8 @@ import {
   getTextColorShadesWithName,
 } from "../utils";
 import ColorPicker from "./ColorPicker";
-import { ColorShades } from "@site/src/components/ColorShades";
 import CodeBlock from "@theme/CodeBlock";
+import { ColorShades } from "./ColorShades";
 
 const MAIN_COLORS = [
   "primary",
@@ -36,6 +36,8 @@ function ThemeGenerator() {
   });
 
   const [themeJson, setThemeJson] = useState({});
+  const [lightThemeBgJson, setLightThemeBgJson] = useState({});
+  const [darkThemeBgJson, setDarkThemeBgJson] = useState({});
 
   const toggleTheme = () => {
     setIsDark((prev) => !prev);
@@ -54,20 +56,35 @@ function ThemeGenerator() {
     }));
   };
 
-  const getDarkThemeJson = () => {
+  const getBgOrTextColors = (isDark: boolean) => {
     const bgShades = shadesArrayToObject(
-      getTextColorShade(colors.bgLight, colors.bgDark).reverse(),
+      isDark
+        ? getTextColorShade(colors.bgDark, colors.bgLight)
+        : getTextColorShade(colors.bgLight, colors.bgDark),
       "background"
     );
+    const bgTransparentShades = getAlphaColorShadesWithName(
+      getBg200Color(isDark),
+      "background" + "Transparent"
+    );
     const textShades = shadesArrayToObject(
-      getTextColorShade("white", "black"),
+      isDark
+        ? getTextColorShade("white", "black")
+        : getTextColorShade("black", "white"),
       "text"
     );
 
     return {
       ...bgShades,
+      ...bgTransparentShades,
       ...textShades,
     };
+  };
+
+  const getBg200Color = (isDark?: boolean) => {
+    return isDark
+      ? getTextColorShade(colors.bgDark, colors.bgLight)[1]
+      : getTextColorShade(colors.bgLight, colors.bgDark)[1];
   };
 
   return (
@@ -151,6 +168,10 @@ function ThemeGenerator() {
               : getTextColorShade(colors.bgLight, colors.bgDark),
             "background"
           )}
+          transparentShades={getAlphaColorShadesWithName(
+            getBg200Color(isDark),
+            "background" + "Transparent"
+          )}
           onColorChange={onColorChange}
         />
         <ColorShades
@@ -169,11 +190,13 @@ function ThemeGenerator() {
           inputColor={undefined}
           name={"bgLight"}
           colorShades={getTextColorShadesWithName("bgLight", "white", "gray")}
+          onColorChange={onColorChange}
         />
         <ColorShades
           inputColor={undefined}
           name={"bgDark"}
           colorShades={getTextColorShadesWithName("bgDark", "gray", "black")}
+          onColorChange={onColorChange}
         />
       </div>
       <div
@@ -189,10 +212,18 @@ function ThemeGenerator() {
           language="json"
           title="lightTheme.json"
         >
-          {JSON.stringify(themeJson, null, 4)}
+          {JSON.stringify(
+            { ...themeJson, ...getBgOrTextColors(false) },
+            null,
+            4
+          )}
         </CodeBlock>
         <CodeBlock language="json" title="darkTheme.json">
-          {JSON.stringify({ ...themeJson, ...getDarkThemeJson() }, null, 4)}
+          {JSON.stringify(
+            { ...themeJson, ...getBgOrTextColors(true) },
+            null,
+            4
+          )}
         </CodeBlock>
       </div>
     </div>
