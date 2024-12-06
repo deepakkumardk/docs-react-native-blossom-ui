@@ -3,6 +3,8 @@ pre-commit:
   commands:
     tsc:
       run: yarn typecheck
+    build:
+      run: yarn build
     lint:
       run: echo "TODO"
 commit-msg:

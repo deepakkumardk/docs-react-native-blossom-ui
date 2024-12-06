@@ -53,8 +53,10 @@ const setupMaterialCommunityIcons = () => {
   document.head.appendChild(style);
 };
 
-setupIonicons();
-setupMaterialCommunityIcons();
+if (typeof document !== "undefined") {
+  setupIonicons();
+  setupMaterialCommunityIcons();
+}
 
 const Root = ({ children }: Children) => {
   const [isDark, setIsDark] = useState(false);
