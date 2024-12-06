@@ -48,6 +48,7 @@ const config = function () {
                   nodeModules,
                   "@react-native-blossom-ui/components"
                 ),
+                path.resolve(nodeModules, "@react-native-blossom-ui/showcase"),
                 path.resolve(nodeModules, "react-native-vector-icons"),
               ],
             },
@@ -59,6 +60,10 @@ const config = function () {
             "@react-native-blossom-ui/components": path.resolve(
               nodeModules,
               "@react-native-blossom-ui/components"
+            ),
+            "@react-native-blossom-ui/showcase": path.resolve(
+              nodeModules,
+              "@react-native-blossom-ui/showcase"
             ),
             "@react-native-vector-icons": path.resolve(
               nodeModules,

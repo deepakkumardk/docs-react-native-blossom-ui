@@ -4,6 +4,7 @@ import {
   Children,
 } from "@react-native-blossom-ui/components";
 import { useColorMode } from "@docusaurus/theme-common";
+import { ColorModeProvider } from "@docusaurus/theme-common/internal";
 
 import { default as LightTheme } from "./lightTheme.json";
 import { default as DarkTheme } from "./darkTheme.json";
@@ -11,7 +12,8 @@ import { default as DarkTheme } from "./darkTheme.json";
 // https://github.com/oblador/react-native-vector-icons/issues/1425#issuecomment-1223534931
 // @ts-ignore
 import Ionicons from "react-native-vector-icons/Fonts/Ionicons.ttf";
-import { ColorModeProvider } from "@docusaurus/theme-common/internal";
+// @ts-ignore
+import MaterialCommunityIcons from "react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf";
 
 const setupIonicons = () => {
   const IoniconsStyles = `@font-face {
@@ -32,7 +34,27 @@ const setupIonicons = () => {
   document.head.appendChild(style);
 };
 
+const setupMaterialCommunityIcons = () => {
+  const MaterialCommunityIconsStyles = `@font-face {
+    src: url(${MaterialCommunityIcons});
+    font-family: MaterialCommunityIcons;
+  }`;
+
+  const style = document.createElement("style");
+  style.type = "text/css";
+
+  // @ts-ignore
+  if (style.styleSheet) {
+    // @ts-ignore
+    style.styleSheet.cssText = MaterialCommunityIconsStyles;
+  } else {
+    style.appendChild(document.createTextNode(MaterialCommunityIconsStyles));
+  }
+  document.head.appendChild(style);
+};
+
 setupIonicons();
+setupMaterialCommunityIcons();
 
 const Root = ({ children }: Children) => {
   const [isDark, setIsDark] = useState(false);

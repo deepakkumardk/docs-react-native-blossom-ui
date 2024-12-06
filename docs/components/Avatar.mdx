@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Avatar
@@ -7,14 +7,22 @@ sidebar_position: 1
 Component to show an image, initials or icon with different shapes.
 
 import {
-  AvatarDocs,
   BlossomUIRenderer,
+  PropsTable,
+  AvatarUsage,
   AvatarStatuses,
   AvatarSizes,
   AvatarModes,
   AvatarModesSizes,
-  PropsTable,
 } from "@site/src/components";
+
+## Usage
+
+<BlossomUIRenderer
+  componentName={"AvatarUsage"}
+  children={<AvatarUsage />}
+  fileName={"Avatar"}
+/>
 
 ## Status
 
@@ -24,7 +32,7 @@ import {
   fileName={"Avatar"}
 />
 
-## Sizes
+## Size
 
 <BlossomUIRenderer
   componentName={"AvatarSizes"}

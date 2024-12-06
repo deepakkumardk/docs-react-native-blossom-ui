@@ -1,4 +1,13 @@
 {
+  "BlossomStatus": {
+    "parent": []
+  },
+  "BlossomTransparentStatus": {
+    "parent": []
+  },
+  "BlossomSize": {
+    "parent": []
+  },
   "BlossomColor": {
     "parent": []
   },
@@ -8,7 +17,13 @@
   "TransparentColorVariants": {
     "parent": []
   },
-  "ColorNames": {
+  "ThemeColorNames": {
+    "parent": []
+  },
+  "SemanticColorNames": {
+    "parent": []
+  },
+  "SurfaceColorNames": {
     "parent": []
   },
   "BlossomThemeColors": {
@@ -37,10 +52,7 @@
     ],
     "parent": []
   },
-  "Children$1": {
-    "parent": []
-  },
-  "WithChildren": {
+  "Children": {
     "parent": []
   },
   "BlossomThemeProviderProps": {
@@ -53,15 +65,6 @@
     "parent": []
   },
   "TypographyOptions": {
-    "parent": []
-  },
-  "BlossomStatus": {
-    "parent": []
-  },
-  "BlossomTransparentStatus": {
-    "parent": []
-  },
-  "BlossomSize": {
     "parent": []
   },
   "BaseUIProps": {
@@ -86,7 +89,10 @@
   "OmitSizeProps": {
     "parent": []
   },
-  "Children": {
+  "ThemeValues": {
+    "parent": []
+  },
+  "ComponentPropsObjectMap": {
     "parent": []
   },
   "TextProps": {
@@ -95,7 +101,7 @@
         "name": "typography",
         "dataType": "TypographyOptions",
         "description": null,
-        "comment": ""
+        "comment": "Typography option to control the size of the text"
       }
     ],
     "parent": [
@@ -110,13 +116,13 @@
         "dataType": "\"label\" | \"caption\"",
         "defaultValue": "label",
         "description": null,
-        "comment": ""
+        "comment": "Mode of the text label or captionCaption will be used for both a caption or error text in form control inputs"
       },
       {
         "name": "typography",
         "dataType": "TypographyOptions",
         "description": null,
-        "comment": ""
+        "comment": "Typography option to control the size of the text"
       },
       {
         "name": "size",
@@ -137,7 +143,7 @@
         "name": "row",
         "dataType": "boolean",
         "description": null,
-        "comment": ""
+        "comment": "Set true for horizontal(flexDirection) view"
       }
     ],
     "parent": [
@@ -150,59 +156,58 @@
   "ButtonProps": {
     "properties": [
       {
-        "name": "title",
-        "dataType": "string",
-        "description": null,
-        "comment": ""
-      },
-      {
         "name": "mode",
         "dataType": "ButtonMode",
         "description": null,
         "comment": ""
       },
       {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": "Button title text"
+      },
+      {
         "name": "titleStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Title text style"
       },
       {
         "name": "style",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": "Either view styles or a function that receives a boolean reflecting whetherthe component is currently pressed and returns view styles."
+        "comment": "Button style to add padding/margin etc."
       },
       {
         "name": "isLoading",
         "dataType": "boolean",
-        "defaultValue": "false",
         "description": null,
-        "comment": "To show the loader"
+        "comment": "Set it to true to show the activity indicator to the left"
       },
       {
         "name": "disabled",
         "dataType": "boolean",
         "description": null,
-        "comment": "Whether the press behavior is disabled."
+        "comment": "Set to true to disable the button"
       },
       {
         "name": "left",
         "dataType": "ReactNode",
         "description": null,
-        "comment": ""
+        "comment": "Render any icon/JSX on left of the title"
       },
       {
         "name": "right",
         "dataType": "ReactNode",
         "description": null,
-        "comment": ""
+        "comment": "Render any icon/JSX on right of the title"
       },
       {
-        "name": "loaderStyle",
+        "name": "loaderProps",
         "dataType": "ActivityIndicatorProps",
         "description": null,
-        "comment": "Loader style"
+        "comment": "Loader props"
       },
       {
         "name": "status",
@@ -234,14 +239,32 @@
         "dataType": "boolean",
         "defaultValue": "true",
         "description": null,
-        "comment": ""
+        "comment": "Set to false to hide it"
       },
       {
         "name": "size",
         "dataType": "number | BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Control the size using pre-defined options"
+      },
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": "Label text below indicator"
+      },
+      {
+        "name": "labelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Label text style"
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Container style wrapping both label and ActivityIndicator"
       }
     ],
     "parent": [
@@ -255,95 +278,101 @@
   "TextInputProps": {
     "properties": [
       {
+        "name": "mode",
+        "dataType": "\"outlined\" | \"flat\"",
+        "defaultValue": "outlined",
+        "description": null,
+        "comment": "Control the different modes of the text input"
+      },
+      {
+        "name": "dense",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Have a denser background in the text input"
+      },
+      {
         "name": "label",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Label text above the input"
       },
       {
         "name": "placeholder",
         "dataType": "string",
         "description": null,
-        "comment": "The string that will be rendered before text input has been entered"
+        "comment": "Placeholder for the text input"
       },
       {
         "name": "caption",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Caption text below the text input"
       },
       {
         "name": "error",
         "dataType": "string",
-        "description": "TextInput will always render this and take the space to fix the flicker issue in show/hide error",
-        "comment": ""
+        "description": "Error text in error status below caption text",
+        "comment": "TODO: TextInput will always render this and take the space to fix the flicker issue in show/hide error"
       },
       {
         "name": "labelStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Label text style"
       },
       {
         "name": "placeholderStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Placeholder text style"
       },
       {
         "name": "captionStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Caption text style"
       },
       {
         "name": "errorStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Error text style"
       },
       {
         "name": "containerStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Container view style"
       },
       {
         "name": "inputStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Input box style"
       },
       {
         "name": "textStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Input text style equivalent to react-native style for TextInput"
       },
       {
         "name": "disabled",
         "dataType": "boolean",
         "description": null,
-        "comment": ""
+        "comment": "Set to true to disable the button"
       },
       {
         "name": "left",
         "dataType": "ReactNode",
         "description": null,
-        "comment": ""
+        "comment": "Render Icon/JSX on the left of the button"
       },
       {
         "name": "right",
         "dataType": "ReactNode",
         "description": null,
-        "comment": ""
-      },
-      {
-        "name": "mode",
-        "dataType": "TextInputMode",
-        "defaultValue": "outlined",
-        "description": null,
-        "comment": ""
+        "comment": "Render Icon/JSX on the right of the button"
       },
       {
         "name": "status",
@@ -386,95 +415,101 @@
         "comment": ""
       },
       {
+        "name": "mode",
+        "dataType": "\"outlined\" | \"flat\"",
+        "defaultValue": "outlined",
+        "description": null,
+        "comment": "Control the different modes of the text input"
+      },
+      {
+        "name": "dense",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Have a denser background in the text input"
+      },
+      {
         "name": "label",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Label text above the input"
       },
       {
         "name": "placeholder",
         "dataType": "string",
         "description": null,
-        "comment": "The string that will be rendered before text input has been entered"
+        "comment": "Placeholder for the text input"
       },
       {
         "name": "caption",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Caption text below the text input"
       },
       {
         "name": "error",
         "dataType": "string",
-        "description": "TextInput will always render this and take the space to fix the flicker issue in show/hide error",
-        "comment": ""
+        "description": "Error text in error status below caption text",
+        "comment": "TODO: TextInput will always render this and take the space to fix the flicker issue in show/hide error"
       },
       {
         "name": "labelStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Label text style"
       },
       {
         "name": "placeholderStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Placeholder text style"
       },
       {
         "name": "captionStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Caption text style"
       },
       {
         "name": "errorStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Error text style"
       },
       {
         "name": "containerStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Container view style"
       },
       {
         "name": "inputStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Input box style"
       },
       {
         "name": "textStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Input text style equivalent to react-native style for TextInput"
       },
       {
         "name": "disabled",
         "dataType": "boolean",
         "description": null,
-        "comment": ""
+        "comment": "Set to true to disable the button"
       },
       {
         "name": "left",
         "dataType": "ReactNode",
         "description": null,
-        "comment": ""
+        "comment": "Render Icon/JSX on the left of the button"
       },
       {
         "name": "right",
         "dataType": "ReactNode",
         "description": null,
-        "comment": ""
-      },
-      {
-        "name": "mode",
-        "dataType": "TextInputMode",
-        "defaultValue": "outlined",
-        "description": null,
-        "comment": ""
+        "comment": "Render Icon/JSX on the right of the button"
       },
       {
         "name": "status",
@@ -502,27 +537,27 @@
         "dataType": "DimensionValue",
         "defaultValue": "100%",
         "description": null,
-        "comment": ""
+        "comment": "Control Width of the divider"
       },
       {
         "name": "height",
         "dataType": "DimensionValue",
         "defaultValue": "0.6",
         "description": null,
-        "comment": ""
+        "comment": "Control height of the divider"
       },
       {
         "name": "color",
         "dataType": "string",
         "defaultValue": "background900",
         "description": null,
-        "comment": ""
+        "comment": "Color of the divider"
       },
       {
         "name": "row",
         "dataType": "boolean",
         "description": null,
-        "comment": ""
+        "comment": "Set true for horizontal(flexDirection) view"
       }
     ],
     "parent": [
@@ -535,52 +570,49 @@
         "name": "size",
         "dataType": "number | BlossomSize",
         "description": null,
-        "comment": ""
+        "comment": "Size of the AvatarIt can be either number or string ('small' | 'medium' | 'large')"
       },
       {
         "name": "mode",
         "dataType": "\"circle\" | \"round\" | \"square\"",
         "description": null,
-        "comment": ""
+        "comment": "Control the shape of the Avatar"
       },
       {
         "name": "url",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Shorthand for the Source.uri of the image propsHere You can directly pass the url of the image\nIf not provided, it will fallback to showing initials or an icon."
       },
       {
         "name": "initials",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Show initials inside the AvatarIf not provided, it will fallback to showing an icon."
       },
       {
         "name": "initialStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Initials Text style to control the font size etc."
       },
       {
         "name": "icon",
         "dataType": "(size: number) => ReactNode",
         "description": null,
-        "comment": ""
+        "comment": "Set a custom icon for Avatar"
       },
       {
         "name": "onPress",
         "dataType": "() => void",
         "description": null,
-        "comment": ""
+        "comment": "On press callback"
       }
     ],
     "parent": [
       "Partial<ImageProps>",
       "OmitSizeProps"
     ]
-  },
-  "AvatarProps1": {
-    "parent": []
   },
   "IconFamily": {
     "parent": []
@@ -592,7 +624,7 @@
         "dataType": "IconFamily",
         "defaultValue": "Ionicons",
         "description": null,
-        "comment": "Vector icons family"
+        "comment": "Vector icons family from vector-icons set"
       },
       {
         "name": "size",
@@ -611,75 +643,83 @@
         "name": "color",
         "dataType": "number | ColorValue",
         "description": null,
-        "comment": "Color of the icon"
-      },
-      {
-        "name": "typography",
-        "dataType": "TypographyOptions",
-        "description": null,
-        "comment": ""
+        "comment": "Set custom icon color"
       }
     ],
     "parent": [
-      "TextProps",
+      "TextProps$1",
       "OmitSizeProps"
     ]
   },
   "BaseBooleanFieldProps": {
     "properties": [
       {
+        "name": "position",
+        "dataType": "\"left\" | \"right\"",
+        "defaultValue": "right",
+        "description": null,
+        "comment": "Control the position of the field"
+      },
+      {
+        "name": "adjacent",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Set it to false to position them apart i.e. space-between"
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set to true for disabled field"
+      },
+      {
         "name": "color",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Set custom color"
       },
       {
         "name": "label",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Label text above the input"
       },
       {
         "name": "caption",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Caption text below the text input"
       },
       {
         "name": "error",
         "dataType": "string",
         "description": null,
-        "comment": ""
-      },
-      {
-        "name": "position",
-        "dataType": "\"left\" | \"right\"",
-        "description": null,
-        "comment": ""
+        "comment": "Error text in error `status` below caption text"
       },
       {
         "name": "containerStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Container view style"
       },
       {
         "name": "labelStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Label text style"
       },
       {
         "name": "captionStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Caption text style"
       },
       {
         "name": "errorStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Error text style"
       },
       {
         "name": "status",
@@ -699,7 +739,7 @@
         "name": "children",
         "dataType": "ReactNode",
         "description": null,
-        "comment": ""
+        "comment": "Children"
       }
     ],
     "parent": [
@@ -710,58 +750,150 @@
   "SwitchProps": {
     "properties": [
       {
+        "name": "position",
+        "dataType": "\"left\" | \"right\"",
+        "defaultValue": "right",
+        "description": null,
+        "comment": "Control the position of the field"
+      },
+      {
+        "name": "adjacent",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Set it to false to position them apart i.e. space-between"
+      },
+      {
         "name": "color",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Set custom color"
       },
       {
         "name": "label",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Label text above the input"
       },
       {
         "name": "caption",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Caption text below the text input"
       },
       {
         "name": "error",
         "dataType": "string",
         "description": null,
-        "comment": ""
-      },
-      {
-        "name": "position",
-        "dataType": "\"left\" | \"right\"",
-        "description": null,
-        "comment": ""
+        "comment": "Error text in error `status` below caption text"
       },
       {
         "name": "containerStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Container view style"
       },
       {
         "name": "labelStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Label text style"
       },
       {
         "name": "captionStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Caption text style"
       },
       {
         "name": "errorStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
+        "comment": "Error text style"
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
         "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "SwitchProps$1",
+      "BaseBooleanFieldProps"
+    ]
+  },
+  "RadioProps": {
+    "properties": [
+      {
+        "name": "position",
+        "dataType": "\"left\" | \"right\"",
+        "defaultValue": "right",
+        "description": null,
+        "comment": "Control the position of the field"
+      },
+      {
+        "name": "adjacent",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Set it to false to position them apart i.e. space-between"
+      },
+      {
+        "name": "color",
+        "dataType": "string",
+        "description": null,
+        "comment": "Set custom color"
+      },
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": "Label text above the input"
+      },
+      {
+        "name": "caption",
+        "dataType": "string",
+        "description": null,
+        "comment": "Caption text below the text input"
+      },
+      {
+        "name": "error",
+        "dataType": "string",
+        "description": null,
+        "comment": "Error text in error `status` below caption text"
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Container view style"
+      },
+      {
+        "name": "labelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Label text style"
+      },
+      {
+        "name": "captionStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Caption text style"
+      },
+      {
+        "name": "errorStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Error text style"
       },
       {
         "name": "status",
@@ -789,85 +921,93 @@
         "name": "value",
         "dataType": "boolean",
         "description": null,
-        "comment": ""
+        "comment": "Control the state of the checkbox with value"
       },
       {
-        "name": "intermediate",
+        "name": "indeterminate",
         "dataType": "boolean",
         "description": null,
-        "comment": ""
+        "comment": "Set to true for an intermediate state"
       },
       {
         "name": "onValueChange",
         "dataType": "(value: boolean) => void | Promise<void>",
         "description": null,
-        "comment": ""
-      },
-      {
-        "name": "disabled",
-        "dataType": "boolean",
-        "description": null,
-        "comment": ""
+        "comment": "Callback for on value change"
       },
       {
         "name": "style",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Style of the checkbox"
+      },
+      {
+        "name": "position",
+        "dataType": "\"left\" | \"right\"",
+        "defaultValue": "right",
+        "description": null,
+        "comment": "Control the position of the field"
+      },
+      {
+        "name": "adjacent",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Set it to false to position them apart i.e. space-between"
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set to true for disabled field"
       },
       {
         "name": "color",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Set custom color"
       },
       {
         "name": "label",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Label text above the input"
       },
       {
         "name": "caption",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Caption text below the text input"
       },
       {
         "name": "error",
         "dataType": "string",
         "description": null,
-        "comment": ""
-      },
-      {
-        "name": "position",
-        "dataType": "\"left\" | \"right\"",
-        "description": null,
-        "comment": ""
+        "comment": "Error text in error `status` below caption text"
       },
       {
         "name": "containerStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Container view style"
       },
       {
         "name": "labelStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Label text style"
       },
       {
         "name": "captionStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Caption text style"
       },
       {
         "name": "errorStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Error text style"
       },
       {
         "name": "status",
@@ -887,11 +1027,14 @@
         "name": "children",
         "dataType": "ReactNode",
         "description": null,
-        "comment": ""
+        "comment": "Children"
       }
     ],
     "parent": [
       "BaseBooleanFieldProps"
     ]
+  },
+  "ComponentPropsMap": {
+    "parent": []
   }
 }

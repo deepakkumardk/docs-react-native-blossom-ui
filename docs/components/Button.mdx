@@ -1,13 +1,16 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Button
 
-Button component with Pressable as container, and supports full customization with different props
+Button component with Pressable as container, and supports full customization with different props.
+It has both hover and press effect that get picked from the color shades or if custom color is provided it auto generates those colors.
 
 import {
-  ButtonDocs,
+  BlossomUIRenderer,
+  PropsTable,
+  ButtonUsage,
   ButtonStatuses,
   ButtonSizes,
   ButtonModes,
@@ -15,9 +18,16 @@ import {
   ButtonLoading,
   ButtonIcons,
   ButtonModesSizes,
-  PropsTable,
-  BlossomUIRenderer,
+  ButtonCustom,
 } from "@site/src/components";
+
+## Usage
+
+<BlossomUIRenderer
+  componentName={"ButtonUsage"}
+  children={<ButtonUsage />}
+  fileName={"Button"}
+/>
 
 ## Status
 
@@ -27,7 +37,7 @@ import {
   fileName={"Button"}
 />
 
-## Sizes
+## Size
 
 <BlossomUIRenderer
   componentName={"ButtonSizes"}
@@ -53,10 +63,11 @@ import {
 
 ## Loading
 
+When `isLoading` enabled, Button doesn't show the hover & press effect same as the disabled state to indicate that user can't do any action here.
+The loading icon is set to left by default.
+The loader color is set to same as the text color by default, it can be changed with `loaderProps`.
+
 <BlossomUIRenderer
-  description={
-    "On the loading button hover & pressed styles are set to none. The loading icon is set to left by default."
-  }
   componentName={"ButtonLoading"}
   children={<ButtonLoading />}
   fileName={"Button"}
@@ -81,6 +92,14 @@ import {
   fileName={"Button"}
   withFlex={false}
   withCodeblock={false}
+/>
+
+## Custom Buttons
+
+<BlossomUIRenderer
+  componentName={"ButtonCustom"}
+  children={<ButtonCustom />}
+  fileName={"Button"}
 />
 
 ## Props

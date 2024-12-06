@@ -1,0 +1,55 @@
+---
+sidebar_position: 10
+---
+
+# Text
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  TextUsage,
+  TextTypographyAll,
+  TextStatuses,
+  TextCustom,
+} from "@site/src/components";
+
+## Typography
+
+<BlossomUIRenderer
+  componentName={"TextUsage"}
+  children={<TextUsage />}
+  fileName={"Text"}
+  withFlex={false}
+/>
+
+## All Typographies
+
+<BlossomUIRenderer
+  componentName={"TextTypographyAll"}
+  children={<TextTypographyAll />}
+  fileName={"Text"}
+  withFlex={false}
+  withCodeblock={false}
+/>
+
+## Status
+
+<BlossomUIRenderer
+  componentName={"TextStatuses"}
+  children={<TextStatuses />}
+  fileName={"Text"}
+  withFlex={false}
+/>
+
+## Custom Texts
+
+<BlossomUIRenderer
+  componentName={"TextCustom"}
+  children={<TextCustom />}
+  fileName={"Text"}
+  withFlex={false}
+/>
+
+## Props
+
+<PropsTable componentName="Text" />
