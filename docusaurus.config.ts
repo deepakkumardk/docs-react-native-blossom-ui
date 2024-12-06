@@ -11,14 +11,14 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-site.example.com",
+  url: "https://docs-react-native-blossom-ui.vercel.app/",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "username", // Usually your GitHub org/user name.
+  organizationName: "", // Usually your GitHub org/user name.
   projectName: "docs-react-native-blossom-ui", // Usually your repo name.
 
   onBrokenLinks: "throw",
@@ -40,7 +40,8 @@ const config: Config = {
           sidebarPath: "./sidebars.ts",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/username/docs-react-native-blossom-ui",
+          editUrl:
+            "https://github.com/deepakkumardk/docs-react-native-blossom-ui",
           remarkPlugins: [
             [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
           ],
@@ -53,7 +54,8 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/username/docs-react-native-blossom-ui",
+          editUrl:
+            "https://github.com/deepakkumardk/docs-react-native-blossom-ui",
           // Useful options to enforce blogging best practices
           onInlineTags: "warn",
           onInlineAuthors: "warn",
@@ -90,7 +92,7 @@ const config: Config = {
         },
         { to: "/blog", label: "Blog", position: "left" },
         {
-          href: "https://github.com/username/react-native-blossom-ui",
+          href: "https://github.com/deepakkumardk/react-native-blossom-ui",
           label: "GitHub",
           position: "right",
         },
@@ -126,7 +128,7 @@ const config: Config = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/username/react-native-blossom-ui",
+              href: "https://github.com/deepakkumardk/react-native-blossom-ui",
             },
           ],
         },
