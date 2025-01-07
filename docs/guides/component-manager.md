@@ -10,28 +10,29 @@ Here's a simple code snippet of it.
 
 ```ts
 ComponentManager.setDefaultProps({
-  ComponentManager.setDefaultProps({
-      Switch: (props: SwitchProps): Partial<SwitchProps> => ({
-        size: 'small',
-        status: 'primary',
-      }),
+  // Simple usage without any prop
+  Switch: () => ({
+    size: "medium",
+    status: "accent",
+  }),
 
-      Avatar: (props: AvatarProps): Partial<AvatarProps> => {
-        if (props.size === 'small') {
-          return {
-            status: 'success',
-          }
-        }
-        return {
-          size: 'large',
-          status: 'primary',
-        }
-      },
-    })
+  // Usage with props & theme
+  Avatar: (props: AvatarProps, theme) => {
+    if (props.size === "small") {
+      return {
+        style: {
+          backgroundColor: theme.colors.success900,
+        },
+      };
+    }
+
+    return {
+      size: "medium",
+      status: "primary",
+      mode: "round",
+    };
+  },
 });
 ```
 
-The above code sets the Switch size to `small` & it's status to `primary` and this will be used across the app until it's being overridden there.
-While for Avatar we have used the conditional return based on the size of the component.
-
-Similarly, you can override all the Component and it's props. This is just an example but using this you can override about anything and everything of each component.
+Using this you can override all the Component and it's props also based on the given props conditions. This is just an example but using this you can override about anything and everything of each component.

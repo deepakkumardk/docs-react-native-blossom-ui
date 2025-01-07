@@ -100,6 +100,7 @@
       {
         "name": "typography",
         "dataType": "TypographyOptions",
+        "defaultValue": "b2",
         "description": null,
         "comment": "Typography option to control the size of the text"
       }
@@ -113,7 +114,7 @@
     "properties": [
       {
         "name": "mode",
-        "dataType": "\"label\" | \"caption\"",
+        "dataType": "\"label\" | \"caption\" | \"body\"",
         "defaultValue": "label",
         "description": null,
         "comment": "Mode of the text label or captionCaption will be used for both a caption or error text in form control inputs"
@@ -121,6 +122,7 @@
       {
         "name": "typography",
         "dataType": "TypographyOptions",
+        "defaultValue": "b2",
         "description": null,
         "comment": "Typography option to control the size of the text"
       },
@@ -158,8 +160,9 @@
       {
         "name": "mode",
         "dataType": "ButtonMode",
+        "defaultValue": "filled",
         "description": null,
-        "comment": ""
+        "comment": "Change the appearance of the button using this"
       },
       {
         "name": "title",
@@ -1036,5 +1039,364 @@
   },
   "ComponentPropsMap": {
     "parent": []
+  },
+  "ModalProps": {
+    "properties": [
+      {
+        "name": "onBackdropPress",
+        "dataType": "() => void",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "backdropStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "contentStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "ModalProps$1"
+    ]
+  },
+  "ModalContentProps": {
+    "properties": [
+      {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "description",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "children",
+        "dataType": "string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "actionButtons",
+        "dataType": "ButtonProps[]",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": []
+  },
+  "PopoverProps": {
+    "properties": [
+      {
+        "name": "visible",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it true to show the popover"
+      },
+      {
+        "name": "children",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Popover JSX content to show"
+      },
+      {
+        "name": "onBackdropPress",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "callback on clicking the outside area or back button of the popover to close it"
+      },
+      {
+        "name": "contentStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Style of the popover shown"
+      },
+      {
+        "name": "Target",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render the target JSX using this prop"
+      },
+      {
+        "name": "targetRef",
+        "dataType": "LegacyRef<unknown>",
+        "description": null,
+        "comment": "Target ref object to control it without statesIf Target is passed then that will be given priority"
+      },
+      {
+        "name": "fitTargetWidth",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it true to have the same width as of the Target view"
+      },
+      {
+        "name": "position",
+        "dataType": "\"left\" | \"right\" | \"top\" | \"bottom\"",
+        "defaultValue": "bottom",
+        "description": null,
+        "comment": "Popover content position"
+      },
+      {
+        "name": "offset",
+        "dataType": "number",
+        "description": null,
+        "comment": "Content offset"
+      },
+      {
+        "name": "wrapContent",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Wrap Content the popover"
+      }
+    ],
+    "parent": []
+  },
+  "PopoverRef": {
+    "properties": [
+      {
+        "name": "open",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Open the popover"
+      },
+      {
+        "name": "close",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Close the popover"
+      }
+    ],
+    "parent": []
+  },
+  "TooltipProps": {
+    "properties": [
+      {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": "Title text for the tooltip"
+      },
+      {
+        "name": "titleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Style of the tooltip title text"
+      }
+    ],
+    "parent": [
+      "Pick<PopoverProps, 'visible' | 'contentStyle' | 'Target' | 'onBackdropPress' | 'position' | 'offset'>"
+    ]
+  },
+  "SelectItemT": {
+    "properties": [
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": "Label to show in the select"
+      },
+      {
+        "name": "value",
+        "dataType": "ItemT",
+        "description": null,
+        "comment": "Any value data for select"
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "This will disable the item to be selected"
+      }
+    ],
+    "parent": []
+  },
+  "SelectItemProps": {
+    "properties": [
+      {
+        "name": "item",
+        "dataType": "SelectItemT<ItemT>",
+        "description": null,
+        "comment": "Select Item object"
+      },
+      {
+        "name": "isSelected",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true to show the item selected"
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Item view style"
+      },
+      {
+        "name": "onPress",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Item on press callback"
+      },
+      {
+        "name": "withTickIcon",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Set it to true to show tick icon on the selected row"
+      },
+      {
+        "name": "leftIcon",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render custom icon on left"
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "BaseUIProps"
+    ]
+  },
+  "RNFlatListProps": {
+    "parent": []
+  },
+  "SelectProps": {
+    "properties": [
+      {
+        "name": "options",
+        "dataType": "SelectItemT<ItemT>[]",
+        "description": null,
+        "comment": "List of options"
+      },
+      {
+        "name": "value",
+        "dataType": "ItemT",
+        "description": null,
+        "comment": "Selected value from the data objecti.e. pass the `item.value` object that you get from `onValueChange`"
+      },
+      {
+        "name": "defaultValue",
+        "dataType": "ItemT",
+        "description": null,
+        "comment": "Default value from the item.value"
+      },
+      {
+        "name": "displayValue",
+        "dataType": "string",
+        "description": null,
+        "comment": "Set custom display value"
+      },
+      {
+        "name": "onValueChange",
+        "dataType": "(selectedValue?: ItemT, selectedItem?: SelectItemT<ItemT>, index?: number) => void",
+        "description": null,
+        "comment": "Callback on every value change"
+      },
+      {
+        "name": "searchable",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it true to open keyboard and show search resultsTODO: add support for this"
+      },
+      {
+        "name": "clearable",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Show the close icon at right to clear the selection"
+      },
+      {
+        "name": "pickerHeight",
+        "dataType": "number",
+        "description": null,
+        "comment": "Height of the popover shown for selecting the item"
+      },
+      {
+        "name": "pickerProps",
+        "dataType": "Partial<Omit<FlatListProps<SelectItemT<ItemT>>, \"data\">>",
+        "description": null,
+        "comment": "Picker flat list props"
+      },
+      {
+        "name": "renderItem",
+        "dataType": "ListRenderItem<SelectItemT<ItemT>>",
+        "description": null,
+        "comment": "Render a custom view for picker item"
+      },
+      {
+        "name": "inputProps",
+        "dataType": "Omit<TextInputProps, \"defaultValue\" | \"value\">",
+        "description": null,
+        "comment": "Input props"
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "BaseUIProps",
+      "Pick<TextInputProps, 'placeholder' | 'disabled' | 'label'>"
+    ]
+  },
+  "MultiSelectProps": {
+    "properties": [
+      {
+        "name": "values",
+        "dataType": "ItemT[]",
+        "description": null,
+        "comment": "List of selected item values"
+      },
+      {
+        "name": "defaultValue",
+        "dataType": "ItemT[]",
+        "description": null,
+        "comment": "List of default item values"
+      },
+      {
+        "name": "onValuesChange",
+        "dataType": "(selectedValues: ItemT[], selectedItems: SelectItemT<ItemT>[]) => void",
+        "description": null,
+        "comment": "Callback on select item press"
+      },
+      {
+        "name": "maxSelectCount",
+        "dataType": "number",
+        "description": null,
+        "comment": "Limit the selection to max count"
+      }
+    ],
+    "parent": [
+      "Omit<SelectProps<ItemT>, 'value' | 'onValueChange' | 'defaultValue'>"
+    ]
   }
 }

@@ -1,7 +1,6 @@
 import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
-const path = require("path");
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -79,10 +78,10 @@ const config: Config = {
     image: "img/docusaurus-social-card.jpg",
     navbar: {
       title: "Blossom UI",
-      logo: {
-        alt: "Blossom UI",
-        src: "img/logo.svg",
-      },
+      // logo: {
+      // alt: "Blossom UI",
+      // src: "img/logo.svg",
+      // },
       items: [
         {
           type: "docSidebar",

@@ -2215,19 +2215,26 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.28.tgz#d45e01c4a56f143ee69c54dd6b12eade9e270a73"
   integrity sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==
 
-"@react-native-blossom-ui/components@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.1.1.tgz#5e60869638dfc9ca7b1341fcd4e23a8281db7ef0"
-  integrity sha512-Kk2F0BrOviVcGft5oN2TW/1XmzJfyT8HAoC3dCdBPbJaOWNAc4m/R+1Jn73xhnqzzIRocsEN8B64KKnsGsrdHw==
+"@react-native-blossom-ui/components@*":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.2.0.tgz#664ef62a5270d9eca5c9f5922c8965ec5c6a106e"
+  integrity sha512-h6UI0a2bPQF0/wvGTUsHG3lG2dJBWDAzRGpCAZHWP418e4Q0krb2VFalFzxYCHfy6ZLmUBYjgIWQd75jg7bUrg==
   dependencies:
     deepmerge "4.3.1"
 
-"@react-native-blossom-ui/showcase@0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.1.1.tgz#f18c7aa67021a4962ddc287ca1f1399bc0157cea"
-  integrity sha512-V+mf/YmMqkhILTTXAzpHeOwGN3xoN6k8NmPyXAwz749poESrCHou24NHq6plJis5glMGS3b4xgyhSjDLW3zEQQ==
+"@react-native-blossom-ui/components@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.2.1.tgz#0c9f6dacd8e8f499465eb7b8863222974e4d4518"
+  integrity sha512-Y7Vf/oOHTlAsq4kFePgOMLDQgp3+Nheh+wrTnpZul08uYjc7+kqU2FebkGKzth5sborbkc6zRndD7t6kqLDHkQ==
   dependencies:
-    "@react-native-blossom-ui/components" "0.1.1"
+    deepmerge "4.3.1"
+
+"@react-native-blossom-ui/showcase@0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.2.1.tgz#b2649710d105a380978c54e981d3830c80780187"
+  integrity sha512-5xEccup1CuleWkNXlcKMADp9y6rri7QlC7Cx+WlAFHLEUeBDgHxQiuIta+10YPlwjIc47hvXAtCxbK4Y55JgWA==
+  dependencies:
+    "@react-native-blossom-ui/components" "*"
 
 "@react-native-community/cli-clean@11.3.10":
   version "11.3.10"
