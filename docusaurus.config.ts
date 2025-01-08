@@ -5,9 +5,9 @@ import type * as Preset from "@docusaurus/preset-classic";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "React-Native-Blossom-UI",
+  title: "React-Native Blossom-UI",
   tagline: "Build Awesome Blossom UI",
-  favicon: "img/favicon.ico",
+  // favicon: "img/favicon.ico",
 
   // Set the production url of your site here
   url: "https://docs-react-native-blossom-ui.vercel.app/",
@@ -89,7 +89,7 @@ const config: Config = {
           position: "left",
           label: "Docs",
         },
-        { to: "/blog", label: "Blog", position: "left" },
+        // { to: "/blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/deepakkumardk/react-native-blossom-ui",
           label: "GitHub",
@@ -104,7 +104,7 @@ const config: Config = {
           title: "Docs",
           items: [
             {
-              label: "Get Started",
+              label: "Getting Started",
               to: "/docs/intro",
             },
           ],
