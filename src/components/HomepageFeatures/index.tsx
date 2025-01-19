@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
+import { Card } from "@react-native-blossom-ui/components";
 
 type FeatureItem = {
   title: string;
@@ -43,7 +44,7 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({ title, Svg, description }: FeatureItem) {
   return (
-    <div className={clsx("col col--4")}>
+    <div className={clsx("")}>
       <div className="text--center">
         {/* <Svg className={styles.featureSvg} role="img" /> */}
       </div>
@@ -59,9 +60,18 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div
+          style={{
+            flexDirection: "row",
+            alignSelf: "center",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
+            <Card style={{ marginBottom: 16 }}>
+              <Feature key={idx} {...props} />
+            </Card>
           ))}
         </div>
       </div>

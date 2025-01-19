@@ -10,6 +10,8 @@ Start with installing the components library.
 npm install @react-native-blossom-ui/components
 ```
 
+Next install the [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons) as it's a peer dependency of the library. Check their [installation guide](https://github.com/oblador/react-native-vector-icons?tab=readme-ov-file#installation).
+
 Now wrap your Root Component (Navigation Container) into the `BlossomThemeProvider` in your App.ts file
 
 ```ts
