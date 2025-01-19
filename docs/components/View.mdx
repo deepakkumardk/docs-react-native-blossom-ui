@@ -1,0 +1,35 @@
+---
+sidebar_position: 1
+---
+
+# View
+
+View is the most basic component and it's just the extension of the react-native `View` component and it knows
+about the current theme and set the background color accordingly.
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  ViewUsage,
+  ViewRow,
+} from "@site/src/components";
+
+## Usage
+
+<BlossomUIRenderer
+  componentName={"ViewUsage"}
+  children={<ViewUsage />}
+  fileName={"View"}
+/>
+
+## Row
+
+<BlossomUIRenderer
+  componentName={"ViewRow"}
+  children={<ViewRow />}
+  fileName={"View"}
+/>
+
+## Props
+
+<PropsTable componentName="View" />

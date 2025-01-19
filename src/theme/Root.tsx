@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   BlossomThemeProvider,
   Children,
+  ComponentManager,
 } from "@react-native-blossom-ui/components";
 import { useColorMode } from "@docusaurus/theme-common";
 import { ColorModeProvider } from "@docusaurus/theme-common/internal";
@@ -57,6 +58,14 @@ if (typeof document !== "undefined") {
   setupIonicons();
   setupMaterialCommunityIcons();
 }
+
+ComponentManager.setDefaultProps({
+  Chip() {
+    return {
+      withCheckIcon: true,
+    };
+  },
+});
 
 const Root = ({ children }: Children) => {
   const [isDark, setIsDark] = useState(false);

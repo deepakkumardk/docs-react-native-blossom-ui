@@ -1,0 +1,131 @@
+---
+sidebar_position: 1
+---
+
+# Chip
+
+Chip component with Pressable as container, and supports full customization with different props.
+It has both hover and press effect that get picked from the color shades or if custom color is provided it auto generates those colors.
+
+Here, below all the usage are shown with `withCheckIcon` prop set to true via the component manager, to get this as a default prop.
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  ChipUsage,
+  ChipViewOnly,
+  ChipClearable,
+  ChipCheckIcon,
+  ChipWithoutCheckIcon,
+  ChipAsBadge,
+  ChipModes,
+  ChipSizes,
+  ChipDisabled,
+  ChipModesSizesMobile,
+  ChipAllStatuses,
+  ChipCustom,
+} from "@site/src/components";
+
+## Usage
+
+<BlossomUIRenderer
+  componentName={"ChipUsage"}
+  children={<ChipUsage />}
+  fileName={"Chip"}
+/>
+
+## View Only
+
+<BlossomUIRenderer
+  componentName={"ChipViewOnly"}
+  children={<ChipViewOnly />}
+  fileName={"Chip"}
+/>
+
+## ChipWithoutCheckIcon
+
+<BlossomUIRenderer
+  componentName={"ChipWithoutCheckIcon"}
+  children={<ChipWithoutCheckIcon />}
+  fileName={"Chip"}
+/>
+
+## ChipClearable
+
+<BlossomUIRenderer
+  componentName={"ChipClearable"}
+  children={<ChipClearable />}
+  fileName={"Chip"}
+/>
+
+## ChipCheckIcon
+
+<BlossomUIRenderer
+  componentName={"ChipCheckIcon"}
+  children={<ChipCheckIcon />}
+  fileName={"Chip"}
+/>
+
+## ChipAsBadge
+
+<BlossomUIRenderer
+  componentName={"ChipAsBadge"}
+  children={<ChipAsBadge />}
+  fileName={"Chip"}
+/>
+
+## Size
+
+<BlossomUIRenderer
+  componentName={"ChipSizes"}
+  children={<ChipSizes />}
+  fileName={"Chip"}
+/>
+
+## Modes
+
+<BlossomUIRenderer
+  componentName={"ChipModes"}
+  children={<ChipModes />}
+  fileName={"Chip"}
+/>
+
+## Disabled
+
+<BlossomUIRenderer
+  componentName={"ChipDisabled"}
+  children={<ChipDisabled />}
+  fileName={"Chip"}
+/>
+
+## ChipModesSizesMobile
+
+<BlossomUIRenderer
+  componentName={"ChipModesSizesMobile"}
+  children={<ChipModesSizesMobile />}
+  fileName={"Chip"}
+  withFlex={false}
+  withCodeblock={false}
+/>
+
+## ChipAllStatuses
+
+<BlossomUIRenderer
+  componentName={"ChipAllStatuses"}
+  children={<ChipAllStatuses />}
+  fileName={"Chip"}
+  withFlex={false}
+  withCodeblock={false}
+/>
+
+## Custom Chips
+
+<BlossomUIRenderer
+  componentName={"ChipCustom"}
+  children={<ChipCustom />}
+  fileName={"Chip"}
+/>
+
+## Props
+
+<PropsTable componentName="Chip" />

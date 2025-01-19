@@ -195,6 +195,18 @@
         "comment": "Set to true to disable the button"
       },
       {
+        "name": "disabledStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "button style for disabled state"
+      },
+      {
+        "name": "disabledTitleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "button text style for disabled state"
+      },
+      {
         "name": "left",
         "dataType": "ReactNode",
         "description": null,
@@ -232,8 +244,473 @@
       "BaseUIProps"
     ]
   },
+  "BaseButtonProps": {
+    "properties": [
+      {
+        "name": "viewOnly",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true to make it unselectable"
+      },
+      {
+        "name": "onTextColorChange",
+        "dataType": "(textColor: string) => void",
+        "description": null,
+        "comment": "Callback on text color change"
+      },
+      {
+        "name": "onBackgroundColorChange",
+        "dataType": "(backgroundColor: string) => void",
+        "description": null,
+        "comment": "Callback on background color change"
+      },
+      {
+        "name": "mode",
+        "dataType": "ButtonMode",
+        "defaultValue": "filled",
+        "description": null,
+        "comment": "Change the appearance of the button using this"
+      },
+      {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": "Button title text"
+      },
+      {
+        "name": "titleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Title text style"
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Button style to add padding/margin etc."
+      },
+      {
+        "name": "isLoading",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true to show the activity indicator to the left"
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set to true to disable the button"
+      },
+      {
+        "name": "disabledStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "button style for disabled state"
+      },
+      {
+        "name": "disabledTitleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "button text style for disabled state"
+      },
+      {
+        "name": "left",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render any icon/JSX on left of the title"
+      },
+      {
+        "name": "right",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render any icon/JSX on right of the title"
+      },
+      {
+        "name": "loaderProps",
+        "dataType": "ActivityIndicatorProps",
+        "description": null,
+        "comment": "Loader props"
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "ButtonProps"
+    ]
+  },
   "PressableState": {
     "parent": []
+  },
+  "ChipProps": {
+    "properties": [
+      {
+        "name": "checkIcon",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Use any custom icon for selected state"
+      },
+      {
+        "name": "isSelected",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true if selected"
+      },
+      {
+        "name": "withCheckIcon",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Show the select icon"
+      },
+      {
+        "name": "clearable",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Show the close icon at right to clear the selection"
+      },
+      {
+        "name": "viewOnly",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true to make it unselectable"
+      },
+      {
+        "name": "onClearPress",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "On clear callback"
+      },
+      {
+        "name": "asBadge",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Render it as a badge"
+      },
+      {
+        "name": "mode",
+        "dataType": "ButtonMode",
+        "defaultValue": "filled",
+        "description": null,
+        "comment": "Change the appearance of the button using this"
+      },
+      {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": "Button title text"
+      },
+      {
+        "name": "titleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Title text style"
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Button style to add padding/margin etc."
+      },
+      {
+        "name": "isLoading",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true to show the activity indicator to the left"
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set to true to disable the button"
+      },
+      {
+        "name": "disabledStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "button style for disabled state"
+      },
+      {
+        "name": "disabledTitleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "button text style for disabled state"
+      },
+      {
+        "name": "left",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render any icon/JSX on left of the title"
+      },
+      {
+        "name": "right",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render any icon/JSX on right of the title"
+      },
+      {
+        "name": "loaderProps",
+        "dataType": "ActivityIndicatorProps",
+        "description": null,
+        "comment": "Loader props"
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "ButtonProps"
+    ]
+  },
+  "SegmentedButtonProps": {
+    "properties": [
+      {
+        "name": "data",
+        "dataType": "ControlButtonProps[]",
+        "description": null,
+        "comment": "List of props for control buttons"
+      },
+      {
+        "name": "mode",
+        "dataType": "ButtonMode",
+        "description": null,
+        "comment": "Mode of the button view"
+      },
+      {
+        "name": "fullWidth",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Take the full width available"
+      },
+      {
+        "name": "borderRadius",
+        "dataType": "number",
+        "description": null,
+        "comment": "Control the border radius of the edge buttons"
+      },
+      {
+        "name": "withVerticalDivider",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Show the vertical divider between the buttons"
+      },
+      {
+        "name": "multiSelect",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set to true for multiple select"
+      },
+      {
+        "name": "activeColor",
+        "dataType": "string",
+        "description": null,
+        "comment": "active color when the button is selected"
+      },
+      {
+        "name": "inactiveColor",
+        "dataType": "string",
+        "description": null,
+        "comment": "inactive color when the button is unselected"
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Container style"
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Disable the whole control"
+      },
+      {
+        "name": "onPress",
+        "dataType": "(value: string, selectedIndex: number) => void",
+        "description": null,
+        "comment": "OnPress callback with value"
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "BaseUIProps"
+    ]
+  },
+  "ControlButtonProps": {
+    "properties": [
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": "Label of the control button"
+      },
+      {
+        "name": "value",
+        "dataType": "string",
+        "description": null,
+        "comment": "Value of the control button that will be passed to on Press & will fallback to label if not passed"
+      },
+      {
+        "name": "checkIcon",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Use any custom icon for selected state"
+      },
+      {
+        "name": "isSelected",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true if selected"
+      },
+      {
+        "name": "withCheckIcon",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Show the select icon"
+      },
+      {
+        "name": "clearable",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Show the close icon at right to clear the selection"
+      },
+      {
+        "name": "viewOnly",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true to make it unselectable"
+      },
+      {
+        "name": "onClearPress",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "On clear callback"
+      },
+      {
+        "name": "asBadge",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Render it as a badge"
+      },
+      {
+        "name": "mode",
+        "dataType": "ButtonMode",
+        "defaultValue": "filled",
+        "description": null,
+        "comment": "Change the appearance of the button using this"
+      },
+      {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": "Button title text"
+      },
+      {
+        "name": "titleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Title text style"
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Button style to add padding/margin etc."
+      },
+      {
+        "name": "isLoading",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true to show the activity indicator to the left"
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set to true to disable the button"
+      },
+      {
+        "name": "disabledStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "button style for disabled state"
+      },
+      {
+        "name": "disabledTitleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "button text style for disabled state"
+      },
+      {
+        "name": "left",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render any icon/JSX on left of the title"
+      },
+      {
+        "name": "right",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render any icon/JSX on right of the title"
+      },
+      {
+        "name": "loaderProps",
+        "dataType": "ActivityIndicatorProps",
+        "description": null,
+        "comment": "Loader props"
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "ChipProps"
+    ]
   },
   "ActivityIndicatorProps": {
     "properties": [
@@ -567,6 +1044,25 @@
       "ViewProps"
     ]
   },
+  "CardProps": {
+    "properties": [
+      {
+        "name": "shadow",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "row",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set true for horizontal(flexDirection) view"
+      }
+    ],
+    "parent": [
+      "ViewProps"
+    ]
+  },
   "AvatarProps": {
     "properties": [
       {
@@ -632,7 +1128,7 @@
       {
         "name": "size",
         "dataType": "number",
-        "defaultValue": "12",
+        "defaultValue": "24",
         "description": null,
         "comment": "Size of the icon, can also be passed as fontSize in the style object."
       },
@@ -1307,10 +1803,22 @@
         "comment": "Set custom display value"
       },
       {
+        "name": "isLoading",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it true to show the loader"
+      },
+      {
         "name": "onValueChange",
         "dataType": "(selectedValue?: ItemT, selectedItem?: SelectItemT<ItemT>, index?: number) => void",
         "description": null,
         "comment": "Callback on every value change"
+      },
+      {
+        "name": "onClearPress",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "On clear callback"
       },
       {
         "name": "searchable",
@@ -1397,6 +1905,63 @@
     ],
     "parent": [
       "Omit<SelectProps<ItemT>, 'value' | 'onValueChange' | 'defaultValue'>"
+    ]
+  },
+  "ProgressBarProps": {
+    "properties": [
+      {
+        "name": "value",
+        "dataType": "number",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "width",
+        "dataType": "number",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "height",
+        "dataType": "number",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "color",
+        "dataType": "ColorValue",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "trackColor",
+        "dataType": "ColorValue",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "indeterminate",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "BaseUIProps"
     ]
   }
 }
