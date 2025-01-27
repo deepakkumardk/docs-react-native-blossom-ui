@@ -13,15 +13,16 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "type-json": "node scripts/generate-type-json-schema.js > output/props-schema.json"
+    "type-json": "node scripts/generate-type-json-schema.js > output/props-schema.json",
+    "postinstall": "yarn type-json"
   },
   "dependencies": {
     "@docusaurus/core": "3.6.0",
     "@docusaurus/preset-classic": "3.6.0",
     "@docusaurus/remark-plugin-npm2yarn": "3.6.1",
     "@mdx-js/react": "^3.0.0",
-    "@react-native-blossom-ui/components": "0.4.0",
-    "@react-native-blossom-ui/showcase": "0.4.0",
+    "@react-native-blossom-ui/components": "0.5.0",
+    "@react-native-blossom-ui/showcase": "0.5.0",
     "@uiw/react-color": "2.3.2",
     "chroma-js": "3.1.2",
     "clsx": "^2.0.0",

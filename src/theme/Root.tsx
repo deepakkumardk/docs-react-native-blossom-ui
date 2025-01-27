@@ -65,6 +65,14 @@ ComponentManager.setDefaultProps({
       withCheckIcon: true,
     };
   },
+
+  ProgressBar(props, theme) {
+    return {
+      style: {
+        marginVertical: 8,
+      },
+    };
+  },
 });
 
 const Root = ({ children }: Children) => {

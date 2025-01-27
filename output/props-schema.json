@@ -152,6 +152,84 @@
       "ViewProps$1"
     ]
   },
+  "SpacerProps": {
+    "properties": [
+      {
+        "name": "width",
+        "dataType": "number",
+        "description": null,
+        "comment": "Width of the spacer"
+      },
+      {
+        "name": "height",
+        "dataType": "number",
+        "description": null,
+        "comment": "Height of the spacer"
+      }
+    ],
+    "parent": [
+      "ViewProps$1"
+    ]
+  },
+  "AccordionProps": {
+    "properties": [
+      {
+        "name": "isCollapsed",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true to open the accordion"
+      },
+      {
+        "name": "title",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Title of the accordion"
+      },
+      {
+        "name": "subtitle",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Title of the accordion"
+      },
+      {
+        "name": "description",
+        "dataType": "string",
+        "description": null,
+        "comment": "Title of the accordion"
+      },
+      {
+        "name": "children",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render custom view inside the accordion instead of the description only"
+      },
+      {
+        "name": "left",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render any icon/JSX on left of the title"
+      },
+      {
+        "name": "right",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render any icon/JSX on right of the title"
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Container style for the accordion"
+      },
+      {
+        "name": "onPress",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "On press callback on the title section"
+      }
+    ],
+    "parent": []
+  },
   "ButtonMode": {
     "parent": []
   },
@@ -1034,6 +1112,19 @@
         "comment": "Color of the divider"
       },
       {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": "Label inside the divider"
+      },
+      {
+        "name": "labelPosition",
+        "dataType": "\"left\" | \"right\" | \"center\"",
+        "defaultValue": "center",
+        "description": null,
+        "comment": "Label position where it will be rendered"
+      },
+      {
         "name": "row",
         "dataType": "boolean",
         "description": null,
@@ -1042,6 +1133,86 @@
     ],
     "parent": [
       "ViewProps"
+    ]
+  },
+  "ShimmerViewProps": {
+    "properties": [
+      {
+        "name": "animated",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Set it to false to disable the animation"
+      },
+      {
+        "name": "visible",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Set it to false to Hide the shimmer view and show it's children"
+      },
+      {
+        "name": "circular",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true to have the circular shape"
+      },
+      {
+        "name": "borderRadius",
+        "dataType": "number",
+        "description": null,
+        "comment": "Border radius of the view"
+      },
+      {
+        "name": "duration",
+        "dataType": "number",
+        "defaultValue": "1000",
+        "description": null,
+        "comment": "Set it to false to disable the animation"
+      },
+      {
+        "name": "width",
+        "dataType": "DimensionValue",
+        "defaultValue": "100%",
+        "description": null,
+        "comment": "Control Width of the divider"
+      },
+      {
+        "name": "height",
+        "dataType": "DimensionValue",
+        "defaultValue": "0.6",
+        "description": null,
+        "comment": "Control height of the divider"
+      },
+      {
+        "name": "color",
+        "dataType": "string",
+        "defaultValue": "background900",
+        "description": null,
+        "comment": "Color of the divider"
+      },
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": "Label inside the divider"
+      },
+      {
+        "name": "labelPosition",
+        "dataType": "\"left\" | \"right\" | \"center\"",
+        "defaultValue": "center",
+        "description": null,
+        "comment": "Label position where it will be rendered"
+      },
+      {
+        "name": "row",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set true for horizontal(flexDirection) view"
+      }
+    ],
+    "parent": [
+      "DividerProps"
     ]
   },
   "CardProps": {
@@ -1439,6 +1610,18 @@
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
         "comment": "Style of the checkbox"
+      },
+      {
+        "name": "checkedIcon",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render custom icon when value is true"
+      },
+      {
+        "name": "uncheckedIcon",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render custom icon when value is false"
       },
       {
         "name": "position",
@@ -1913,37 +2096,43 @@
         "name": "value",
         "dataType": "number",
         "description": null,
-        "comment": ""
+        "comment": "Progress value for the track color"
       },
       {
         "name": "width",
         "dataType": "number",
         "description": null,
-        "comment": ""
+        "comment": "Width of the progress bar"
       },
       {
         "name": "height",
         "dataType": "number",
         "description": null,
-        "comment": ""
+        "comment": "height of the progress bar"
       },
       {
         "name": "color",
         "dataType": "ColorValue",
         "description": null,
-        "comment": ""
+        "comment": "Background color of the unfilled color"
       },
       {
         "name": "trackColor",
         "dataType": "ColorValue",
         "description": null,
-        "comment": ""
+        "comment": "Main trackColor of the progress bar"
       },
       {
         "name": "indeterminate",
         "dataType": "boolean",
         "description": null,
-        "comment": ""
+        "comment": "Set it to true to have the infinite animation"
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Style of the container view"
       },
       {
         "name": "status",
