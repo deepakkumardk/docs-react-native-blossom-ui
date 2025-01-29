@@ -6,6 +6,7 @@ import {
 } from "@react-native-blossom-ui/components";
 import { useColorMode } from "@docusaurus/theme-common";
 import { ColorModeProvider } from "@docusaurus/theme-common/internal";
+import { Analytics } from "@vercel/analytics/react";
 
 import { default as LightTheme } from "./lightTheme.json";
 import { default as DarkTheme } from "./darkTheme.json";
@@ -88,6 +89,7 @@ const Root = ({ children }: Children) => {
         <ThemeChangeListener
           onChange={(value) => setIsDark(value === "dark" ? true : false)}
         />
+        <Analytics />
       </ColorModeProvider>
     </BlossomThemeProvider>
   );
