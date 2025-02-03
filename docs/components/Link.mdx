@@ -1,0 +1,41 @@
+---
+sidebar_position: 1
+---
+
+# Link
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  LinkUsage,
+  LinkWithText,
+  LinkCustom,
+} from "@site/src/components";
+
+## Usage
+
+<BlossomUIRenderer
+  componentName={"LinkUsage"}
+  children={<LinkUsage />}
+  fileName={"Link"}
+/>
+
+## With Text
+
+<BlossomUIRenderer
+  componentName={"LinkWithText"}
+  children={<LinkWithText />}
+  fileName={"Link"}
+/>
+
+## Custom
+
+<BlossomUIRenderer
+  componentName={"LinkCustom"}
+  children={<LinkCustom />}
+  fileName={"Link"}
+/>
+
+## Props
+
+<PropsTable componentName="Link" />

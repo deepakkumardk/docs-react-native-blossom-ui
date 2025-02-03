@@ -139,6 +139,44 @@
       "BaseUIProps"
     ]
   },
+  "LinkProps": {
+    "properties": [
+      {
+        "name": "leftText",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Set the left side of the text"
+      },
+      {
+        "name": "rightText",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Set the left side of the text"
+      },
+      {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": "Set the link label to show"
+      },
+      {
+        "name": "href",
+        "dataType": "string",
+        "description": null,
+        "comment": "Set the href url for link"
+      },
+      {
+        "name": "typography",
+        "dataType": "TypographyOptions",
+        "defaultValue": "b2",
+        "description": null,
+        "comment": "Typography option to control the size of the text"
+      }
+    ],
+    "parent": [
+      "TextProps"
+    ]
+  },
   "ViewProps": {
     "properties": [
       {
@@ -430,6 +468,114 @@
   },
   "PressableState": {
     "parent": []
+  },
+  "FABProps": {
+    "properties": [
+      {
+        "name": "icon",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Set the icon of the FAB"
+      },
+      {
+        "name": "offsetX",
+        "dataType": "number",
+        "defaultValue": "48",
+        "description": null,
+        "comment": "Horizontal offset position for the fab"
+      },
+      {
+        "name": "offsetY",
+        "dataType": "number",
+        "defaultValue": "48",
+        "description": null,
+        "comment": "Vertical offset position for the fab"
+      },
+      {
+        "name": "mode",
+        "dataType": "ButtonMode",
+        "defaultValue": "filled",
+        "description": null,
+        "comment": "Change the appearance of the button using this"
+      },
+      {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": "Button title text"
+      },
+      {
+        "name": "titleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Title text style"
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Button style to add padding/margin etc."
+      },
+      {
+        "name": "isLoading",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set it to true to show the activity indicator to the left"
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set to true to disable the button"
+      },
+      {
+        "name": "disabledStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "button style for disabled state"
+      },
+      {
+        "name": "disabledTitleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "button text style for disabled state"
+      },
+      {
+        "name": "left",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render any icon/JSX on left of the title"
+      },
+      {
+        "name": "right",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render any icon/JSX on right of the title"
+      },
+      {
+        "name": "loaderProps",
+        "dataType": "ActivityIndicatorProps",
+        "description": null,
+        "comment": "Loader props"
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "ButtonProps"
+    ]
   },
   "ChipProps": {
     "properties": [
@@ -1087,6 +1233,48 @@
     "parent": [
       "TextInputProps"
     ]
+  },
+  "OtpInputProps": {
+    "properties": [
+      {
+        "name": "maxLength",
+        "dataType": "number",
+        "defaultValue": "4",
+        "description": null,
+        "comment": "Set the otp input length"
+      },
+      {
+        "name": "boxStyle",
+        "dataType": "StyleProp<ViewStyle> | ((isFocused: boolean) => StyleProp<ViewStyle>)",
+        "description": null,
+        "comment": "Set the style for each box with isFocused prop"
+      },
+      {
+        "name": "mode",
+        "dataType": "\"box\" | \"dash\"",
+        "defaultValue": "box",
+        "description": null,
+        "comment": "different view based on the mode"
+      },
+      {
+        "name": "withAlphanumericKeyboard",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Set the alphanumeric keyboard"
+      },
+      {
+        "name": "onComplete",
+        "dataType": "(otp: string) => void",
+        "description": null,
+        "comment": "onComplete callback with otp input text"
+      }
+    ],
+    "parent": [
+      "Omit<TextInputProps, 'mode'>"
+    ]
+  },
+  "OtpInputRef": {
+    "parent": []
   },
   "DividerProps": {
     "properties": [

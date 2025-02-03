@@ -2222,17 +2222,17 @@
   dependencies:
     deepmerge "4.3.1"
 
-"@react-native-blossom-ui/components@0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.5.0.tgz#f8d1733a88fb713addcbd5d3dda279b63af70714"
-  integrity sha512-pe2IvC2DN+lY4Lev/c44Kc0xi7LzgL480nQYwNHn9x4EnmUMjtiWZOvs9x01t94M+fFMf7ym29fBPCJrgTTlwA==
+"@react-native-blossom-ui/components@0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.6.0.tgz#589d16d88f9c8746a272fc29e2c8ae01cdf04203"
+  integrity sha512-y09PbznFqE3caS4KKotXvW5fmqZWsZ0wGycAZ5oi1jibdKgboE7zj3Is2IXm0WFvr1cpe+VIn3LYzu78zuKT/w==
   dependencies:
     deepmerge "4.3.1"
 
-"@react-native-blossom-ui/showcase@0.5.0":
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.5.0.tgz#de3611eb3c1861c1e8db055b2ac43294eb63f8f7"
-  integrity sha512-pwyMIsqZ9QYbHsl3xFdhGm8g7/XIfREY/smESOzPd4O0e+s4Vh/PFV0Bg/zNEYNnVEO/FceYRJCmsWdE2xeEiw==
+"@react-native-blossom-ui/showcase@0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.6.0.tgz#973e826ce5267f7bdda71dd2c65cf095acfbf870"
+  integrity sha512-aWkD2XBSmZ/dLelJR1/iqKECe12mblIC+9F6Bd6kjzVqDrbWuJRZ9K2H/5yH27MHBOcBchaQOjWk6YiqvotGtw==
   dependencies:
     "@react-native-blossom-ui/components" "*"
 
