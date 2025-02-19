@@ -2222,19 +2222,34 @@
   dependencies:
     deepmerge "4.3.1"
 
-"@react-native-blossom-ui/components@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.6.0.tgz#589d16d88f9c8746a272fc29e2c8ae01cdf04203"
-  integrity sha512-y09PbznFqE3caS4KKotXvW5fmqZWsZ0wGycAZ5oi1jibdKgboE7zj3Is2IXm0WFvr1cpe+VIn3LYzu78zuKT/w==
+"@react-native-blossom-ui/components@0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.7.0.tgz#0da8f6fccd1397bce30e6f832a276c9ab20cd9de"
+  integrity sha512-xG7oWHP+7f3xtnWgM/ymRs/6CehAFcntcio3Tc/ejP8QEOmX+YGNVuSIkb7f8yjiD5eabORXcE3irdd+RWLGIA==
   dependencies:
     deepmerge "4.3.1"
 
-"@react-native-blossom-ui/showcase@0.6.0":
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.6.0.tgz#973e826ce5267f7bdda71dd2c65cf095acfbf870"
-  integrity sha512-aWkD2XBSmZ/dLelJR1/iqKECe12mblIC+9F6Bd6kjzVqDrbWuJRZ9K2H/5yH27MHBOcBchaQOjWk6YiqvotGtw==
+"@react-native-blossom-ui/dates@*":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/dates/-/dates-1.0.0.tgz#b7eb5a0e38df74f26cd7517d6639af7779378af0"
+  integrity sha512-J5RTS89brrTX0NSDIi0r5Bq40jC0yKNo4K7G+dGYQ1L3WjIBvECE9oZq30DJtTDslneqnHGmo/rGKbAbdSz0ZA==
+  dependencies:
+    dayjs "1.11.13"
+
+"@react-native-blossom-ui/dates@0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/dates/-/dates-0.7.0.tgz#dc9688573d641d5634a64fccaa50b4310d0354dd"
+  integrity sha512-dNpfQwSE9k1cFtoDgjuXtUz6iHRqXNhuJ7yTjiVidtWc6LXb0nxl3U+WeDrmqemIae9jdUSqRAIVgzeTQHrSlw==
+  dependencies:
+    dayjs "1.11.13"
+
+"@react-native-blossom-ui/showcase@0.7.0":
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.7.0.tgz#95782f30eb3f06b78dbb19fc92c502b0bd6b1dab"
+  integrity sha512-+Yt3fSr5qQjD2oi3UMXU4PmmOe15iBCLz445mhSojD03J/oxtq1mBuyd5KME3Va5p14t/ux8hnXcuDmtQhsIRA==
   dependencies:
     "@react-native-blossom-ui/components" "*"
+    "@react-native-blossom-ui/dates" "*"
 
 "@react-native-community/cli-clean@11.3.10":
   version "11.3.10"
@@ -4689,7 +4704,7 @@ dargs@^8.0.0:
   resolved "https://registry.yarnpkg.com/dargs/-/dargs-8.1.0.tgz#a34859ea509cbce45485e5aa356fef70bfcc7272"
   integrity sha512-wAV9QHOsNbwnWdNW2FYvE1P56wtgSbM+3SZcdGiWQILwVjACCXDCI3Ai8QlCjMDB8YK5zySiXZYBiwGmNY3lnw==
 
-dayjs@^1.8.15:
+dayjs@1.11.13, dayjs@^1.8.15:
   version "1.11.13"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.13.tgz#92430b0139055c3ebb60150aa13e860a4b5a366c"
   integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==

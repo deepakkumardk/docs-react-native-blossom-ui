@@ -10,6 +10,8 @@ import {
   OtpInputUsage,
   OtpInputModes,
   OtpInputPlaceholder,
+  OtpInputWithCursor,
+  OtpInputAsPin,
   OtpInputSizes,
   OtpInputCustom,
 } from "@site/src/components";
@@ -35,6 +37,22 @@ import {
 <BlossomUIRenderer
   componentName={"OtpInputPlaceholder"}
   children={<OtpInputPlaceholder />}
+  fileName={"OtpInput"}
+/>
+
+## With Cursor
+
+<BlossomUIRenderer
+  componentName={"OtpInputWithCursor"}
+  children={<OtpInputWithCursor />}
+  fileName={"OtpInput"}
+/>
+
+## As Pin Input
+
+<BlossomUIRenderer
+  componentName={"OtpInputAsPin"}
+  children={<OtpInputAsPin />}
   fileName={"OtpInput"}
 />
 

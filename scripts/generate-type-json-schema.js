@@ -104,10 +104,15 @@ function processTypesFile(filePath) {
 }
 
 try {
-  const result = processTypesFile(
+  const resultComponents = processTypesFile(
     "node_modules/@react-native-blossom-ui/components/dist/index.d.ts"
   );
+  const resultDates = processTypesFile(
+    "node_modules/@react-native-blossom-ui/dates/dist/index.d.ts"
+  );
+  const result = { ...resultComponents, ...resultDates };
   console.log(JSON.stringify(result, null, 2));
 } catch (error) {
-  console.error("Error processing file:", error.message);
+  // console.error("Error processing file:", error.message);
+  console.log(JSON.stringify({}, null, 2));
 }

@@ -1,0 +1,84 @@
+---
+sidebar_position: 2
+---
+
+# DatePicker
+
+A DatePicker with popover showing the month days with customization.
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  DatePickerUsage,
+  MonthCalendarUsage,
+  DatePickerClearable,
+  DatePickerDisplayFormat,
+  DatePickerDefaultValue,
+  DatePickerDisableDates,
+} from "@site/src/components";
+
+## Usage
+
+<BlossomUIRenderer
+  componentName={"DatePickerUsage"}
+  children={<DatePickerUsage />}
+  fileName={"DatePicker"}
+/>
+
+## Clearable
+
+<BlossomUIRenderer
+  componentName={"DatePickerClearable"}
+  children={<DatePickerClearable />}
+  fileName={"DatePicker"}
+/>
+
+## Display Format
+
+Use the `displayDateFormat` prop to format the display date in the DatePicker, you can use the format as provided in the [dayjs library](https://day.js.org/docs/en/parse/string-format#list-of-all-available-parsing-tokens)
+
+<BlossomUIRenderer
+  componentName={"DatePickerDisplayFormat"}
+  children={<DatePickerDisplayFormat />}
+  fileName={"DatePicker"}
+/>
+
+## Default Value
+
+Pass any default value in terms of either `Date` object or string formatted in the same format as passed in the `outputDateFormat`
+
+Note: The `outputDateFormat` should be always used whenever you are passing any date as a string to the component.
+
+<BlossomUIRenderer
+  componentName={"DatePickerDefaultValue"}
+  children={<DatePickerDefaultValue />}
+  fileName={"DatePicker"}
+/>
+
+## Disable Dates
+
+Disable the array of dates passed as either `Date` object or string (again in the `outputDateFormat` format)
+
+<BlossomUIRenderer
+  componentName={"DatePickerDisableDates"}
+  children={<DatePickerDisableDates />}
+  fileName={"DatePicker"}
+/>
+
+Here, if you look closer the date string (`10-02-2025`) passed here is formatted in the same as of the `outputDateFormat` format i.e. `DD-MM-YYYY`
+
+<!---
+# MonthCalendar
+
+DatePicker internally uses this component as a popover, if you want to use this somewhere in your UI you can also this out as your custom calendar.
+
+<BlossomUIRenderer
+  componentName={"MonthCalendarUsage"}
+  children={<MonthCalendarUsage />}
+  fileName={"DatePicker"}
+/>
+-->
+
+## Props
+
+<PropsTable componentName="DatePicker" />
