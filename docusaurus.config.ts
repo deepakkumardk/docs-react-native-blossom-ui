@@ -138,6 +138,12 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
+
+    algolia: {
+      appId: "9FKDO5LLVA",
+      apiKey: "744a766af4feafe79fbaa5c7d9adb6ff",
+      indexName: "react-native-blossom-ui",
+    },
   } satisfies Preset.ThemeConfig,
 };
 
