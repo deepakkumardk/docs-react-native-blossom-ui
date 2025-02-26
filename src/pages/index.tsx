@@ -20,7 +20,7 @@ function HomepageHeader() {
 
   return (
     <header>
-      <div style={{ margin: 100 }}>
+      <div className={styles.headerContainer}>
         <Text
           style={{
             fontSize: 56,
@@ -39,7 +39,7 @@ function HomepageHeader() {
           </Text>
         </Text>
         <br />
-        <Text style={{ fontSize: 22 }} status="primary">
+        <Text style={{ fontSize: 22, marginVertical: 6 }} status="primary">
           {sloganPrefix}
           <Text
             style={{

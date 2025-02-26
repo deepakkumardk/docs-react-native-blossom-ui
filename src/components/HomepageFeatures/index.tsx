@@ -44,7 +44,7 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({ title, Svg, description }: FeatureItem) {
   return (
-    <div className={clsx("")}>
+    <div className={styles.featureCard}>
       <div className="text--center">
         {/* <Svg className={styles.featureSvg} role="img" /> */}
       </div>
@@ -59,21 +59,26 @@ function Feature({ title, Svg, description }: FeatureItem) {
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
-      <div className="container">
-        <div
-          style={{
-            flexDirection: "row",
-            alignSelf: "center",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          {FeatureList.map((props, idx) => (
-            <Card style={{ marginBottom: 16 }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: "2rem 0",
+        }}
+      >
+        {FeatureList.map((props, idx) => (
+          <div
+            style={{
+              alignSelf: "center",
+              maxWidth: "80%",
+            }}
+          >
+            <Card key={idx} style={{ marginBottom: 16 }}>
               <Feature key={idx} {...props} />
             </Card>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

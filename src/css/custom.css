@@ -29,6 +29,12 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.codeblock {
-  max-height: 400;
+.codeBlockLines_e6Vv {
+  max-height: 500px;
+}
+
+@media screen and (max-width: 996px) {
+  body {
+    padding: 4px;
+  }
 }

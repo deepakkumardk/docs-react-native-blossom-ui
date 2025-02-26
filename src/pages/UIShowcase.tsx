@@ -17,11 +17,12 @@ import {
   useBlossomTheme,
   View,
 } from "@react-native-blossom-ui/components";
+import styles from "./UIShowcase.module.css";
 
 const counts = Array(3).fill(Math.floor(Math.random() * 1000));
 
 const maxWidth = "30%";
-const minWidth = 400;
+const minWidth = 330;
 
 function UIShowcase() {
   const { colors } = useBlossomTheme();
@@ -39,17 +40,31 @@ function UIShowcase() {
     setTimeout(() => {
       setIsSubscribing(false);
     }, 1500);
-  }, []);
+  }, [email]);
 
   return (
-    <ScrollView horizontal>
-      <View
-        row
+    <div
+      style={{
+        justifyContent: "center",
+      }}
+    >
+      <div
         style={{
-          alignSelf: "baseline",
-          marginHorizontal: 20,
+          margin: 10,
+          display: "flex",
+          justifyContent: "center",
         }}
       >
+        <Text
+          typography="h4"
+          status="primary"
+          style={{ alignSelf: "center", textAlign: "center" }}
+        >
+          Largest React-Native UI Component Library in the Open-Source Community
+        </Text>
+      </div>
+
+      <div className={styles.container}>
         {/* GalleryView */}
         <View
           style={{
@@ -75,7 +90,7 @@ function UIShowcase() {
               <View style={{ margin: 8, marginStart: 0 }}>
                 <Avatar
                   mode="round"
-                  size={120}
+                  size={100}
                   url={"https://picsum.photos/200/300?random=" + index}
                 />
                 <Text typography="b1">{value}</Text>
@@ -100,7 +115,7 @@ function UIShowcase() {
             <View style={{ marginVertical: 6 }}>
               <Text typography="s1">Amazing Title</Text>
               <Text style={{ color: colors.text300 }}>Subtitle</Text>
-              <Text>Lorem Ipsum is simply dummy text</Text>
+              <Text>Lorem Ipsum, a dummy text</Text>
             </View>
           </Card>
         </View>
@@ -144,7 +159,7 @@ function UIShowcase() {
             value={email}
             onChangeText={setEmail}
             containerStyle={{ marginVertical: 8 }}
-            error={isError ? "Please enter your email" : ""}
+            error={isError ? "Please enter a valid email" : ""}
           />
           <Checkbox
             status="primary"
@@ -167,8 +182,8 @@ function UIShowcase() {
           </Text>
           <ButtonAllStatuses />
         </View>
-      </View>
-    </ScrollView>
+      </div>
+    </div>
   );
 }
 
