@@ -46,6 +46,7 @@ function UIShowcase() {
     <div
       style={{
         justifyContent: "center",
+        alignSelf: "center",
       }}
     >
       <div
@@ -69,8 +70,8 @@ function UIShowcase() {
         <View
           style={{
             minWidth,
-            maxWidth,
             margin: 16,
+            alignItems: "center",
           }}
         >
           <View
@@ -101,7 +102,7 @@ function UIShowcase() {
         </View>
 
         {/* Card */}
-        <View style={{ margin: 16 }}>
+        <View style={{ margin: 16, alignItems: "center" }}>
           <Text typography="h6" style={{ marginBottom: 8 }}>
             Card
           </Text>
@@ -121,7 +122,7 @@ function UIShowcase() {
         </View>
 
         {/* Select */}
-        <View style={{ margin: 16 }}>
+        <View style={{ margin: 16, alignItems: "center" }}>
           <Text typography="h6" style={{ marginBottom: 8 }}>
             Select
           </Text>
@@ -130,7 +131,7 @@ function UIShowcase() {
         </View>
 
         {/* Modal Content */}
-        <View style={{ margin: 16 }}>
+        <View style={{ margin: 16, alignItems: "center" }}>
           <Text typography="h6" style={{ marginBottom: 8 }}>
             Modal Content
           </Text>
@@ -151,7 +152,13 @@ function UIShowcase() {
         </View>
 
         {/* Subscribe Form */}
-        <View style={{ minWidth, maxWidth, margin: 16 }}>
+        <View
+          style={{
+            minWidth,
+            margin: 16,
+            alignItems: "center",
+          }}
+        >
           <Text typography="h5">Subscribe Us</Text>
           <TextInput
             label="Email"
@@ -171,7 +178,7 @@ function UIShowcase() {
           <Button
             isLoading={isSubscribing}
             title="Subscribe"
-            style={{ width: "100%", marginVertical: 16 }}
+            style={{ marginVertical: 16, alignSelf: "center" }}
             onPress={onSubscribePress}
           />
         </View>
