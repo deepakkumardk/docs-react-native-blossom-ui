@@ -38,18 +38,66 @@
   }
 }
 
-.mainTitle {
-  font-size: 56px;
-  line-height: 50px;
-  /* display: flex; */
-  align-self: baseline;
+/* UI Showcase and mobile frame container */
+.showcaseContainer {
+  display: flex;
+  justify-content: space-evenly;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.mainTitleSuffix {
-  font-size: 56px;
-  line-height: 60px;
-  margin-top: 16px;
-  font-weight: 500;
-  /* align-self: baseline; */
-  /* display: flex; */
+@media all and (max-width: 996px) {
+  .showcaseContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Mobile Frame */
+
+.mobileBorder {
+  border: 8px solid black;
+  border-radius: 24px;
+  width: 340px;
+  height: 700px;
+  min-width: 340px;
+
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+@media screen and (max-width: 996px) {
+  .mobileBorder {
+    display: none;
+  }
+}
+
+.notch {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: black;
+  width: 50%;
+  height: 20px;
+}
+
+.mobileBorder iframe {
+  height: 650px;
+  width: 100%;
+
+  position: absolute;
+  top: 20px;
+}
+
+.bottomBar {
+  background-color: black;
+  width: 40%;
+  height: 6px;
+  border-radius: 8px;
+
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  right: 0px;
+  bottom: 6px;
 }

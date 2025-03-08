@@ -35,7 +35,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        Blossom UI has a lot components along with Light/Dark theme support out
+        Blossom UI has a 30+ components along with Light/Dark theme support out
         of the box
       </>
     ),
@@ -59,23 +59,11 @@ function Feature({ title, Svg, description }: FeatureItem) {
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: "2rem 0",
-        }}
-      >
-        {FeatureList.map((props, idx) => (
-          <div
-            style={{
-              alignSelf: "center",
-              maxWidth: "80%",
-            }}
-          >
-            <Card key={idx} style={{ marginBottom: 16 }}>
-              <Feature key={idx} {...props} />
+      <div className={styles.featuresContainer}>
+        {FeatureList.map((props, index) => (
+          <div key={index} className={styles.featureDiv}>
+            <Card key={index} style={{ minHeight: 100 }}>
+              <Feature key={index} {...props} />
             </Card>
           </div>
         ))}

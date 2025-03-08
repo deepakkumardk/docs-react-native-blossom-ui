@@ -1,16 +1,17 @@
 import React, { useCallback, useState } from "react";
-import { ScrollView } from "react-native";
 
 import {
   ButtonAllStatuses,
+  DatePickerClearable,
   MultiSelectUsage,
-  SelectUsage,
+  SelectClearable,
 } from "@react-native-blossom-ui/showcase";
 import {
   Avatar,
   Button,
   Card,
   Checkbox,
+  Chip,
   ModalContent,
   Text,
   TextInput,
@@ -18,14 +19,20 @@ import {
   View,
 } from "@react-native-blossom-ui/components";
 import styles from "./UIShowcase.module.css";
+import { MonthCalendar } from "@react-native-blossom-ui/dates";
 
 const counts = Array(3).fill(Math.floor(Math.random() * 1000));
 
 const maxWidth = "30%";
 const minWidth = 330;
 
+const chips = ["Cards", "Buttons", "Select", "Dates"];
+
 function UIShowcase() {
   const { colors } = useBlossomTheme();
+
+  const [selectedChip, setSelectedChip] = useState(chips[0]);
+
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [email, setEmail] = useState("");
   const [isError, setIsError] = useState(false);
@@ -43,153 +50,172 @@ function UIShowcase() {
   }, [email]);
 
   return (
-    <div
-      style={{
-        justifyContent: "center",
-        alignSelf: "center",
-      }}
-    >
-      <div
-        style={{
-          margin: 10,
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Text
-          typography="h4"
-          status="primary"
-          style={{ alignSelf: "center", textAlign: "center" }}
-        >
-          Largest React-Native UI Component Library in the Open-Source Community
-        </Text>
-      </div>
+    <div>
+      <View row>
+        {chips.map((title) => (
+          <Chip
+            key={title}
+            withCheckIcon={false}
+            title={title}
+            mode={selectedChip === title ? "filled" : "outlined"}
+            style={{ marginHorizontal: 2 }}
+            onPress={() => setSelectedChip(title)}
+          />
+        ))}
+      </View>
 
-      <div className={styles.container}>
-        {/* GalleryView */}
-        <View
-          style={{
-            minWidth,
-            margin: 16,
-            alignItems: "center",
-          }}
-        >
+      {selectedChip === chips[0] && (
+        <div className={styles.container}>
+          {/* GalleryView */}
           <View
-            row
             style={{
-              justifyContent: "space-between",
-              alignItems: "baseline",
+              minWidth,
+              margin: 16,
             }}
           >
-            <Text typography="h6">Albums</Text>
-            <Button mode="plain" status="info">
-              See All
-            </Button>
-          </View>
-          <View row>
-            {["Holiday", "Family", "Favorite"].map((value, index) => (
-              <View style={{ margin: 8, marginStart: 0 }}>
-                <Avatar
-                  mode="round"
-                  size={100}
-                  url={"https://picsum.photos/200/300?random=" + index}
-                />
-                <Text typography="b1">{value}</Text>
-                <Text>{counts[index]}</Text>
-              </View>
-            ))}
-          </View>
-        </View>
-
-        {/* Card */}
-        <View style={{ margin: 16, alignItems: "center" }}>
-          <Text typography="h6" style={{ marginBottom: 8 }}>
-            Card
-          </Text>
-          <Card row style={{ minWidth, maxWidth }}>
-            <Avatar
-              mode="round"
-              url="https://picsum.photos/200/300?random=1"
-              style={{ margin: 8 }}
-            />
-
-            <View style={{ marginVertical: 6 }}>
-              <Text typography="s1">Amazing Title</Text>
-              <Text style={{ color: colors.text300 }}>Subtitle</Text>
-              <Text>Lorem Ipsum, a dummy text</Text>
+            <View
+              row
+              style={{
+                justifyContent: "space-between",
+                alignItems: "baseline",
+              }}
+            >
+              <Text typography="h6">Albums</Text>
+              <Button mode="plain" status="info">
+                See All
+              </Button>
             </View>
-          </Card>
-        </View>
+            <View row>
+              {["Holiday", "Family", "Favorite"].map((value, index) => (
+                <View key={value} style={{ margin: 8, marginStart: 0 }}>
+                  <Avatar
+                    mode="round"
+                    size={100}
+                    url={"https://picsum.photos/200/300?random=" + index}
+                  />
+                  <Text typography="b1">{value}</Text>
+                  <Text>{counts[index]}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
 
-        {/* Select */}
-        <View style={{ margin: 16, alignItems: "center" }}>
-          <Text typography="h6" style={{ marginBottom: 8 }}>
-            Select
-          </Text>
-          <SelectUsage />
-          <MultiSelectUsage />
-        </View>
+          {/* Card */}
+          <View style={{ margin: 16 }}>
+            <Text typography="h6" style={{ marginBottom: 8 }}>
+              Card
+            </Text>
+            <Card row style={{ minWidth, maxWidth }}>
+              <Avatar
+                mode="round"
+                url="https://picsum.photos/200/300?random=1"
+                style={{ margin: 8 }}
+              />
 
-        {/* Modal Content */}
-        <View style={{ margin: 16, alignItems: "center" }}>
-          <Text typography="h6" style={{ marginBottom: 8 }}>
-            Modal Content
-          </Text>
-          <Card style={{ minWidth, maxWidth, padding: 8 }}>
-            <ModalContent
-              title="Hello world"
-              description="Lorem ipsum"
-              actionButtons={[
-                {
-                  title: "Cancel",
-                },
-                {
-                  title: "Done",
-                },
-              ]}
+              <View style={{ marginVertical: 6 }}>
+                <Text typography="s1">Amazing Title</Text>
+                <Text style={{ color: colors.text300 }}>Subtitle</Text>
+                <Text>Lorem Ipsum, a dummy text</Text>
+              </View>
+            </Card>
+          </View>
+
+          {/* Modal Content */}
+          <View style={{ margin: 16 }}>
+            <Text typography="h6" style={{ marginBottom: 8 }}>
+              Modal Content
+            </Text>
+            <Card style={{ minWidth, maxWidth, padding: 8 }}>
+              <ModalContent
+                title="Hello world"
+                description="Lorem ipsum"
+                actionButtons={[
+                  {
+                    title: "Cancel",
+                  },
+                  {
+                    title: "Done",
+                  },
+                ]}
+              />
+            </Card>
+          </View>
+
+          {/* Subscribe Form */}
+          <View
+            style={{
+              minWidth,
+              margin: 16,
+            }}
+          >
+            <Text typography="h5">Subscribe Us</Text>
+            <TextInput
+              label="Email"
+              placeholder="abc@gmail.com"
+              value={email}
+              onChangeText={setEmail}
+              containerStyle={{ marginVertical: 8 }}
+              error={isError ? "Please enter a valid email" : ""}
             />
-          </Card>
-        </View>
+            <Checkbox
+              status="primary"
+              size="small"
+              position="left"
+              label="Subscribe to our newsletter"
+            />
+            <Button
+              isLoading={isSubscribing}
+              title="Subscribe"
+              style={{ marginVertical: 16, width: "100%" }}
+              onPress={onSubscribePress}
+            />
+          </View>
+        </div>
+      )}
 
-        {/* Subscribe Form */}
-        <View
-          style={{
-            minWidth,
-            margin: 16,
-            alignItems: "center",
-          }}
-        >
-          <Text typography="h5">Subscribe Us</Text>
-          <TextInput
-            label="Email"
-            placeholder="abc@gmail.com"
-            value={email}
-            onChangeText={setEmail}
-            containerStyle={{ marginVertical: 8 }}
-            error={isError ? "Please enter a valid email" : ""}
-          />
-          <Checkbox
-            status="primary"
-            size="small"
-            position="left"
-            // adjacent
-            label="Subscribe to our newsletter"
-          />
-          <Button
-            isLoading={isSubscribing}
-            title="Subscribe"
-            style={{ marginVertical: 16, alignSelf: "center" }}
-            onPress={onSubscribePress}
-          />
-        </View>
+      {selectedChip === chips[1] && (
+        <div className={styles.container}>
+          {/* Buttons Modes */}
 
-        <View style={{ alignItems: "center" }}>
-          <Text typography="h6" style={{ marginBottom: 8 }}>
-            Button Status & Modes
-          </Text>
-          <ButtonAllStatuses />
-        </View>
-      </div>
+          <View style={{ margin: 16 }}>
+            <Text typography="h6" style={{ marginBottom: 8 }}>
+              Button Status & Modes
+            </Text>
+            <ButtonAllStatuses />
+          </View>
+        </div>
+      )}
+
+      {selectedChip === chips[2] && (
+        <div className={styles.container}>
+          {/* Select */}
+          <View style={{ marginVertical: 16 }}>
+            <Text typography="h6" style={{ marginBottom: 8 }}>
+              Single Select
+            </Text>
+            <SelectClearable />
+            <Text typography="h6" style={{ marginBottom: 8 }}>
+              MultiSelect
+            </Text>
+            <MultiSelectUsage />
+          </View>
+        </div>
+      )}
+      {selectedChip === chips[3] && (
+        <div className={styles.container}>
+          {/* Select */}
+          <View style={{ margin: 16 }}>
+            <Text typography="h6" style={{ marginBottom: 8 }}>
+              Dates
+            </Text>
+            <DatePickerClearable />
+            <Text typography="h6" style={{ marginVertical: 8 }}>
+              Calendar
+            </Text>
+            <MonthCalendar />
+          </View>
+        </div>
+      )}
     </div>
   );
 }

@@ -2,8 +2,28 @@
   align-items: center;
   padding: 2rem 0;
   width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
 }
 
 .featureCard {
   padding: 12px;
+}
+
+.featureDiv {
+  align-self: center;
+  margin: 16px;
+}
+
+.featuresContainer {
+  display: flex;
+  margin: 10px;
+}
+
+@media all and (max-width: 996px) {
+  .featuresContainer {
+    flex-direction: column;
+    max-width: 400px;
+  }
 }

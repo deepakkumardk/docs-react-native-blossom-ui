@@ -44,6 +44,7 @@ const config: Config = {
           remarkPlugins: [
             [require("@docusaurus/remark-plugin-npm2yarn"), { sync: true }],
           ],
+          showLastUpdateTime: true,
         },
         blog: {
           showReadingTime: true,
