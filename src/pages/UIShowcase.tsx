@@ -19,7 +19,7 @@ import {
   View,
 } from "@react-native-blossom-ui/components";
 import styles from "./UIShowcase.module.css";
-import { MonthCalendar } from "@react-native-blossom-ui/dates";
+import { Calendar } from "@react-native-blossom-ui/dates";
 
 const counts = Array(3).fill(Math.floor(Math.random() * 1000));
 
@@ -212,7 +212,7 @@ function UIShowcase() {
             <Text typography="h6" style={{ marginVertical: 8 }}>
               Calendar
             </Text>
-            <MonthCalendar />
+            <Calendar />
           </View>
         </div>
       )}

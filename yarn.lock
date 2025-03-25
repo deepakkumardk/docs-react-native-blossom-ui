@@ -2222,11 +2222,12 @@
   dependencies:
     deepmerge "4.3.1"
 
-"@react-native-blossom-ui/components@0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.7.0.tgz#0da8f6fccd1397bce30e6f832a276c9ab20cd9de"
-  integrity sha512-xG7oWHP+7f3xtnWgM/ymRs/6CehAFcntcio3Tc/ejP8QEOmX+YGNVuSIkb7f8yjiD5eabORXcE3irdd+RWLGIA==
+"@react-native-blossom-ui/components@0.9.3":
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.9.3.tgz#6ad381db30e79fee757d066cca0ae1af82a2bb72"
+  integrity sha512-jDVBJHrB7kHbVRJbbZMaVymv+hcV88gfradTI/oLd5/AdJSa44dzrE1HIKcodksIT78cXrL3y3oagimkGYTkHA==
   dependencies:
+    chroma-js "3.1.1"
     deepmerge "4.3.1"
 
 "@react-native-blossom-ui/dates@*":
@@ -2236,17 +2237,17 @@
   dependencies:
     dayjs "1.11.13"
 
-"@react-native-blossom-ui/dates@0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/dates/-/dates-0.7.0.tgz#dc9688573d641d5634a64fccaa50b4310d0354dd"
-  integrity sha512-dNpfQwSE9k1cFtoDgjuXtUz6iHRqXNhuJ7yTjiVidtWc6LXb0nxl3U+WeDrmqemIae9jdUSqRAIVgzeTQHrSlw==
+"@react-native-blossom-ui/dates@0.9.3":
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/dates/-/dates-0.9.3.tgz#c960a8c5f7d0c0c36e18778dc9be6e1343fe1729"
+  integrity sha512-muJ24FB/GI9737DCCCHmfoYnhBITK5e8AnkcxnZ4HHdApyzyHfBnQRgTN13gmbWbkn/JnuPdKdNjYX6XmEsNzw==
   dependencies:
     dayjs "1.11.13"
 
-"@react-native-blossom-ui/showcase@0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.7.0.tgz#95782f30eb3f06b78dbb19fc92c502b0bd6b1dab"
-  integrity sha512-+Yt3fSr5qQjD2oi3UMXU4PmmOe15iBCLz445mhSojD03J/oxtq1mBuyd5KME3Va5p14t/ux8hnXcuDmtQhsIRA==
+"@react-native-blossom-ui/showcase@0.9.3":
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.9.3.tgz#aa16e00e7adc8cc61472453d11c745769572c762"
+  integrity sha512-lv6vVYySl6BNpo2FFDyaOoR9KOLPOyJeotA0KJp3PAX5IX1luUb+flOkEPOWSFjAZYKHjGYAtNCFgKjSk6USxQ==
   dependencies:
     "@react-native-blossom-ui/components" "*"
     "@react-native-blossom-ui/dates" "*"
@@ -4074,6 +4075,11 @@ chokidar@^3.4.2, chokidar@^3.5.3:
     readdirp "~3.6.0"
   optionalDependencies:
     fsevents "~2.3.2"
+
+chroma-js@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-3.1.1.tgz#380103ce1f8bb119be2b18303d598b3c113cf6b1"
+  integrity sha512-CGr6w73Gi86142RWqZ1RjED/CyduYw2vMTikQZUvr2jGIihnZlMo/Kzm9rYHWDP2pJc6eebwc8CkX0iteBon+A==
 
 chroma-js@3.1.2:
   version "3.1.2"

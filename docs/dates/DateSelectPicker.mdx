@@ -1,0 +1,53 @@
+---
+sidebar_position: 2
+---
+
+# DateSelectPicker
+
+A DateSelectPicker with popover showing the days, moths and year picker.
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  DateSelectPickerUsage,
+  MonthPickerUsage,
+} from "@site/src/components";
+
+## Usage
+
+<BlossomUIRenderer
+  componentName={"DateSelectPickerUsage"}
+  children={<DateSelectPickerUsage />}
+  fileName={"DateSelectPicker"}
+/>
+
+## MonthPicker
+
+<BlossomUIRenderer
+  componentName={"MonthPickerUsage"}
+  children={<MonthPickerUsage />}
+  fileName={"DateSelectPicker"}
+/>
+
+## YearPicker
+
+```tsx
+<View>
+  <YearPicker />
+</View>
+```
+
+## Month-Year picker
+
+You can also combine the month & year picker to use them in a row
+
+```tsx
+<View row>
+  <MonthPicker />
+  <YearPicker />
+</View>
+```
+
+## Props
+
+<PropsTable componentName="DateSelectPicker" />

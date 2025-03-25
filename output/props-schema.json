@@ -1067,6 +1067,12 @@
         "comment": "Set to true to disable the button"
       },
       {
+        "name": "shouldMockDisableState",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Mock the disable behavior not the styling for popover contained inputs"
+      },
+      {
         "name": "left",
         "dataType": "ReactNode",
         "description": null,
@@ -1202,6 +1208,12 @@
         "dataType": "boolean",
         "description": null,
         "comment": "Set to true to disable the button"
+      },
+      {
+        "name": "shouldMockDisableState",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Mock the disable behavior not the styling for popover contained inputs"
       },
       {
         "name": "left",
@@ -1916,22 +1928,22 @@
   "ModalProps": {
     "properties": [
       {
-        "name": "onBackdropPress",
-        "dataType": "() => void",
-        "description": null,
-        "comment": ""
-      },
-      {
         "name": "backdropStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": ""
+        "comment": "Style the backdrop of the modal"
       },
       {
         "name": "contentStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": ""
+        "comment": "content style of the Modal"
+      },
+      {
+        "name": "onBackdropPress",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback whenever user press on the backdrop or on the android back button press"
       }
     ],
     "parent": [
@@ -1944,25 +1956,31 @@
         "name": "title",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Tittle of the modal"
       },
       {
         "name": "description",
         "dataType": "string",
         "description": null,
-        "comment": ""
+        "comment": "Description text of the modal"
       },
       {
         "name": "children",
-        "dataType": "string",
+        "dataType": "ReactNode",
         "description": null,
-        "comment": ""
+        "comment": "Render extra child component JSX"
       },
       {
         "name": "actionButtons",
         "dataType": "ButtonProps[]",
         "description": null,
-        "comment": ""
+        "comment": "Customize the buttons from the Button that will be shown in a row"
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "container style of the ModalContent"
       }
     ],
     "parent": []
@@ -2347,6 +2365,35 @@
       "BaseUIProps"
     ]
   },
+  "MonthDayItem": {
+    "properties": [
+      {
+        "name": "day",
+        "dataType": "number",
+        "description": null,
+        "comment": "The day of the month (1-31)."
+      },
+      {
+        "name": "month",
+        "dataType": "number",
+        "description": null,
+        "comment": "The month the day belongs to (0-based index, 0 = January, 11 = December)."
+      },
+      {
+        "name": "year",
+        "dataType": "number",
+        "description": null,
+        "comment": "The year the day belongs to."
+      },
+      {
+        "name": "isCurrentMonth",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Indicates whether the day belongs to the current displayed month.If false, the day might be from the previous or next month."
+      }
+    ],
+    "parent": []
+  },
   "MonthNamesListProps": {
     "properties": [
       {
@@ -2360,8 +2407,17 @@
         "dataType": "(monthIndex: number) => void",
         "description": null,
         "comment": "Callback for when a month is pressed."
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "select input container style"
       }
     ],
+    "parent": []
+  },
+  "MonthPickerProps": {
     "parent": []
   },
   "YearListProps": {
@@ -2393,6 +2449,48 @@
     ],
     "parent": []
   },
+  "YearPickerProps": {
+    "parent": []
+  },
+  "DateSelectPickerProps": {
+    "properties": [
+      {
+        "name": "monthProps",
+        "dataType": "Partial<MonthNamesListProps>",
+        "description": null,
+        "comment": "Month Props to control the Month Picker"
+      },
+      {
+        "name": "yearProps",
+        "dataType": "Partial<YearListProps>",
+        "description": null,
+        "comment": "Year Props to control the Year Picker"
+      },
+      {
+        "name": "onDateComplete",
+        "dataType": "(date: Omit<MonthDayItem, \"isCurrentMonth\">) => void",
+        "description": null,
+        "comment": "Callback fired when all there pickers are selected"
+      },
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": "primary",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "size",
+        "dataType": "BlossomSize",
+        "defaultValue": "medium",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parent": [
+      "BaseUIProps"
+    ]
+  },
   "YearsListRef": {
     "properties": [
       {
@@ -2422,7 +2520,7 @@
     ],
     "parent": []
   },
-  "MonthCalendarProps": {
+  "CalendarProps": {
     "properties": [
       {
         "name": "selectedDate",
