@@ -166,6 +166,12 @@
         "comment": "Set the href url for link"
       },
       {
+        "name": "onLinkOpenError",
+        "dataType": "(error: unknown) => void",
+        "description": null,
+        "comment": "Callback for when the given link can't be opened"
+      },
+      {
         "name": "typography",
         "dataType": "TypographyOptions",
         "defaultValue": "b2",
@@ -212,7 +218,7 @@
   "AccordionProps": {
     "properties": [
       {
-        "name": "isCollapsed",
+        "name": "isOpen",
         "dataType": "boolean",
         "description": null,
         "comment": "Set it to true to open the accordion"
@@ -224,22 +230,22 @@
         "comment": "Title of the accordion"
       },
       {
-        "name": "subtitle",
+        "name": "description",
         "dataType": "ReactNode",
         "description": null,
-        "comment": "Title of the accordion"
+        "comment": "description of the accordion below title"
       },
       {
-        "name": "description",
+        "name": "content",
         "dataType": "string",
         "description": null,
-        "comment": "Title of the accordion"
+        "comment": "Content of the accordion shown when expanded"
       },
       {
         "name": "children",
         "dataType": "ReactNode",
         "description": null,
-        "comment": "Render custom view inside the accordion instead of the description only"
+        "comment": "Render custom view inside the accordion instead of the content string"
       },
       {
         "name": "left",
@@ -254,16 +260,35 @@
         "comment": "Render any icon/JSX on right of the title"
       },
       {
+        "name": "chevron",
+        "dataType": "(isOpen: boolean) => ReactNode",
+        "description": null,
+        "comment": "Custom chevron icon to show"
+      },
+      {
         "name": "containerStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
         "comment": "Container style for the accordion"
       },
       {
+        "name": "headerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Accordion header style for title & description"
+      },
+      {
         "name": "onPress",
         "dataType": "() => void",
         "description": null,
         "comment": "On press callback on the title section"
+      },
+      {
+        "name": "transitionDuration",
+        "dataType": "number",
+        "defaultValue": "300",
+        "description": null,
+        "comment": "Set the animation transition duration for the accordion"
       }
     ],
     "parent": []
@@ -1007,6 +1032,12 @@
         "comment": "Placeholder for the text input"
       },
       {
+        "name": "placeholderComponent",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render a custom Placeholder component for the text input"
+      },
+      {
         "name": "caption",
         "dataType": "string",
         "description": null,
@@ -1104,25 +1135,70 @@
       "BaseUIProps"
     ]
   },
+  "AnimatedPlaceholderProps": {
+    "properties": [
+      {
+        "name": "placeholders",
+        "dataType": "string[]",
+        "description": null,
+        "comment": "An array of placeholder strings to animate between."
+      },
+      {
+        "name": "duration",
+        "dataType": "number",
+        "defaultValue": "500",
+        "description": null,
+        "comment": "Duration in milliseconds each placeholder is displayed before transitioning."
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Custom styles for the container view of the placeholder."
+      },
+      {
+        "name": "textStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Custom style for the placeholder text."
+      },
+      {
+        "name": "visible",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Whether the placeholder is visible.Set it to false to hide the placeholder."
+      }
+    ],
+    "parent": []
+  },
   "SearchInputProps": {
     "properties": [
       {
         "name": "withClearIcon",
         "dataType": "boolean",
+        "defaultValue": "false",
         "description": null,
-        "comment": ""
+        "comment": "Whether to show a clear (X) icon to reset the input at the right.Set it to true to show the clear icon."
       },
       {
         "name": "onQueryChange",
         "dataType": "(query: string) => void",
         "description": null,
-        "comment": ""
+        "comment": "Callback when the search query changes."
       },
       {
         "name": "debounceDelay",
         "dataType": "number",
+        "defaultValue": "300",
         "description": null,
-        "comment": ""
+        "comment": "Delay in milliseconds to debounce the query change callback."
+      },
+      {
+        "name": "animatedPlaceholderProps",
+        "dataType": "AnimatedPlaceholderProps",
+        "description": null,
+        "comment": "Customize the animated placeholder behavior with a slide-up animation."
       },
       {
         "name": "mode",
@@ -1148,6 +1224,12 @@
         "dataType": "string",
         "description": null,
         "comment": "Placeholder for the text input"
+      },
+      {
+        "name": "placeholderComponent",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Render a custom Placeholder component for the text input"
       },
       {
         "name": "caption",
@@ -1375,6 +1457,13 @@
         "defaultValue": "1000",
         "description": null,
         "comment": "Set it to false to disable the animation"
+      },
+      {
+        "name": "mode",
+        "dataType": "\"fade\" | \"wave\"",
+        "defaultValue": "fade",
+        "description": null,
+        "comment": "Set the mode of the animation"
       },
       {
         "name": "width",
@@ -2339,6 +2428,12 @@
         "dataType": "boolean",
         "description": null,
         "comment": "Set it to true to have the infinite animation"
+      },
+      {
+        "name": "reverseDirection",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Reverse the direction of the progress bar"
       },
       {
         "name": "style",

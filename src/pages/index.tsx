@@ -105,11 +105,11 @@ export default function Home(): JSX.Element {
       </div>
       <div className={styles.showcaseContainer}>
         <UIShowcase />
-        {/* <div className={styles.mobileBorder}>
+        <div className={styles.mobileBorder}>
           <div className={styles.notch} />
           <div className={styles.bottomBar} />
           <iframe src="https://react-native-blossom-ui-showcase-app.vercel.app" />
-        </div> */}
+        </div>
       </div>
 
       <main>
