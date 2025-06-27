@@ -1,0 +1,41 @@
+---
+sidebar_position: 1
+---
+
+# ExpandableText
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  ExpandableTextUsage,
+  ExpandableTextLessLines,
+  ExpandableTextLines,
+} from "@site/src/components";
+
+## Usage
+
+<BlossomUIRenderer
+  componentName={"ExpandableTextUsage"}
+  children={<ExpandableTextUsage />}
+  fileName={"ExpandableText"}
+/>
+
+## With Less Lines
+
+<BlossomUIRenderer
+  componentName={"ExpandableTextLessLines"}
+  children={<ExpandableTextLessLines />}
+  fileName={"ExpandableText"}
+/>
+
+## With overflow texts
+
+<BlossomUIRenderer
+  componentName={"ExpandableTextLines"}
+  children={<ExpandableTextLines />}
+  fileName={"ExpandableText"}
+/>
+
+## Props
+
+<PropsTable componentName="ExpandableText" />
