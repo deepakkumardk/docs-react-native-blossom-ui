@@ -2222,10 +2222,10 @@
   dependencies:
     deepmerge "4.3.1"
 
-"@react-native-blossom-ui/components@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.11.0.tgz#c3c5c31a15cbafb3759e3567d5667207431d2a9f"
-  integrity sha512-NEWI0ikbQTqtdBfGWf3TiETk/8YQD4nai/jURvIueOokz5PtXwW3Td5WWMJQxmIqKUD6FP+ezAnUJqX6VfI5zg==
+"@react-native-blossom-ui/components@0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.12.0.tgz#dad83ceb98426cf13d4ceda57916e6ea4b0fcb2c"
+  integrity sha512-Tv8rCNRWicp5yRkRExJW3GnNTHgo6PxGG4HpmSdKkVWj1PGdvZpWdxIsHQC/jrFA8cqgblV8ks6MxmbaJST05A==
   dependencies:
     chroma-js "3.1.1"
     deepmerge "4.3.1"
@@ -2237,17 +2237,17 @@
   dependencies:
     dayjs "1.11.13"
 
-"@react-native-blossom-ui/dates@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/dates/-/dates-0.11.0.tgz#90f60e0e930b33fa496350db6ca9fc519e4c9708"
-  integrity sha512-ylBfoit5jgBjwkN2ULPYFad5P0VMlu9BK5TgipQwWsXPSzgkuuJ2j2MI1EmkUAUTq95fj0INxoT+8JWZqMyhmA==
+"@react-native-blossom-ui/dates@0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/dates/-/dates-0.12.0.tgz#cd9e5763a3b18afb47b1111642ef2b4cad2c75a6"
+  integrity sha512-cf7uZRNLy/vF85fXg4l3WtMmoO8LyapBPtY1kW7JwgkJd2IjGJF0M8tGjQpyIKWY9sQ7dX0ThVrJnc3U8QisjA==
   dependencies:
     dayjs "1.11.13"
 
-"@react-native-blossom-ui/showcase@0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.11.0.tgz#6ab42bff195073a7bf7b36a06828994a41e42a4c"
-  integrity sha512-dyT6LnOJ4xTYRVPzppq0jJg1EMuASmRwkOQdEFhjKWrXPR1DfD+Em3mok+46XI58DDHBJK6R6yCSYF6SknPmNg==
+"@react-native-blossom-ui/showcase@0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.12.0.tgz#9dacb1e90e1b5f36ffd7de1e40f1baf66ed19aa9"
+  integrity sha512-vqo4dgSw73E2XlHgsueV/lrz9NROGqpSpYGSptEIIZaMXuOJvyexFATdwxn5mmzGc9WnN58z3ALToMb6WWYApQ==
   dependencies:
     "@react-native-blossom-ui/components" "*"
     "@react-native-blossom-ui/dates" "*"

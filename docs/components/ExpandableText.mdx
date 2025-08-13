@@ -8,8 +8,9 @@ import {
   BlossomUIRenderer,
   PropsTable,
   ExpandableTextUsage,
-  ExpandableTextLessLines,
   ExpandableTextLines,
+  ExpandableTextLessLines,
+  ExpandableTextLabelCustom,
 } from "@site/src/components";
 
 ## Usage
@@ -20,7 +21,7 @@ import {
   fileName={"ExpandableText"}
 />
 
-## With Less Lines
+## Less Lines
 
 <BlossomUIRenderer
   componentName={"ExpandableTextLessLines"}
@@ -28,14 +29,20 @@ import {
   fileName={"ExpandableText"}
 />
 
-## With overflow texts
+## Lines
 
 <BlossomUIRenderer
-  componentName={"ExpandableTextLines"}
+  componentName={"ExpandableTextLinesSpacing"}
   children={<ExpandableTextLines />}
   fileName={"ExpandableText"}
 />
 
-## Props
+## Label
+
+<BlossomUIRenderer
+  componentName={"ExpandableTextLabelCustom"}
+  children={<ExpandableTextLabelCustom />}
+  fileName={"ExpandableText"}
+/>
 
 <PropsTable componentName="ExpandableText" />
