@@ -14,6 +14,8 @@ import {
   MultiSelectClearable,
   MultiSelectControlled,
   MultiSelectDisabled,
+  MultiSelectCustomStyle,
+  MultiSelectCustomPickerStyle,
   MultiSelectMaxSelect,
   MultiSelectObjectOptions,
 } from "@site/src/components";
@@ -63,6 +65,20 @@ import {
 <BlossomUIRenderer
   componentName={"MultiSelectMaxSelect"}
   children={<MultiSelectMaxSelect />}
+  fileName={"MultiSelect"}
+/>
+## Custom Style
+
+<BlossomUIRenderer
+  componentName={"MultiSelectCustomStyle"}
+  children={<MultiSelectCustomStyle />}
+  fileName={"MultiSelect"}
+/>
+## Custom Picker Style
+
+<BlossomUIRenderer
+  componentName={"MultiSelectCustomPickerStyle"}
+  children={<MultiSelectCustomPickerStyle />}
   fileName={"MultiSelect"}
 />
 

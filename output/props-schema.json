@@ -100,9 +100,9 @@
       {
         "name": "typography",
         "dataType": "TypographyOptions",
-        "defaultValue": "b2",
+        "defaultValue": "b3",
         "description": null,
-        "comment": "Typography option to control the size of the text"
+        "comment": "Modify the font size/weight values using this- h1-h6 are used for headings\n- s1-s3 are used for subheadings\n- b1-b3 are used for body text\n- l1-l3 are used for labels\n- c1-c3 are used for captions"
       }
     ],
     "parent": [
@@ -122,9 +122,9 @@
       {
         "name": "typography",
         "dataType": "TypographyOptions",
-        "defaultValue": "b2",
+        "defaultValue": "b3",
         "description": null,
-        "comment": "Typography option to control the size of the text"
+        "comment": "Modify the font size/weight values using this- h1-h6 are used for headings\n- s1-s3 are used for subheadings\n- b1-b3 are used for body text\n- l1-l3 are used for labels\n- c1-c3 are used for captions"
       },
       {
         "name": "size",
@@ -174,9 +174,49 @@
       {
         "name": "typography",
         "dataType": "TypographyOptions",
-        "defaultValue": "b2",
+        "defaultValue": "b3",
         "description": null,
-        "comment": "Typography option to control the size of the text"
+        "comment": "Modify the font size/weight values using this- h1-h6 are used for headings\n- s1-s3 are used for subheadings\n- b1-b3 are used for body text\n- l1-l3 are used for labels\n- c1-c3 are used for captions"
+      }
+    ],
+    "parent": [
+      "TextProps"
+    ]
+  },
+  "ExpandableTextProps": {
+    "properties": [
+      {
+        "name": "showLabel",
+        "dataType": "string",
+        "defaultValue": "\"Read more\"",
+        "description": null,
+        "comment": "Open/show label of the text component"
+      },
+      {
+        "name": "hideLabel",
+        "dataType": "string",
+        "defaultValue": "\"Read less\"",
+        "description": null,
+        "comment": "Close/hide label of the text component"
+      },
+      {
+        "name": "showLabelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Show label text style"
+      },
+      {
+        "name": "hideLabelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Hide label text style"
+      },
+      {
+        "name": "typography",
+        "dataType": "TypographyOptions",
+        "defaultValue": "b3",
+        "description": null,
+        "comment": "Modify the font size/weight values using this- h1-h6 are used for headings\n- s1-s3 are used for subheadings\n- b1-b3 are used for body text\n- l1-l3 are used for labels\n- c1-c3 are used for captions"
       }
     ],
     "parent": [
@@ -1388,9 +1428,16 @@
       {
         "name": "height",
         "dataType": "DimensionValue",
-        "defaultValue": "0.6",
+        "defaultValue": "1",
         "description": null,
         "comment": "Control height of the divider"
+      },
+      {
+        "name": "spacing",
+        "dataType": "DimensionValue",
+        "defaultValue": "0",
+        "description": null,
+        "comment": "Spacing around the line"
       },
       {
         "name": "color",
@@ -1475,9 +1522,16 @@
       {
         "name": "height",
         "dataType": "DimensionValue",
-        "defaultValue": "0.6",
+        "defaultValue": "1",
         "description": null,
         "comment": "Control height of the divider"
+      },
+      {
+        "name": "spacing",
+        "dataType": "DimensionValue",
+        "defaultValue": "0",
+        "description": null,
+        "comment": "Spacing around the line"
       },
       {
         "name": "color",
@@ -2338,7 +2392,7 @@
         "name": "inputProps",
         "dataType": "Omit<TextInputProps, \"defaultValue\" | \"value\">",
         "description": null,
-        "comment": "Input props"
+        "comment": "Change the style of the input and it's container"
       },
       {
         "name": "status",
@@ -2652,6 +2706,12 @@
         "dataType": "Pick<YearListProps, \"minYear\" | \"maxYear\">",
         "description": null,
         "comment": "Props for configuring the year list (min and max year)."
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "The outer most container style for the calendar.This can be used to set padding, margin, etc."
       },
       {
         "name": "status",
