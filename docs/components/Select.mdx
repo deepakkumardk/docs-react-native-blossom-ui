@@ -12,6 +12,9 @@ import {
   SelectUsage,
   SelectDefaultValue,
   SelectClearable,
+  SelectCustomItem,
+  SelectCustomStyle,
+  SelectCustomPickerStyle,
   SelectDisabled,
   SelectObjectOptions,
 } from "@site/src/components";
@@ -37,6 +40,30 @@ import {
 <BlossomUIRenderer
   componentName={"SelectClearable"}
   children={<SelectClearable />}
+  fileName={"Select"}
+/>
+
+## SelectCustomItem
+
+<BlossomUIRenderer
+  componentName={"SelectCustomItem"}
+  children={<SelectCustomItem />}
+  fileName={"Select"}
+/>
+
+## Custom Style
+
+<BlossomUIRenderer
+  componentName={"SelectCustomStyle"}
+  children={<SelectCustomStyle />}
+  fileName={"Select"}
+/>
+
+## Custom Picker Style
+
+<BlossomUIRenderer
+  componentName={"SelectCustomPickerStyle"}
+  children={<SelectCustomPickerStyle />}
   fileName={"Select"}
 />
 
