@@ -145,13 +145,13 @@
         "name": "leftText",
         "dataType": "ReactNode",
         "description": null,
-        "comment": "Set the left side of the text"
+        "comment": "Set the left side of the textIf string will be passed a space delimiter will be added automatically at the end"
       },
       {
         "name": "rightText",
         "dataType": "ReactNode",
         "description": null,
-        "comment": "Set the left side of the text"
+        "comment": "Set the right side of the textIf string will be passed a space delimiter will be added automatically at the start"
       },
       {
         "name": "title",
@@ -160,10 +160,22 @@
         "comment": "Set the link label to show"
       },
       {
+        "name": "style",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Set the link label style"
+      },
+      {
         "name": "href",
         "dataType": "string",
         "description": null,
         "comment": "Set the href url for link"
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Container style for the link"
       },
       {
         "name": "onLinkOpenError",
@@ -1096,12 +1108,6 @@
         "comment": "Label text style"
       },
       {
-        "name": "placeholderStyle",
-        "dataType": "StyleProp<TextStyle>",
-        "description": null,
-        "comment": "Placeholder text style"
-      },
-      {
         "name": "captionStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
@@ -1117,16 +1123,16 @@
         "name": "containerStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": "Container view style"
+        "comment": "Container view style including label, caption & error"
       },
       {
-        "name": "inputStyle",
+        "name": "inputContainerStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": "Input box style"
+        "comment": "Input container style including left, right section, custom placeholder and input text"
       },
       {
-        "name": "textStyle",
+        "name": "inputTextStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
         "comment": "Input text style equivalent to react-native style for TextInput"
@@ -1290,12 +1296,6 @@
         "comment": "Label text style"
       },
       {
-        "name": "placeholderStyle",
-        "dataType": "StyleProp<TextStyle>",
-        "description": null,
-        "comment": "Placeholder text style"
-      },
-      {
         "name": "captionStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
@@ -1311,16 +1311,16 @@
         "name": "containerStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": "Container view style"
+        "comment": "Container view style including label, caption & error"
       },
       {
-        "name": "inputStyle",
+        "name": "inputContainerStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": "Input box style"
+        "comment": "Input container style including left, right section, custom placeholder and input text"
       },
       {
-        "name": "textStyle",
+        "name": "inputTextStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
         "comment": "Input text style equivalent to react-native style for TextInput"
@@ -1399,8 +1399,9 @@
       {
         "name": "withAlphanumericKeyboard",
         "dataType": "boolean",
+        "defaultValue": "false",
         "description": null,
-        "comment": "Set the alphanumeric keyboard"
+        "comment": "Set the alphanumeric keyboardBy default it will use numeric keyboard"
       },
       {
         "name": "onComplete",
@@ -1622,6 +1623,18 @@
         "comment": "Set a custom icon for Avatar"
       },
       {
+        "name": "fallbackIcon",
+        "dataType": "(size: number) => ReactNode",
+        "description": null,
+        "comment": "Set a custom fallback icon for Avatar"
+      },
+      {
+        "name": "fallbackSource",
+        "dataType": "ImageSourcePropType",
+        "description": null,
+        "comment": "Fallback source for the Avatar"
+      },
+      {
         "name": "onPress",
         "dataType": "() => void",
         "description": null,
@@ -1685,6 +1698,13 @@
         "defaultValue": "true",
         "description": null,
         "comment": "Set it to false to position them apart i.e. space-between"
+      },
+      {
+        "name": "defaultValue",
+        "dataType": "boolean",
+        "defaultValue": "false",
+        "description": null,
+        "comment": "Default value for the field"
       },
       {
         "name": "disabled",
@@ -1783,6 +1803,13 @@
         "comment": "Set it to false to position them apart i.e. space-between"
       },
       {
+        "name": "defaultValue",
+        "dataType": "boolean",
+        "defaultValue": "false",
+        "description": null,
+        "comment": "Default value for the field"
+      },
+      {
         "name": "color",
         "dataType": "string",
         "description": null,
@@ -1865,6 +1892,13 @@
         "defaultValue": "true",
         "description": null,
         "comment": "Set it to false to position them apart i.e. space-between"
+      },
+      {
+        "name": "defaultValue",
+        "dataType": "boolean",
+        "defaultValue": "false",
+        "description": null,
+        "comment": "Default value for the field"
       },
       {
         "name": "color",
@@ -1985,6 +2019,13 @@
         "defaultValue": "true",
         "description": null,
         "comment": "Set it to false to position them apart i.e. space-between"
+      },
+      {
+        "name": "defaultValue",
+        "dataType": "boolean",
+        "defaultValue": "false",
+        "description": null,
+        "comment": "Default value for the field"
       },
       {
         "name": "disabled",
