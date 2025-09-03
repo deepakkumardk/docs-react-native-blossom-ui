@@ -14,6 +14,9 @@ import {
   AvatarSizes,
   AvatarModes,
   AvatarModesSizes,
+  AvatarFallbackIcon,
+  AvatarFallbackSource,
+  AvatarCustom,
 } from "@site/src/components";
 
 ## Usage
@@ -56,6 +59,30 @@ import {
   fileName={"Avatar"}
   withFlex={false}
   withCodeblock={false}
+/>
+
+## Fallback Icon
+
+<BlossomUIRenderer
+  componentName={"AvatarFallbackIcon"}
+  children={<AvatarFallbackIcon />}
+  fileName={"Avatar"}
+/>
+
+## Fallback Source
+
+<BlossomUIRenderer
+  componentName={"AvatarFallbackSource"}
+  children={<AvatarFallbackSource />}
+  fileName={"Avatar"}
+/>
+
+## Custom
+
+<BlossomUIRenderer
+  componentName={"AvatarCustom"}
+  children={<AvatarCustom />}
+  fileName={"Avatar"}
 />
 
 ## Props
