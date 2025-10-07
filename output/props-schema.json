@@ -2799,31 +2799,19 @@
     ],
     "parent": []
   },
-  "CalendarProps": {
+  "BaseDateProps": {
     "properties": [
       {
-        "name": "selectedDate",
+        "name": "minDate",
         "dataType": "string | Date",
         "description": null,
-        "comment": "The default selected date.Can be a string (formatted date) or a Date object."
+        "comment": "minimum selectable date inclusive.Can be a string (in `outputDateFormat`) or a Date object."
       },
       {
-        "name": "displayDateFormat",
-        "dataType": "string",
+        "name": "maxDate",
+        "dataType": "string | Date",
         "description": null,
-        "comment": "The format in which the date should be displayed inside the input value"
-      },
-      {
-        "name": "outputDateFormat",
-        "dataType": "string",
-        "description": null,
-        "comment": "The format in which the selected date should give outputAnd this format should be used whenever you are passing any date to this component"
-      },
-      {
-        "name": "disableDates",
-        "dataType": "(string | Date)[]",
-        "description": null,
-        "comment": "An array of disabled dates of string (in outputDateFormat) or a Date object.Make sure to provide the outputDateFormat prop too if passing date as string"
+        "comment": "maximum selectable date inclusive.Can be a string (in `outputDateFormat`) or a Date object."
       },
       {
         "name": "disableFutureDates",
@@ -2836,6 +2824,37 @@
         "dataType": "boolean",
         "description": null,
         "comment": "Disable past dates"
+      },
+      {
+        "name": "displayDateFormat",
+        "dataType": "string",
+        "defaultValue": "'D MMM YYYY'",
+        "description": null,
+        "comment": "The format in which the date should be displayed inside the input valueCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
+      },
+      {
+        "name": "outputDateFormat",
+        "dataType": "string",
+        "defaultValue": "'DD-MM-YYYY'",
+        "description": null,
+        "comment": "The format in which the selected date should give outputAnd this format should be used whenever you are passing any date to this component\n\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
+      }
+    ],
+    "parent": []
+  },
+  "CalendarProps": {
+    "properties": [
+      {
+        "name": "selectedDate",
+        "dataType": "string | Date",
+        "description": null,
+        "comment": "The default selected date.Can be a string (formatted date) or a Date object."
+      },
+      {
+        "name": "disableDates",
+        "dataType": "(string | Date)[]",
+        "description": null,
+        "comment": "An array of disabled dates of string (in outputDateFormat) or a Date object.Make sure to provide the outputDateFormat prop too if passing date as string"
       },
       {
         "name": "onDateChange",
@@ -2868,10 +2887,49 @@
         "defaultValue": "medium",
         "description": null,
         "comment": ""
+      },
+      {
+        "name": "minDate",
+        "dataType": "string | Date",
+        "description": null,
+        "comment": "minimum selectable date inclusive.Can be a string (in `outputDateFormat`) or a Date object."
+      },
+      {
+        "name": "maxDate",
+        "dataType": "string | Date",
+        "description": null,
+        "comment": "maximum selectable date inclusive.Can be a string (in `outputDateFormat`) or a Date object."
+      },
+      {
+        "name": "disableFutureDates",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Disable future dates"
+      },
+      {
+        "name": "disablePastDates",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Disable past dates"
+      },
+      {
+        "name": "displayDateFormat",
+        "dataType": "string",
+        "defaultValue": "'D MMM YYYY'",
+        "description": null,
+        "comment": "The format in which the date should be displayed inside the input valueCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
+      },
+      {
+        "name": "outputDateFormat",
+        "dataType": "string",
+        "defaultValue": "'DD-MM-YYYY'",
+        "description": null,
+        "comment": "The format in which the selected date should give outputAnd this format should be used whenever you are passing any date to this component\n\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
       }
     ],
     "parent": [
-      "BaseUIProps"
+      "BaseUIProps",
+      "BaseDateProps"
     ]
   },
   "BaseDatePickerProps": {
@@ -2890,10 +2948,23 @@
         "dataType": "boolean",
         "description": null,
         "comment": "Whether the date picker allows clearing the selected date."
+      },
+      {
+        "name": "minDate",
+        "dataType": "string | Date",
+        "description": null,
+        "comment": "minimum selectable date inclusive.Can be a string (in `outputDateFormat`) or a Date object."
+      },
+      {
+        "name": "maxDate",
+        "dataType": "string | Date",
+        "description": null,
+        "comment": "maximum selectable date inclusive.Can be a string (in `outputDateFormat`) or a Date object."
       }
     ],
     "parent": [
-      "BaseDatePickerProps"
+      "BaseDatePickerProps",
+      "BaseDateProps"
     ]
   }
 }

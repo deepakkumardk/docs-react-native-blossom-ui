@@ -13,6 +13,9 @@ import {
   DatePickerClearable,
   DatePickerDisplayFormat,
   DatePickerDefaultValue,
+  DatePickerMaxDate,
+  DatePickerMinDate,
+  DatePickerMinMaxDate,
   DatePickerDisableDates,
 } from "@site/src/components";
 
@@ -51,6 +54,30 @@ Note: The `outputDateFormat` should be always used whenever you are passing any 
 <BlossomUIRenderer
   componentName={"DatePickerDefaultValue"}
   children={<DatePickerDefaultValue />}
+  fileName={"DatePicker"}
+/>
+
+## Min Date
+
+<BlossomUIRenderer
+  componentName={"DatePickerMinDate"}
+  children={<DatePickerMinDate />}
+  fileName={"DatePicker"}
+/>
+
+## Max Date
+
+<BlossomUIRenderer
+  componentName={"DatePickerMaxDate"}
+  children={<DatePickerMaxDate />}
+  fileName={"DatePicker"}
+/>
+
+## Min & Max Date
+
+<BlossomUIRenderer
+  componentName={"DatePickerMinMaxDate"}
+  children={<DatePickerMinMaxDate />}
   fileName={"DatePicker"}
 />
 
