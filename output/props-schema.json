@@ -2857,6 +2857,18 @@
         "comment": "An array of disabled dates of string (in outputDateFormat) or a Date object.Make sure to provide the outputDateFormat prop too if passing date as string"
       },
       {
+        "name": "disableFutureDates",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Disable future dates"
+      },
+      {
+        "name": "disablePastDates",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Disable past dates"
+      },
+      {
         "name": "onDateChange",
         "dataType": "(date?: Date, displayDate?: string, outputDate?: string) => void",
         "description": null,
