@@ -1617,6 +1617,12 @@
         "comment": "Initials Text style to control the font size etc."
       },
       {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Container style for the Avatar component"
+      },
+      {
         "name": "icon",
         "dataType": "(size: number) => ReactNode",
         "description": null,
@@ -1635,6 +1641,12 @@
         "comment": "Fallback source for the Avatar"
       },
       {
+        "name": "imgComponent",
+        "dataType": "ComponentType<ImageProps>",
+        "description": null,
+        "comment": "Custom image component for Avatar"
+      },
+      {
         "name": "onPress",
         "dataType": "() => void",
         "description": null,
@@ -1644,6 +1656,59 @@
     "parent": [
       "Partial<ImageProps>",
       "OmitSizeProps"
+    ]
+  },
+  "AvatarGroupProps": {
+    "properties": [
+      {
+        "name": "avatars",
+        "dataType": "AvatarGroupItem[]",
+        "description": null,
+        "comment": "List of avatar items to show in the group"
+      },
+      {
+        "name": "max",
+        "dataType": "number",
+        "defaultValue": "3",
+        "description": null,
+        "comment": "Maximum avatars to show in the group"
+      },
+      {
+        "name": "spacing",
+        "dataType": "number",
+        "defaultValue": "-10",
+        "description": null,
+        "comment": "Spacing between the avatars"
+      },
+      {
+        "name": "bringToFront",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Control the zIndex of the Avatar item"
+      },
+      {
+        "name": "renderCount",
+        "dataType": "(extraCount: number) => ReactNode",
+        "description": null,
+        "comment": "Render custom view for the extra count"
+      }
+    ],
+    "parent": [
+      "Omit<AvatarProps, 'source' | 'url' | 'initials'>",
+      "OmitSizeProps"
+    ]
+  },
+  "AvatarGroupItem": {
+    "properties": [
+      {
+        "name": "zIndex",
+        "dataType": "number",
+        "description": null,
+        "comment": "Control the zIndex of the each Avatar item to create custom stacking order"
+      }
+    ],
+    "parent": [
+      "Pick<AvatarProps, 'initials' | 'url' | 'source'>"
     ]
   },
   "IconFamily": {
@@ -1743,6 +1808,12 @@
         "comment": "Container view style"
       },
       {
+        "name": "textFieldsContainerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Text field Container view styleContainer for label, caption & error i.e. the right/left section opposite to the boolean field"
+      },
+      {
         "name": "labelStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
@@ -1840,6 +1911,12 @@
         "comment": "Container view style"
       },
       {
+        "name": "textFieldsContainerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Text field Container view styleContainer for label, caption & error i.e. the right/left section opposite to the boolean field"
+      },
+      {
         "name": "labelStyle",
         "dataType": "StyleProp<TextStyle>",
         "description": null,
@@ -1929,6 +2006,12 @@
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
         "comment": "Container view style"
+      },
+      {
+        "name": "textFieldsContainerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Text field Container view styleContainer for label, caption & error i.e. the right/left section opposite to the boolean field"
       },
       {
         "name": "labelStyle",
@@ -2062,6 +2145,12 @@
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
         "comment": "Container view style"
+      },
+      {
+        "name": "textFieldsContainerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Text field Container view styleContainer for label, caption & error i.e. the right/left section opposite to the boolean field"
       },
       {
         "name": "labelStyle",
@@ -2735,6 +2824,18 @@
         "dataType": "(string | Date)[]",
         "description": null,
         "comment": "An array of disabled dates of string (in outputDateFormat) or a Date object.Make sure to provide the outputDateFormat prop too if passing date as string"
+      },
+      {
+        "name": "disableFutureDates",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Disable future dates"
+      },
+      {
+        "name": "disablePastDates",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Disable past dates"
       },
       {
         "name": "onDateChange",
