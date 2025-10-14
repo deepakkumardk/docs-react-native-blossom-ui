@@ -1,33 +1,33 @@
 {
   "BlossomStatus": {
-    "parent": []
+    "parents": []
   },
   "BlossomTransparentStatus": {
-    "parent": []
+    "parents": []
   },
   "BlossomSize": {
-    "parent": []
+    "parents": []
   },
   "BlossomColor": {
-    "parent": []
+    "parents": []
   },
   "ColorVariants": {
-    "parent": []
+    "parents": []
   },
   "TransparentColorVariants": {
-    "parent": []
+    "parents": []
   },
   "ThemeColorNames": {
-    "parent": []
+    "parents": []
   },
   "SemanticColorNames": {
-    "parent": []
+    "parents": []
   },
   "SurfaceColorNames": {
-    "parent": []
+    "parents": []
   },
   "BlossomThemeColors": {
-    "parent": []
+    "parents": []
   },
   "BlossomContext": {
     "properties": [
@@ -50,22 +50,23 @@
         "comment": ""
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "Children": {
-    "parent": []
+    "parents": []
   },
   "BlossomThemeProviderProps": {
-    "parent": []
+    "parents": []
   },
   "TypographyValues": {
-    "parent": []
+    "parents": []
   },
   "BlossomUIOptions": {
-    "parent": []
+    "parents": []
   },
   "TypographyOptions": {
-    "parent": []
+    "parents": []
   },
   "BaseUIProps": {
     "properties": [
@@ -84,16 +85,17 @@
         "comment": ""
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "OmitSizeProps": {
-    "parent": []
+    "parents": []
   },
   "ThemeValues": {
-    "parent": []
+    "parents": []
   },
   "ComponentPropsObjectMap": {
-    "parent": []
+    "parents": []
   },
   "TextProps": {
     "properties": [
@@ -105,7 +107,14 @@
         "comment": "Modify the font size/weight values using this- h1-h6 are used for headings\n- s1-s3 are used for subheadings\n- b1-b3 are used for body text\n- l1-l3 are used for labels\n- c1-c3 are used for captions"
       }
     ],
-    "parent": ["TextProps$1", "OmitSizeProps"]
+    "parents": [
+      "TextProps$1",
+      "OmitSizeProps"
+    ],
+    "parentsDisplay": [
+      "RNTextProps",
+      "OmitSizeProps"
+    ]
   },
   "SizedTextProps": {
     "properties": [
@@ -131,7 +140,14 @@
         "comment": ""
       }
     ],
-    "parent": ["TextProps", "BaseUIProps"]
+    "parents": [
+      "TextProps",
+      "BaseUIProps"
+    ],
+    "parentsDisplay": [
+      "TextProps",
+      "BaseUIProps"
+    ]
   },
   "LinkProps": {
     "properties": [
@@ -185,7 +201,12 @@
         "comment": "Modify the font size/weight values using this- h1-h6 are used for headings\n- s1-s3 are used for subheadings\n- b1-b3 are used for body text\n- l1-l3 are used for labels\n- c1-c3 are used for captions"
       }
     ],
-    "parent": ["TextProps"]
+    "parents": [
+      "TextProps"
+    ],
+    "parentsDisplay": [
+      "TextProps"
+    ]
   },
   "ExpandableTextProps": {
     "properties": [
@@ -223,7 +244,12 @@
         "comment": "Modify the font size/weight values using this- h1-h6 are used for headings\n- s1-s3 are used for subheadings\n- b1-b3 are used for body text\n- l1-l3 are used for labels\n- c1-c3 are used for captions"
       }
     ],
-    "parent": ["TextProps"]
+    "parents": [
+      "TextProps"
+    ],
+    "parentsDisplay": [
+      "TextProps"
+    ]
   },
   "ViewProps": {
     "properties": [
@@ -234,7 +260,12 @@
         "comment": "Set true for horizontal(flexDirection) view"
       }
     ],
-    "parent": ["ViewProps$1"]
+    "parents": [
+      "ViewProps$1"
+    ],
+    "parentsDisplay": [
+      "RNViewProps"
+    ]
   },
   "SpacerProps": {
     "properties": [
@@ -251,7 +282,12 @@
         "comment": "Height of the spacer"
       }
     ],
-    "parent": ["ViewProps$1"]
+    "parents": [
+      "ViewProps$1"
+    ],
+    "parentsDisplay": [
+      "RNViewProps"
+    ]
   },
   "AccordionProps": {
     "properties": [
@@ -329,10 +365,11 @@
         "comment": "Set the animation transition duration for the accordion"
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "ButtonMode": {
-    "parent": []
+    "parents": []
   },
   "ButtonProps": {
     "properties": [
@@ -418,7 +455,14 @@
         "comment": ""
       }
     ],
-    "parent": ["PressableProps", "BaseUIProps"]
+    "parents": [
+      "PressableProps",
+      "BaseUIProps"
+    ],
+    "parentsDisplay": [
+      "PressableProps",
+      "BaseUIProps"
+    ]
   },
   "BaseButtonProps": {
     "properties": [
@@ -522,10 +566,15 @@
         "comment": ""
       }
     ],
-    "parent": ["ButtonProps"]
+    "parents": [
+      "ButtonProps"
+    ],
+    "parentsDisplay": [
+      "ButtonProps"
+    ]
   },
   "PressableState": {
-    "parent": []
+    "parents": []
   },
   "FABProps": {
     "properties": [
@@ -631,7 +680,12 @@
         "comment": ""
       }
     ],
-    "parent": ["ButtonProps"]
+    "parents": [
+      "ButtonProps"
+    ],
+    "parentsDisplay": [
+      "ButtonProps"
+    ]
   },
   "ChipProps": {
     "properties": [
@@ -759,7 +813,12 @@
         "comment": ""
       }
     ],
-    "parent": ["ButtonProps"]
+    "parents": [
+      "ButtonProps"
+    ],
+    "parentsDisplay": [
+      "ButtonProps"
+    ]
   },
   "SegmentedButtonProps": {
     "properties": [
@@ -844,7 +903,12 @@
         "comment": ""
       }
     ],
-    "parent": ["BaseUIProps"]
+    "parents": [
+      "BaseUIProps"
+    ],
+    "parentsDisplay": [
+      "BaseUIProps"
+    ]
   },
   "ControlButtonProps": {
     "properties": [
@@ -984,7 +1048,12 @@
         "comment": ""
       }
     ],
-    "parent": ["ChipProps"]
+    "parents": [
+      "ChipProps"
+    ],
+    "parentsDisplay": [
+      "ChipProps"
+    ]
   },
   "ActivityIndicatorProps": {
     "properties": [
@@ -1021,13 +1090,17 @@
         "comment": "Container style wrapping both label and ActivityIndicator"
       }
     ],
-    "parent": [
+    "parents": [
       "Omit<ActivityIndicatorProps$1, 'size'>",
       "Omit<BaseUIProps, 'size'>"
+    ],
+    "parentsDisplay": [
+      "RNActivityIndicatorProps",
+      "BaseUIProps"
     ]
   },
   "TextInputMode": {
-    "parent": []
+    "parents": []
   },
   "TextInputProps": {
     "properties": [
@@ -1149,7 +1222,14 @@
         "comment": ""
       }
     ],
-    "parent": ["Omit<TextInputProps$1, 'style'>", "BaseUIProps"]
+    "parents": [
+      "Omit<TextInputProps$1, 'style'>",
+      "BaseUIProps"
+    ],
+    "parentsDisplay": [
+      "RNTextInputProps",
+      "BaseUIProps"
+    ]
   },
   "AnimatedPlaceholderProps": {
     "properties": [
@@ -1186,7 +1266,8 @@
         "comment": "Whether the placeholder is visible.Set it to false to hide the placeholder."
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "SearchInputProps": {
     "properties": [
@@ -1334,7 +1415,12 @@
         "comment": ""
       }
     ],
-    "parent": ["TextInputProps"]
+    "parents": [
+      "TextInputProps"
+    ],
+    "parentsDisplay": [
+      "TextInputProps"
+    ]
   },
   "OtpInputProps": {
     "properties": [
@@ -1378,10 +1464,15 @@
         "comment": "onComplete callback with otp input text"
       }
     ],
-    "parent": ["Omit<TextInputProps, 'mode'>"]
+    "parents": [
+      "Omit<TextInputProps, 'mode'>"
+    ],
+    "parentsDisplay": [
+      "TextInputProps"
+    ]
   },
   "OtpInputRef": {
-    "parent": []
+    "parents": []
   },
   "DividerProps": {
     "properties": [
@@ -1433,7 +1524,12 @@
         "comment": "Set true for horizontal(flexDirection) view"
       }
     ],
-    "parent": ["ViewProps"]
+    "parents": [
+      "ViewProps"
+    ],
+    "parentsDisplay": [
+      "ViewProps"
+    ]
   },
   "ShimmerViewProps": {
     "properties": [
@@ -1525,7 +1621,12 @@
         "comment": "Set true for horizontal(flexDirection) view"
       }
     ],
-    "parent": ["DividerProps"]
+    "parents": [
+      "DividerProps"
+    ],
+    "parentsDisplay": [
+      "DividerProps"
+    ]
   },
   "CardProps": {
     "properties": [
@@ -1542,7 +1643,12 @@
         "comment": "Set true for horizontal(flexDirection) view"
       }
     ],
-    "parent": ["ViewProps"]
+    "parents": [
+      "ViewProps"
+    ],
+    "parentsDisplay": [
+      "ViewProps"
+    ]
   },
   "AvatarProps": {
     "properties": [
@@ -1613,7 +1719,14 @@
         "comment": "On press callback"
       }
     ],
-    "parent": ["Partial<ImageProps>", "OmitSizeProps"]
+    "parents": [
+      "Partial<ImageProps>",
+      "OmitSizeProps"
+    ],
+    "parentsDisplay": [
+      "ImageProps",
+      "OmitSizeProps"
+    ]
   },
   "AvatarGroupProps": {
     "properties": [
@@ -1650,8 +1763,12 @@
         "comment": "Render custom view for the extra count"
       }
     ],
-    "parent": [
+    "parents": [
       "Omit<AvatarProps, 'source' | 'url' | 'initials'>",
+      "OmitSizeProps"
+    ],
+    "parentsDisplay": [
+      "AvatarProps",
       "OmitSizeProps"
     ]
   },
@@ -1664,10 +1781,15 @@
         "comment": "Control the zIndex of the each Avatar item to create custom stacking order"
       }
     ],
-    "parent": ["Pick<AvatarProps, 'initials' | 'url' | 'source'>"]
+    "parents": [
+      "Pick<AvatarProps, 'initials' | 'url' | 'source'>"
+    ],
+    "parentsDisplay": [
+      "AvatarProps"
+    ]
   },
   "IconFamily": {
-    "parent": []
+    "parents": []
   },
   "IconProps": {
     "properties": [
@@ -1698,7 +1820,14 @@
         "comment": "Set custom icon color"
       }
     ],
-    "parent": ["TextProps$1", "OmitSizeProps"]
+    "parents": [
+      "TextProps$1",
+      "OmitSizeProps"
+    ],
+    "parentsDisplay": [
+      "RNTextProps",
+      "OmitSizeProps"
+    ]
   },
   "BaseBooleanFieldProps": {
     "properties": [
@@ -1804,7 +1933,14 @@
         "comment": "Children"
       }
     ],
-    "parent": ["BaseUIProps", "Children"]
+    "parents": [
+      "BaseUIProps",
+      "Children"
+    ],
+    "parentsDisplay": [
+      "BaseUIProps",
+      "Children"
+    ]
   },
   "SwitchProps": {
     "properties": [
@@ -1898,7 +2034,14 @@
         "comment": ""
       }
     ],
-    "parent": ["SwitchProps$1", "BaseBooleanFieldProps"]
+    "parents": [
+      "SwitchProps$1",
+      "BaseBooleanFieldProps"
+    ],
+    "parentsDisplay": [
+      "RNSwitchProps",
+      "BaseBooleanFieldProps"
+    ]
   },
   "RadioProps": {
     "properties": [
@@ -1992,7 +2135,14 @@
         "comment": ""
       }
     ],
-    "parent": ["SwitchProps$1", "BaseBooleanFieldProps"]
+    "parents": [
+      "SwitchProps$1",
+      "BaseBooleanFieldProps"
+    ],
+    "parentsDisplay": [
+      "RNSwitchProps",
+      "BaseBooleanFieldProps"
+    ]
   },
   "CheckboxProps": {
     "properties": [
@@ -2134,10 +2284,15 @@
         "comment": "Children"
       }
     ],
-    "parent": ["BaseBooleanFieldProps"]
+    "parents": [
+      "BaseBooleanFieldProps"
+    ],
+    "parentsDisplay": [
+      "BaseBooleanFieldProps"
+    ]
   },
   "ComponentPropsMap": {
-    "parent": []
+    "parents": []
   },
   "ModalProps": {
     "properties": [
@@ -2160,7 +2315,12 @@
         "comment": "Callback whenever user press on the backdrop or on the android back button press"
       }
     ],
-    "parent": ["ModalProps$1"]
+    "parents": [
+      "ModalProps$1"
+    ],
+    "parentsDisplay": [
+      "RNModalProps"
+    ]
   },
   "ModalContentProps": {
     "properties": [
@@ -2195,7 +2355,8 @@
         "comment": "container style of the ModalContent"
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "PopoverProps": {
     "properties": [
@@ -2261,7 +2422,8 @@
         "comment": "Wrap Content the popover"
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "PopoverRef": {
     "properties": [
@@ -2278,7 +2440,8 @@
         "comment": "Close the popover"
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "TooltipProps": {
     "properties": [
@@ -2295,8 +2458,11 @@
         "comment": "Style of the tooltip title text"
       }
     ],
-    "parent": [
+    "parents": [
       "Pick<PopoverProps, 'visible' | 'contentStyle' | 'Target' | 'onBackdropPress' | 'position' | 'offset'>"
+    ],
+    "parentsDisplay": [
+      "PopoverProps"
     ]
   },
   "SelectItemT": {
@@ -2320,7 +2486,8 @@
         "comment": "This will disable the item to be selected"
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "SelectItemProps": {
     "properties": [
@@ -2376,10 +2543,15 @@
         "comment": ""
       }
     ],
-    "parent": ["BaseUIProps"]
+    "parents": [
+      "BaseUIProps"
+    ],
+    "parentsDisplay": [
+      "BaseUIProps"
+    ]
   },
   "RNFlatListProps": {
-    "parent": []
+    "parents": []
   },
   "SelectProps": {
     "properties": [
@@ -2476,9 +2648,13 @@
         "comment": ""
       }
     ],
-    "parent": [
+    "parents": [
       "BaseUIProps",
       "Pick<TextInputProps, 'placeholder' | 'disabled' | 'label'>"
+    ],
+    "parentsDisplay": [
+      "BaseUIProps",
+      "TextInputProps"
     ]
   },
   "MultiSelectProps": {
@@ -2508,8 +2684,11 @@
         "comment": "Limit the selection to max count"
       }
     ],
-    "parent": [
+    "parents": [
       "Omit<SelectProps<ItemT>, 'value' | 'onValueChange' | 'defaultValue'>"
+    ],
+    "parentsDisplay": [
+      "SelectProps<ItemT"
     ]
   },
   "ProgressBarProps": {
@@ -2577,7 +2756,12 @@
         "comment": ""
       }
     ],
-    "parent": ["BaseUIProps"]
+    "parents": [
+      "BaseUIProps"
+    ],
+    "parentsDisplay": [
+      "BaseUIProps"
+    ]
   },
   "MonthDayItem": {
     "properties": [
@@ -2606,7 +2790,8 @@
         "comment": "Indicates whether the day belongs to the current displayed month.If false, the day might be from the previous or next month."
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "MonthNamesListProps": {
     "properties": [
@@ -2629,10 +2814,11 @@
         "comment": "select input container style"
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "MonthPickerProps": {
-    "parent": []
+    "parents": []
   },
   "YearListProps": {
     "properties": [
@@ -2661,10 +2847,11 @@
         "comment": "Callback triggered when a year is selected."
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "YearPickerProps": {
-    "parent": []
+    "parents": []
   },
   "DateSelectPickerProps": {
     "properties": [
@@ -2701,7 +2888,12 @@
         "comment": ""
       }
     ],
-    "parent": ["BaseUIProps"]
+    "parents": [
+      "BaseUIProps"
+    ],
+    "parentsDisplay": [
+      "BaseUIProps"
+    ]
   },
   "YearsListRef": {
     "properties": [
@@ -2730,7 +2922,8 @@
         "comment": "Check if there are more years available beyond the maxYear."
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "BaseDateProps": {
     "properties": [
@@ -2773,7 +2966,8 @@
         "comment": "The format in which the selected date should give outputAnd this format should be used whenever you are passing any date to this component\n\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
       }
     ],
-    "parent": []
+    "parents": [],
+    "parentsDisplay": []
   },
   "CalendarProps": {
     "properties": [
@@ -2788,18 +2982,6 @@
         "dataType": "(string | Date)[]",
         "description": null,
         "comment": "An array of disabled dates of string (in outputDateFormat) or a Date object.Make sure to provide the outputDateFormat prop too if passing date as string"
-      },
-      {
-        "name": "disableFutureDates",
-        "dataType": "boolean",
-        "description": null,
-        "comment": "Disable future dates"
-      },
-      {
-        "name": "disablePastDates",
-        "dataType": "boolean",
-        "description": null,
-        "comment": "Disable past dates"
       },
       {
         "name": "onDateChange",
@@ -2872,10 +3054,17 @@
         "comment": "The format in which the selected date should give outputAnd this format should be used whenever you are passing any date to this component\n\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
       }
     ],
-    "parent": ["BaseUIProps", "BaseDateProps"]
+    "parents": [
+      "BaseUIProps",
+      "BaseDateProps"
+    ],
+    "parentsDisplay": [
+      "BaseUIProps",
+      "BaseDateProps"
+    ]
   },
   "BaseDatePickerProps": {
-    "parent": []
+    "parents": []
   },
   "DatePickerProps": {
     "properties": [
@@ -2904,6 +3093,13 @@
         "comment": "maximum selectable date inclusive.Can be a string (in `outputDateFormat`) or a Date object."
       }
     ],
-    "parent": ["BaseDatePickerProps", "BaseDateProps"]
+    "parents": [
+      "BaseDatePickerProps",
+      "BaseDateProps"
+    ],
+    "parentsDisplay": [
+      "BaseDatePickerProps",
+      "BaseDateProps"
+    ]
   }
 }

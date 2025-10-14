@@ -1,18 +1,18 @@
 import React from "react";
 import { useBlossomTheme } from "@react-native-blossom-ui/components";
 
-import { default as JsonSchema } from "../../../output/props-schema.json";
-import { PropsFields, PropsTableProps } from "../showcase/types";
+import Link from "@docusaurus/Link";
 
-export const PropsTable = ({ componentName }: PropsTableProps) => {
+import { default as JsonSchema } from "../../../output/props-schema.json";
+import { PropsInfo, PropsTableProps } from "../showcase/types";
+import { getLinkedPropPath } from "./helper";
+
+export const PropsTable = ({ componentName, propName }: PropsTableProps) => {
   const theme = useBlossomTheme();
 
-  const data = JsonSchema?.[`${componentName}Props`] || {};
-  const properties: PropsFields[] = data.properties || [];
-
-  const getParent = () => {
-    return data.parent?.filter((value) => !data[value])?.[0];
-  };
+  const data: PropsInfo =
+    JsonSchema?.[propName || `${componentName}Props`] || {};
+  const properties = data.properties || [];
 
   return (
     <table>
@@ -27,10 +27,18 @@ export const PropsTable = ({ componentName }: PropsTableProps) => {
       <tbody>
         <tr style={{ backgroundColor: theme.colors.primary400 }}>
           <td style={{ fontStyle: "italic" }}>Extends</td>
-          <td style={{ fontStyle: "italic" }}>{getParent()}</td>
+          <td style={{ fontStyle: "italic" }} title={data.parents?.join(", ")}>
+            {getLinkedPropPath(data.parentsDisplay?.[0]) ? (
+              <Link to={getLinkedPropPath(data.parentsDisplay?.[0])}>
+                {data.parentsDisplay?.[0]}
+              </Link>
+            ) : (
+              data.parentsDisplay?.[0] || "--"
+            )}
+          </td>
           <td style={{ fontStyle: "italic" }}>--</td>
           <td style={{ fontStyle: "italic" }}>
-            Inherits properties from {getParent()}
+            Inherits properties from {data.parentsDisplay?.[0]}
           </td>
         </tr>
         {properties.map((item) => (
