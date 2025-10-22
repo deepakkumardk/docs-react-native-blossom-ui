@@ -38,7 +38,9 @@ export const PropsTable = ({ componentName, propName }: PropsTableProps) => {
           </td>
           <td style={{ fontStyle: "italic" }}>--</td>
           <td style={{ fontStyle: "italic" }}>
-            Inherits properties from {data.parentsDisplay?.[0]}
+            {data.parentsDisplay?.[0]
+              ? `Inherits properties from ${data.parentsDisplay?.[0]}`
+              : "--"}
           </td>
         </tr>
         {properties.map((item) => (

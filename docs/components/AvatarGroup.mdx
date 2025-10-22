@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # AvatarGroup
 
-Component to show an image, initials or icon with different shapes.
+Component to display multiple avatars together in a compact, overlapping group layout.
 
 import {
   BlossomUIRenderer,
@@ -16,8 +16,15 @@ import {
   AvatarGroupBringToFront,
   AvatarGroupCustomZIndex,
   AvatarGroupSpacing,
-  AvatarGroupStatuses,
 } from "@site/src/components";
+
+The following avatars data will be used in the below demos:
+
+```tsx
+const AVATAR_GROUP_DATA = Array.from({ length: 8 }).map((_, index) => ({
+  url: `https://picsum.photos/200/300?random=${index}`,
+}));
+```
 
 ## Usage
 
@@ -28,6 +35,8 @@ import {
 />
 
 ## Max Count
+
+Limits the number of avatars displayed and shows a counter for the remaining ones.
 
 <BlossomUIRenderer
   componentName={"AvatarGroupMaxCount"}
@@ -45,6 +54,8 @@ import {
 
 ## Bring to Front
 
+Display the Avatar components with increasing index
+
 <BlossomUIRenderer
   componentName={"AvatarGroupBringToFront"}
   children={<AvatarGroupBringToFront />}
@@ -52,6 +63,8 @@ import {
 />
 
 ## Spacing
+
+Adjusts the horizontal overlap or spacing between grouped avatars.
 
 <BlossomUIRenderer
   componentName={"AvatarGroupSpacing"}
@@ -61,17 +74,11 @@ import {
 
 ## Custom Z-Index
 
+Manually sets the z-index order of avatars for precise overlap control.
+
 <BlossomUIRenderer
   componentName={"AvatarGroupCustomZIndex"}
   children={<AvatarGroupCustomZIndex />}
-  fileName={"AvatarGroup"}
-/>
-
-## Status
-
-<BlossomUIRenderer
-  componentName={"AvatarGroupStatuses"}
-  children={<AvatarGroupStatuses />}
   fileName={"AvatarGroup"}
 />
 

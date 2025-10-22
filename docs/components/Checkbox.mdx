@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Checkbox
 
+Component for binary or multi-state selection, supporting custom icons, sizes, and statuses.
+
 import {
   BlossomUIRenderer,
   PropsTable,
@@ -27,6 +29,8 @@ import {
 
 ## Custom Icon
 
+Use `checkedIcon` & `uncheckedIcon` to have a custom toggle button look.
+
 <BlossomUIRenderer
   componentName={"CheckboxCustomIcon"}
   children={<CheckboxCustomIcon />}
@@ -49,7 +53,9 @@ import {
   fileName={"Checkbox"}
 />
 
-## Intermediate
+## Indeterminate
+
+Shows the partially selected state, useful for nested or grouped selections.
 
 <BlossomUIRenderer
   componentName={"CheckboxIndeterminate"}
@@ -59,6 +65,8 @@ import {
 
 ## Disabled
 
+Use the `disabled` prop to make the checkbox non-interactive.
+
 <BlossomUIRenderer
   componentName={"CheckboxDisabled"}
   children={<CheckboxDisabled />}
@@ -66,6 +74,8 @@ import {
 />
 
 ## Default Value
+
+Use `defaultValue` to set the initial checked state.
 
 <BlossomUIRenderer
   componentName={"CheckboxDefaultValue"}

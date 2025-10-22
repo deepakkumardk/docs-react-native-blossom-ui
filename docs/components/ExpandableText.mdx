@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # ExpandableText
 
+Component to display long text that can be expanded or collapsed.  
+Supports controlling number of visible lines, custom labels, and line spacing.
+
 import {
   BlossomUIRenderer,
   PropsTable,
@@ -23,6 +26,8 @@ import {
 
 ## Less Lines
 
+Use the `numberOfLines` prop to limit how many lines are visible before expansion.
+
 <BlossomUIRenderer
   componentName={"ExpandableTextLessLines"}
   children={<ExpandableTextLessLines />}
@@ -31,13 +36,17 @@ import {
 
 ## Lines
 
+Again, use the same `numberOfLines` prop to limit how many lines are visible before expansion.
+
 <BlossomUIRenderer
-  componentName={"ExpandableTextLinesSpacing"}
+  componentName={"ExpandableTextLines"}
   children={<ExpandableTextLines />}
   fileName={"ExpandableText"}
 />
 
 ## Label
+
+Use `showLabel` and `hideLabel` props to customize the toggle text & their corresponding styles.
 
 <BlossomUIRenderer
   componentName={"ExpandableTextLabelCustom"}

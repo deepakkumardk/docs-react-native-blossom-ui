@@ -4,7 +4,8 @@ sidebar_position: 1
 
 # Select
 
-Single Select picker component for primitive and list of objects.
+Single select picker component for primitive values or objects.  
+Supports default values, clearable selection, custom items, and full styling.
 
 import {
   BlossomUIRenderer,
@@ -19,6 +20,18 @@ import {
   SelectObjectOptions,
 } from "@site/src/components";
 
+The following option data will be used in the below demos:
+
+```tsx
+const OPTIONS = Array(25)
+  .fill(0)
+  .map((_, i) => ({
+    label: `Option ${i}`,
+    value: i,
+    disabled: i % 4 === 0,
+  }));
+```
+
 ## Usage
 
 <BlossomUIRenderer
@@ -29,13 +42,17 @@ import {
 
 ## Default Value
 
+Use `defaultValue` to preselect an item when the component mounts.
+
 <BlossomUIRenderer
   componentName={"SelectDefaultValue"}
   children={<SelectDefaultValue />}
   fileName={"Select"}
 />
 
-## SelectClearable
+## Clearable
+
+Enable the `clearable` prop to allow users to remove all selected options at once from the right clear icon.
 
 <BlossomUIRenderer
   componentName={"SelectClearable"}
@@ -43,7 +60,9 @@ import {
   fileName={"Select"}
 />
 
-## SelectCustomItem
+## Custom Item
+
+Use `renderItem` prop to render each option with custom layout.
 
 <BlossomUIRenderer
   componentName={"SelectCustomItem"}
@@ -53,6 +72,8 @@ import {
 
 ## Custom Style
 
+Use `inputProps` prop to customize the input container styling.
+
 <BlossomUIRenderer
   componentName={"SelectCustomStyle"}
   children={<SelectCustomStyle />}
@@ -61,6 +82,8 @@ import {
 
 ## Custom Picker Style
 
+Use `pickerProps` prop to customize the dropdown or modal container styling.
+
 <BlossomUIRenderer
   componentName={"SelectCustomPickerStyle"}
   children={<SelectCustomPickerStyle />}
@@ -68,6 +91,8 @@ import {
 />
 
 ## Disabled
+
+Use the `disabled` prop to make the select input non-interactive.
 
 <BlossomUIRenderer
   componentName={"SelectDisabled"}

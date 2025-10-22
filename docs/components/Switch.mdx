@@ -4,7 +4,8 @@ sidebar_position: 1
 
 # Switch
 
-A custom switch with label, caption & error fields props.
+Custom switch component with optional label, caption, and error support.  
+Supports different positions, sizes, statuses, default values, and full styling.
 
 import {
   BlossomUIRenderer,
@@ -27,6 +28,8 @@ import {
 />
 
 ## Positions
+
+Use `label` & `position` prop to control whether the label appears on the left or right of the switch.
 
 <BlossomUIRenderer
   componentName={"SwitchPositions"}
@@ -52,6 +55,8 @@ import {
 
 ## Disabled
 
+Use `disabled` prop to make the switch non-interactive.
+
 <BlossomUIRenderer
   componentName={"SwitchDisabled"}
   children={<SwitchDisabled />}
@@ -60,6 +65,8 @@ import {
 
 ## Default Value
 
+Use `defaultValue` to set the initial state of the switch.
+
 <BlossomUIRenderer
   componentName={"SwitchDefaultValue"}
   children={<SwitchDefaultValue />}
@@ -67,6 +74,8 @@ import {
 />
 
 ## Custom
+
+Demonstrates fully customized switches with custom colors, sizes, and label positioning.
 
 <BlossomUIRenderer
   componentName={"SwitchCustom"}

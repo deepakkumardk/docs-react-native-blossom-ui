@@ -4,7 +4,8 @@ sidebar_position: 2
 
 # DateSelectPicker
 
-A DateSelectPicker with popover showing the days, moths and year picker.
+A DateSelectPicker component that provides day, month, and year selection using a popover interface.  
+It can also be used as standalone Month or Year pickers or combined for a compact Month-Year picker.
 
 import {
   BlossomUIRenderer,
@@ -21,7 +22,9 @@ import {
   fileName={"DateSelectPicker"}
 />
 
-## MonthPicker
+## Month Picker
+
+Use the `MonthPicker` component to select months independently.
 
 <BlossomUIRenderer
   componentName={"MonthPickerUsage"}
@@ -29,7 +32,9 @@ import {
   fileName={"DateSelectPicker"}
 />
 
-## YearPicker
+## Year Picker
+
+Display a standalone year selection using `YearPicker`.
 
 ```tsx
 <View>
@@ -39,7 +44,7 @@ import {
 
 ## Month-Year picker
 
-You can also combine the month & year picker to use them in a row
+Combine both `MonthPicker` and `YearPicker` in a row layout for a compact selection interface.
 
 ```tsx
 <View row>
