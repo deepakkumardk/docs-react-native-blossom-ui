@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import CodeBlock from "@theme/CodeBlock";
+import { getComponentCode } from "./helper";
 
 /**
  * React-Native component renderer along with it's description
@@ -71,13 +72,4 @@ export const BlossomUIRenderer = ({
       )}
     </>
   );
-};
-
-const getComponentCode = (codeblock: string, componentName: string) => {
-  const code = codeblock
-    .split("export function ")
-    .find((value) => value.startsWith(componentName))
-    ?.trim();
-
-  return code ? "function " + code : "";
 };
