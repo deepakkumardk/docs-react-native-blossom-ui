@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # Link
 
+Component to render text as clickable links.  
+Supports custom styling, nested text, and full customization via props.
+
 import {
   BlossomUIRenderer,
   PropsTable,
@@ -22,6 +25,9 @@ import {
 
 ## With Text
 
+Use the `leftText` & `rightText` prop to render inline text as prefix/suffix alongside the link.
+It could be a string or a Text component or any ReactNode of your choice.
+
 <BlossomUIRenderer
   componentName={"LinkWithText"}
   children={<LinkWithText />}
@@ -29,6 +35,8 @@ import {
 />
 
 ## Custom
+
+Demonstrates fully customizable links with custom styles, colors, and behaviors.
 
 <BlossomUIRenderer
   componentName={"LinkCustom"}

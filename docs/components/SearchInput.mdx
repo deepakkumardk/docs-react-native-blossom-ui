@@ -4,7 +4,8 @@ sidebar_position: 1
 
 # SearchInput
 
-A Search component with debouncing support, internally it extends the [TextInput](/docs/components/TextInput) and it's all props.
+Search input component with debouncing support.  
+Extends **TextInput**, supporting all its props while adding search-specific behaviors and animations.
 
 import {
   BlossomUIRenderer,
@@ -24,6 +25,8 @@ import {
 />
 
 ## Animated Placeholder
+
+Use `animatedPlaceholderProps` prop to show an animated text on the SearchInput
 
 <BlossomUIRenderer
   componentName={"AnimatedSearchInput"}
@@ -50,3 +53,7 @@ import {
 ## Props
 
 <PropsTable componentName="SearchInput" />
+
+### AnimatedPlaceholderProps
+
+<PropsTable propName="AnimatedPlaceholderProps" />

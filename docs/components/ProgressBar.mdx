@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # ProgressBar
 
+Component to visually represent progress or completion.  
+Supports determinate and indeterminate states, directional control, sizing, and status-based colors.
+
 import {
   BlossomUIRenderer,
   PropsTable,
@@ -25,6 +28,8 @@ import {
 
 ## Indeterminate
 
+Enable `indeterminate` prop to show a continuous loading animation without a fixed progress value.
+
 <BlossomUIRenderer
   componentName={"ProgressBarIndeterminate"}
   children={<ProgressBarIndeterminate />}
@@ -32,6 +37,8 @@ import {
 />
 
 ## Direction
+
+Use the `reverseDirection` prop to reverse the progress bar i.e. it will start from right by default.
 
 <BlossomUIRenderer
   componentName={"ProgressBarDirection"}

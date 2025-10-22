@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # Radio
 
+Component for selecting a single option.
+Supports custom sizes, statuses, positions, default values, and full styling customization.
+
 import {
   BlossomUIRenderer,
   PropsTable,
@@ -42,13 +45,17 @@ import {
 
 ## Disabled
 
+Use the `disabled` prop to make radio buttons non-interactive.
+
 <BlossomUIRenderer
-  componentName={"RadioSizes"}
-  children={<RadioSizes />}
+  componentName={"RadioDisabled"}
+  children={<RadioDisabled />}
   fileName={"Radio"}
 />
 
 ## Positions
+
+Use the `position` & `adjacent` prop together to place the label on the left or right of the radio button & spacing between them.
 
 <BlossomUIRenderer
   componentName={"RadioPositions"}
@@ -57,6 +64,8 @@ import {
 />
 
 ## Default Value
+
+Use `defaultValue` to preselect a radio button when the component mounts.
 
 <BlossomUIRenderer
   componentName={"RadioDefaultValue"}

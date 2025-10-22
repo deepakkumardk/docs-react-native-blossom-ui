@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # ShimmerView
 
+Component to display loading placeholders with shimmer animation.  
+Supports custom shapes, color, duration, stopping animation, and visibility control.
+
 import {
   BlossomUIRenderer,
   PropsTable,
@@ -24,6 +27,8 @@ import {
 
 ## Circular Shape
 
+Use the `circular` prop to render the shimmer as a circle instead of a rectangle.
+
 <BlossomUIRenderer
   componentName={"ShimmerViewCircular"}
   children={<ShimmerViewCircular />}
@@ -31,6 +36,8 @@ import {
 />
 
 ## Duration
+
+Use the `duration` prop to control the speed of the shimmer animation.
 
 <BlossomUIRenderer
   componentName={"ShimmerViewDuration"}
@@ -40,6 +47,8 @@ import {
 
 ## Stopping Animation
 
+Use `animated` prop to pause/resume the shimmer animation.
+
 <BlossomUIRenderer
   componentName={"ShimmerViewStopAnimation"}
   children={<ShimmerViewStopAnimation />}
@@ -47,6 +56,8 @@ import {
 />
 
 ## Control Visibility
+
+Use `visible` prop to toggle shimmer visibility without unmounting the component.
 
 <BlossomUIRenderer
   componentName={"ShimmerViewVisibility"}

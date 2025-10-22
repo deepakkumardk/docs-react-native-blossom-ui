@@ -4,7 +4,8 @@ sidebar_position: 1
 
 # Icon
 
-It's an extension and accumulation of the react-native-vector-icons library along with all it's family group support.
+Wrapper around **react-native-vector-icons** with extended support for all icon families.  
+Allows consistent theming, sizing, and color management across Blossom UI components.
 
 import {
   BlossomUIRenderer,
@@ -33,6 +34,8 @@ import {
 
 ## Size
 
+Control the size (width/height) of the icon
+
 <BlossomUIRenderer
   componentName={"IconSizes"}
   children={<IconSizes />}
@@ -40,6 +43,8 @@ import {
 />
 
 ## Family
+
+Use the `family` prop to switch between different icon sets supported by **react-native-vector-icons**.
 
 <BlossomUIRenderer
   componentName={"IconFamily"}

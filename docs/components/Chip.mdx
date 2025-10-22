@@ -36,13 +36,17 @@ import {
 
 ## View Only
 
+Displays non-interactive chips for informational or read-only use cases.
+
 <BlossomUIRenderer
   componentName={"ChipViewOnly"}
   children={<ChipViewOnly />}
   fileName={"Chip"}
 />
 
-## ChipWithoutCheckIcon
+## Hide check icon
+
+use `withCheckIcon` to show or hide the check icon
 
 <BlossomUIRenderer
   componentName={"ChipWithoutCheckIcon"}
@@ -50,7 +54,9 @@ import {
   fileName={"Chip"}
 />
 
-## ChipClearable
+## clearable
+
+use `clearable` prop to show/hide the clear icon at right
 
 <BlossomUIRenderer
   componentName={"ChipClearable"}
@@ -58,7 +64,9 @@ import {
   fileName={"Chip"}
 />
 
-## ChipCheckIcon
+## With Check Icon
+
+use your desired icon for left with `checkIcon` as a ReactNode
 
 <BlossomUIRenderer
   componentName={"ChipCheckIcon"}
@@ -66,7 +74,9 @@ import {
   fileName={"Chip"}
 />
 
-## ChipAsBadge
+## As Badge
+
+Displays the chip styled as a badge for compact labeling or status display.
 
 <BlossomUIRenderer
   componentName={"ChipAsBadge"}
@@ -98,7 +108,9 @@ import {
   fileName={"Chip"}
 />
 
-## ChipModesSizesMobile
+## Modes and Sizes
+
+Showcases how chip modes and sizes appear
 
 <BlossomUIRenderer
   componentName={"ChipModesSizesMobile"}
@@ -108,7 +120,7 @@ import {
   withCodeblock={false}
 />
 
-## ChipAllStatuses
+## All Statuses
 
 <BlossomUIRenderer
   componentName={"ChipAllStatuses"}

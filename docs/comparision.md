@@ -1,31 +1,50 @@
 # Comparison
 
-Blossom-UI is made keeping the design system, Customizability & developer experience in mind, so that it can help the app ship faster with an Awesome UI.
+Blossom UI is thoughtfully built with **design systems**, **customizability**, and **developer experience** at its core — enabling teams to craft stunning apps faster and more consistently.
 
-Following are the comparisons of the blossom-ui with the top react-native libraries -
+Below is a comparison of **Blossom UI** with some of the most popular React Native UI libraries, highlighting where it stands out.
 
-## vs React-Native-Paper
+---
 
-[React-Native-Paper](https://reactnativepaper.com/) is a great community-driven library and it follows the Material Design for both the platforms Android & iOS.
-Following are the few advantages you get on the Blossom-UI over the react-native-paper -
+## vs React Native Paper
 
-- You get more components **(30+ as of now)** than the react-native-paper
-- A few examples are - **Select, MultiSelect, DatePicker, Calendar etc.**
-- You get a **customized design system** instead of the forced material design, which you can also change based on the platform
-- It also supports the **web platform** and you can also see it in real action on the each component documentation also
+[React Native Paper](https://reactnativepaper.com/) is a mature, community-driven library that implements Google’s **Material Design** guidelines for Android and iOS.  
+While it’s an excellent choice for Material-based apps, **Blossom UI** focuses on flexibility and a design-system-first approach.
 
-## vs UI-Kitten
+### Why Blossom UI stands out:
 
-[UI-Kitten](https://akveo.github.io/react-native-ui-kitten/) has been a great library, and this library has taken a few inspirations also like the theme system inspired from it & a few more customization on top of it. But now the state of the library has been changed and we don't see any active development more.
+- Offers **32+ production-ready components**, exceeding Paper’s set of essentials.
+- Includes advanced components like **Select**, **MultiSelect**, **DatePicker**, and **Calendar**.
+- Provides a **custom design system** — not limited to Material Design — allowing you to tailor the look and feel for each platform.
+- Fully supports the **Web** platform, with live previews available for every documented component resulting in a great developer experience.
 
-- You get more components (30+ as of now) than the UI-Kitten
-- A few extra components from the UI-Kitten like **Chip, OtpInput, ShimmerView etc.**
+---
 
-## vs React-Native Elements
+## vs UI Kitten
 
-Again [React-Native Elements](https://reactnativeelements.com/) is a great library and it also contains a lot of components, but it also lags on some basic and advanced components.
-Following are the few advantages you get on the Blossom-UI over the react-native elements -
+[UI Kitten](https://akveo.github.io/react-native-ui-kitten/) has been an inspiration to Blossom UI — especially in terms of theming and customization.  
+However, UI Kitten’s active development has slowed down, while Blossom UI continues to evolve with modern features and best practices.
 
-- You get more components **(30+ as of now)** than the react-native elements
-  A few examples are - **Select, MultiSelect, DatePicker, Calendar etc.**
-- Blossom-UI also have a more **configurable design system** than the react-native elements which just support one shade per color while Blossom-UI supports **9+5 shades per color**
+### Why Blossom UI stands out:
+
+- Delivers **more than 32 components**, going beyond Kitten’s core offering.
+- Adds unique components such as **Chip**, **OtpInput**, **ShimmerView**, and more.
+- Extends the theme system for finer control and easier scalability.
+
+---
+
+## vs React Native Elements
+
+[React Native Elements](https://reactnativeelements.com/) provides a great base for building cross-platform apps.  
+However, it lacks certain advanced components and depth in theme customization.
+
+### Why Blossom UI stands out:
+
+- Ships with **32+ components**, covering both foundational and advanced needs.  
+  Examples include **Select**, **MultiSelect**, **DatePicker**, and **Calendar**.
+- Features a **comprehensive design system**, offering **9 primary shades** and **5 semantic shades** per color — unlike Elements, which supports only a single shade per color.
+- Encourages full **theme consistency** across apps, ensuring better scalability and maintainability.
+
+---
+
+In essence, **Blossom UI** combines the best of existing design libraries with a flexible, theme-first approach — empowering developers to build **beautiful, consistent, and scalable mobile and web experiences**.

@@ -4,7 +4,8 @@ sidebar_position: 1
 
 # Popover
 
-A popover component that will be shown relative to the target position.
+Component to display content in a floating container relative to a target element.  
+Supports custom positioning, offsets and target references.
 
 import {
   BlossomUIRenderer,
@@ -26,6 +27,8 @@ import {
 
 ## Position
 
+Use the `position` prop to control where the popover appears relative to its target (e.g., top, bottom, left, right).
+
 <BlossomUIRenderer
   componentName={"PopoverPosition"}
   children={<PopoverPosition />}
@@ -33,6 +36,8 @@ import {
 />
 
 ## PopoverOffset
+
+Use the `offset` prop to adjust the distance between the popover and its target element.
 
 <BlossomUIRenderer
   componentName={"PopoverOffset"}
@@ -42,6 +47,8 @@ import {
 
 ## Ref Usage
 
+Use `targetRef` to attach the popover to a specific element programmatically.
+
 <BlossomUIRenderer
   componentName={"PopoverTargetRefUsage"}
   children={<PopoverTargetRefUsage />}
@@ -49,6 +56,8 @@ import {
 />
 
 ## Fit target width
+
+Enable `fitToTargetWidth` to automatically match the popover width to the target element’s width.
 
 <BlossomUIRenderer
   componentName={"PopoverFitTargetWidth"}

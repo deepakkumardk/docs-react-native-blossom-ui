@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # Divider
 
+Component to separate content visually with horizontal or vertical lines.  
+Supports labels, custom spacing, and styling for better layout structure.
+
 import {
   BlossomUIRenderer,
   PropsTable,
@@ -24,6 +27,8 @@ import {
 
 ## Vertical
 
+Use width & height prop in conjunction to have the vertical look.
+
 <BlossomUIRenderer
   componentName={"DividerVertical"}
   children={<DividerVertical />}
@@ -32,6 +37,8 @@ import {
 
 ## Spacing
 
+use the `spacing` prop to have the around cross axis i.e vertical margin for horizontal line and horizontal margin for vertical line.
+
 <BlossomUIRenderer
   componentName={"DividerSpacing"}
   children={<DividerSpacing />}
@@ -39,6 +46,8 @@ import {
 />
 
 ## Label
+
+Use the `label` & `labelPosition` prop together to show and control the position of label (`left`, `center` & `right`)
 
 <BlossomUIRenderer
   componentName={"DividerLabel"}
