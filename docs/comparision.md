@@ -36,7 +36,7 @@ However, UI Kitten’s active development has slowed down, while Blossom UI cont
 ## vs React Native Elements
 
 [React Native Elements](https://reactnativeelements.com/) provides a great base for building cross-platform apps.  
-However, it lacks certain advanced components and depth in theme customization.
+Blossom-UI builds upon that foundation by providing a more extensive set of components and a deeply customizable design system.
 
 ### Why Blossom UI stands out:
 
