@@ -4,8 +4,8 @@ sidebar_position: 1
 
 # SegmentedButton
 
-SegmentedButton component with Pressable as container, and supports full customization with different props.
-It has both hover and press effect that get picked from the color shades or if custom color is provided it auto generates those colors.
+Button group component to select one or multiple options. Each unit Button just extends the Button component.
+Supports icons, multi-select, custom modes, sizes, statuses, and full styling customization.
 
 import {
   BlossomUIRenderer,
@@ -20,6 +20,22 @@ import {
   SegmentedButtonCustom,
 } from "@site/src/components";
 
+Following values will be used on the following demos:
+
+```tsx
+const buttons: ControlButtonProps[] = [
+  { title: "Primary" },
+  { title: "Secondary" },
+  { title: "Tertiary" },
+];
+
+const iconButtons: ControlButtonProps[] = [
+  { title: "Primary", left: <Icon name="add" /> },
+  { title: "Secondary", left: <Icon name="add" /> },
+  { title: "Tertiary", left: <Icon name="add" /> },
+];
+```
+
 ## Usage
 
 <BlossomUIRenderer
@@ -28,7 +44,9 @@ import {
   fileName={"SegmentedButton"}
 />
 
-## SegmentedButtonIcons
+## Icons
+
+Use the `left` or `right` prop in the data to display icons along with text in each segment.
 
 <BlossomUIRenderer
   componentName={"SegmentedButtonIcons"}
@@ -36,7 +54,9 @@ import {
   fileName={"SegmentedButton"}
 />
 
-## SegmentedButtonMultiSelect
+## MultiSelect
+
+Enable `multiSelect` prop to allow selecting multiple segments at once.
 
 <BlossomUIRenderer
   componentName={"SegmentedButtonMultiSelect"}
@@ -70,13 +90,15 @@ import {
 
 ## Disabled
 
+Use the `disabled` prop to make segments non-interactive.
+
 <BlossomUIRenderer
   componentName={"SegmentedButtonDisabled"}
   children={<SegmentedButtonDisabled />}
   fileName={"SegmentedButton"}
 />
 
-## Custom SegmentedButtons
+## Custom
 
 <BlossomUIRenderer
   componentName={"SegmentedButtonCustom"}

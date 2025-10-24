@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # Spacer
 
+Component to add spacing between elements.  
+Supports horizontal and vertical spacing, with optional background color for visibility.
+
 import {
   BlossomUIRenderer,
   PropsTable,
@@ -22,6 +25,8 @@ import {
 
 ## Vertical
 
+Use the `width` & `height` prop in conjunction to have the vertical look.
+
 <BlossomUIRenderer
   componentName={"SpacerVertical"}
   children={<SpacerVertical />}
@@ -29,6 +34,8 @@ import {
 />
 
 ## On Background
+
+Space has the transparent background so it does takes the parent background color.
 
 <BlossomUIRenderer
   componentName={"SpacerOnBackground"}

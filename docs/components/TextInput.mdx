@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # TextInput
 
+A text input component built over `RNTextInput`, supporting sizes, modes, dense layout, icons, error states, and full customization.
+
 import {
   BlossomUIRenderer,
   PropsTable,
@@ -36,6 +38,8 @@ import {
 
 ## Modes
 
+Use the `mode` prop to switch between different visual styles of the input, e.g., `outlined` or `flat`.
+
 <BlossomUIRenderer
   componentName={"TextInputModes"}
   children={<TextInputModes />}
@@ -43,6 +47,8 @@ import {
 />
 
 ## Dense
+
+Use the `dense` prop to have the darker backboard in the text input container
 
 <BlossomUIRenderer
   componentName={"TextInputDense"}
@@ -60,6 +66,8 @@ import {
 
 ## Error
 
+Use the `error` prop to display error styling and messages.
+
 <BlossomUIRenderer
   componentName={"TextInputError"}
   children={<TextInputError />}
@@ -75,6 +83,8 @@ import {
 />
 
 ## Icons
+
+Supports `left` and `right` props to display icons inside the input field.
 
 <BlossomUIRenderer
   componentName={"TextInputIcons"}

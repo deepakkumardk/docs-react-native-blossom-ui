@@ -1,41 +1,63 @@
-# Website
+# Blossom UI Documentation Website
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This project is the documentation site for Blossom UI, built with [Docusaurus](https://docusaurus.io/). It provides interactive docs, usage guides, and API references for the React Native Blossom UI component library.
+
+## Features
+
+- Interactive component showcases
+- Prop tables with auto-generated types
+- Guides for theming and customization
+
+## Getting Started
 
 ### Installation
 
-```
-$ yarn
+Install dependencies:
+
+```bash
+yarn
 ```
 
 ### Local Development
 
-```
-$ yarn start
+Start the local dev server:
+
+```bash
+yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This will open the docs in your browser. Most changes are reflected live without restarting.
 
 ### Build
 
-```
-$ yarn build
+Generate static site files:
+
+```bash
+yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+Output will be in the `build` directory.
 
 ### Deployment
 
-Using SSH:
+This is currently host at [vercel](https://docs-react-native-blossom-ui.vercel.app/) and deployment is auto triggered automatically whenever a commit is pushed/merged to main branch.
 
-```
-$ USE_SSH=true yarn deploy
-```
+## Documentation Structure
 
-Not using SSH:
+- `docs/` — Main documentation pages (components, guides, design system)
+- `blog/` — Blog posts and changelog
+- `src/` — Source code for custom docs components
+- `static/` — Static assets (images, icons)
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
+## Contributing
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Pull requests and issues are welcome! Please follow the code style and add documentation for new components or features.
+
+## Links
+
+- [Blossom UI GitHub](https://github.com/deepakkumardk/react-native-blossom-ui)
+- [Docusaurus Documentation](https://docusaurus.io/docs)
+
+---
+
+For more details, see the docs in the `docs/` folder or open an issue for help.

@@ -46,6 +46,12 @@ import {
 
 ## Modes
 
+Mode control the shape of the **Avatar** component.
+
+- circle - circular Avatar shape
+- round - rounded shaped with default border radius
+- square - square shape with 0 border radius
+
 <BlossomUIRenderer
   componentName={"AvatarModes"}
   children={<AvatarModes />}
@@ -64,6 +70,8 @@ import {
 
 ## Img Component
 
+Allows using custom image components (e.g., `FastImage`, `ExpoImage`) inside the Avatar.
+
 <BlossomUIRenderer
   componentName={"AvatarImgComponent"}
   children={<AvatarImgComponent />}
@@ -72,6 +80,8 @@ import {
 
 ## Fallback Icon
 
+Renders a fallback icon or custom ReactNode when the main image fails to load.
+
 <BlossomUIRenderer
   componentName={"AvatarFallbackIcon"}
   children={<AvatarFallbackIcon />}
@@ -79,6 +89,8 @@ import {
 />
 
 ## Fallback Source
+
+Displays a fallback image (like a placeholder/source) if the image fails to load.
 
 <BlossomUIRenderer
   componentName={"AvatarFallbackSource"}

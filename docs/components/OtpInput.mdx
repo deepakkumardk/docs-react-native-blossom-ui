@@ -4,6 +4,9 @@ sidebar_position: 1
 
 # OtpInput
 
+Component to input OTP or PIN codes with multiple boxes.  
+Supports custom placeholder, cursor, modes, sizes, and fully customizable behavior.
+
 import {
   BlossomUIRenderer,
   PropsTable,
@@ -26,6 +29,8 @@ import {
 
 ## Modes
 
+Use the `mode` prop to switch between default underline or box-style inputs.
+
 <BlossomUIRenderer
   componentName={"OtpInputModes"}
   children={<OtpInputModes />}
@@ -33,6 +38,8 @@ import {
 />
 
 ## Placeholder
+
+Use the `placeholder` prop to show hint characters in each input box.
 
 <BlossomUIRenderer
   componentName={"OtpInputPlaceholder"}
@@ -42,6 +49,8 @@ import {
 
 ## With Cursor
 
+Enable `withCursor` prop to display a blinking cursor in the focused input box.
+
 <BlossomUIRenderer
   componentName={"OtpInputWithCursor"}
   children={<OtpInputWithCursor />}
@@ -49,6 +58,8 @@ import {
 />
 
 ## As Pin Input
+
+Use the `secureTextEntry` prop to style the OTP input as a PIN code.
 
 <BlossomUIRenderer
   componentName={"OtpInputAsPin"}

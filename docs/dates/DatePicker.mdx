@@ -4,7 +4,8 @@ sidebar_position: 2
 
 # DatePicker
 
-A DatePicker with popover showing the month days with customization.
+A versatile DatePicker component with a popover calendar view for selecting dates.  
+It supports custom formats, default values, and restrictions like minimum, maximum, or disabled dates.
 
 import {
   BlossomUIRenderer,
@@ -29,6 +30,8 @@ import {
 
 ## Clearable
 
+Use the `clearable` prop to allow resetting the selected date.
+
 <BlossomUIRenderer
   componentName={"DatePickerClearable"}
   children={<DatePickerClearable />}
@@ -37,7 +40,7 @@ import {
 
 ## Display Format
 
-Use the `displayDateFormat` prop to format the display date in the DatePicker, you can use the format as provided in the [dayjs library](https://day.js.org/docs/en/parse/string-format#list-of-all-available-parsing-tokens)
+Use the `displayDateFormat` prop to format the displayed date, following the format options from the [dayjs library](https://day.js.org/docs/en/parse/string-format#list-of-all-available-parsing-tokens).
 
 <BlossomUIRenderer
   componentName={"DatePickerDisplayFormat"}
@@ -47,9 +50,9 @@ Use the `displayDateFormat` prop to format the display date in the DatePicker, y
 
 ## Default Value
 
-Pass any default value in terms of either `Date` object or string formatted in the same format as passed in the `outputDateFormat`
+Provide a default value using either a `Date` object or a formatted string (matching the `outputDateFormat`).
 
-Note: The `outputDateFormat` should be always used whenever you are passing any date as a string to the component.
+> **Note:** Always use `outputDateFormat` when passing string dates to the component.
 
 <BlossomUIRenderer
   componentName={"DatePickerDefaultValue"}
@@ -59,6 +62,8 @@ Note: The `outputDateFormat` should be always used whenever you are passing any 
 
 ## Min Date
 
+Restrict date selection to only those after a specific minimum date.
+
 <BlossomUIRenderer
   componentName={"DatePickerMinDate"}
   children={<DatePickerMinDate />}
@@ -66,6 +71,8 @@ Note: The `outputDateFormat` should be always used whenever you are passing any 
 />
 
 ## Max Date
+
+Restrict date selection to only those before a specific maximum date.
 
 <BlossomUIRenderer
   componentName={"DatePickerMaxDate"}
@@ -75,6 +82,8 @@ Note: The `outputDateFormat` should be always used whenever you are passing any 
 
 ## Min & Max Date
 
+Combine both `minDate` and `maxDate` to define a valid date range.
+
 <BlossomUIRenderer
   componentName={"DatePickerMinMaxDate"}
   children={<DatePickerMinMaxDate />}
@@ -83,7 +92,10 @@ Note: The `outputDateFormat` should be always used whenever you are passing any 
 
 ## Disable Dates
 
-Disable the array of dates passed as either `Date` object or string (again in the `outputDateFormat` format)
+Disable specific dates by passing an array of `Date` objects or formatted strings matching `outputDateFormat`.
+
+For example, if `outputDateFormat` is `"DD-MM-YYYY"`,  
+then `"10-02-2025"` should be passed in that exact format.
 
 <BlossomUIRenderer
   componentName={"DatePickerDisableDates"}

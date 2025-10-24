@@ -4,7 +4,8 @@ sidebar_position: 1
 
 # MultiSelect
 
-MultiSelect picker component for primitive and list of objects.
+Component for selecting multiple options from a list of options.
+Supports clearable, controlled, and customizable behavior.
 
 import {
   BlossomUIRenderer,
@@ -20,6 +21,18 @@ import {
   MultiSelectObjectOptions,
 } from "@site/src/components";
 
+The following option data will be used in the below demos:
+
+```tsx
+const OPTIONS = Array(25)
+  .fill(0)
+  .map((_, i) => ({
+    label: `Option ${i}`,
+    value: i,
+    disabled: i % 4 === 0,
+  }));
+```
+
 ## Usage
 
 <BlossomUIRenderer
@@ -30,6 +43,8 @@ import {
 
 ## Default Value
 
+Use the `defaultValue` prop to preselect options when the component mounts.
+
 <BlossomUIRenderer
   componentName={"MultiSelectDefaultValue"}
   children={<MultiSelectDefaultValue />}
@@ -37,6 +52,8 @@ import {
 />
 
 ## Clearable
+
+Enable the `clearable` prop to allow users to remove all selected options at once from the right clear icon.
 
 <BlossomUIRenderer
   componentName={"MultiSelectClearable"}
@@ -46,6 +63,8 @@ import {
 
 ## Controlled
 
+Use `values` and `onValuesChange` props to fully control the selection state externally.
+
 <BlossomUIRenderer
   componentName={"MultiSelectControlled"}
   children={<MultiSelectControlled />}
@@ -54,27 +73,37 @@ import {
 
 ## Disabled
 
+Use the `disabled` prop to make the MultiSelect non-interactive.
+
 <BlossomUIRenderer
   componentName={"MultiSelectDisabled"}
   children={<MultiSelectDisabled />}
   fileName={"MultiSelect"}
 />
 
-## MaxSelect
+## Max Select
+
+Use the `maxSelect` prop to limit the number of options a user can select.
 
 <BlossomUIRenderer
   componentName={"MultiSelectMaxSelect"}
   children={<MultiSelectMaxSelect />}
   fileName={"MultiSelect"}
 />
+
 ## Custom Style
+
+Use `inputProps` prop to override input container styling.
 
 <BlossomUIRenderer
   componentName={"MultiSelectCustomStyle"}
   children={<MultiSelectCustomStyle />}
   fileName={"MultiSelect"}
 />
+
 ## Custom Picker Style
+
+Use `pickerProps` prop to customize the dropdown/picker appearance.
 
 <BlossomUIRenderer
   componentName={"MultiSelectCustomPickerStyle"}
@@ -83,6 +112,8 @@ import {
 />
 
 ## List of Objects
+
+Use object-based options with `label` and `value` keys for more complex data structures.
 
 <BlossomUIRenderer
   componentName={"MultiSelectObjectOptions"}

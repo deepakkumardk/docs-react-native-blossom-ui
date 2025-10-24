@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Button
 
-Button component with Pressable as container, and supports full customization with different props.
+Button component built over Pressable, and supports full customization with different props.
 It has both hover and press effect that get picked from the color shades or if custom color is provided it auto generates those colors.
 
 import {
@@ -75,16 +75,17 @@ The loader color is set to same as the text color by default, it can be changed 
 
 ## Icons
 
+You can use both `left` and `right` props to include icons with built-in standard padding.
+
 <BlossomUIRenderer
-  description={
-    "You can use both the left/right props for left/right icons, it comes with default standard padding."
-  }
   componentName={"ButtonIcons"}
   children={<ButtonIcons />}
   fileName={"Button"}
 />
 
 ## Modes and Sizes
+
+Showcases combinations of button modes and sizes.
 
 <BlossomUIRenderer
   componentName={"ButtonModesSizes"}

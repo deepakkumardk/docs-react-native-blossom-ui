@@ -53,14 +53,34 @@ function extractTypeMetadata(symbol, checker) {
   }
 
   if (ts.isInterfaceDeclaration(declaration)) {
-    metadata.parent = declaration.heritageClauses
+    const metadataParents = declaration.heritageClauses
       ? declaration.heritageClauses.map((hc) =>
           hc.types.map((t) => t.getText())
         )
       : [];
-    metadata.parent = metadata.parent?.flat?.();
+
+    metadata.parents = metadataParents?.flat?.();
+
+    const getFormattedParentName = (parent) => {
+      // Handle cases for Omit<SomeType, 'a' | 'b'> or Partial<SomeType> etc.
+      const strBetweenAngles = (p) => {
+        const match = p.match(/<([^>]+)>/);
+        return match ? match[1].split(",")[0] : null;
+      };
+      const strInAngles = strBetweenAngles(parent);
+
+      // Add RN as suffix for import with suffix of $1
+      if (strInAngles?.includes("$1")) {
+        return "RN" + strInAngles.replace("$1", "");
+      } else if (parent?.includes("$1")) {
+        return "RN" + parent.replace("$1", "");
+      }
+      return strInAngles || parent;
+    };
+
+    metadata.parentsDisplay = metadata.parents?.map(getFormattedParentName);
   } else {
-    metadata.parent = [];
+    metadata.parents = [];
   }
 
   return metadata;
