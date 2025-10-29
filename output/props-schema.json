@@ -35,35 +35,97 @@
         "name": "colors",
         "dataType": "BlossomThemeColors",
         "description": null,
-        "comment": ""
+        "comment": "App theme colors json for light and dark mode"
       },
       {
         "name": "isDark",
         "dataType": "boolean",
         "description": null,
-        "comment": ""
+        "comment": "Whether the app is in dark mode or not"
       },
       {
         "name": "options",
         "dataType": "BlossomUIOptions",
         "description": null,
-        "comment": ""
+        "comment": "Extra options to control the other aspects of the library like typography, border radius etc."
       }
     ],
     "parents": [],
     "parentsDisplay": []
   },
   "Children": {
-    "parents": []
+    "properties": [
+      {
+        "name": "children",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Children"
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
   },
   "BlossomThemeProviderProps": {
-    "parents": []
+    "properties": [
+      {
+        "name": "theme",
+        "dataType": "BlossomThemeColors",
+        "description": null,
+        "comment": "App theme colors json for light and dark mode"
+      },
+      {
+        "name": "isDark",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Whether the app is in dark mode or not"
+      },
+      {
+        "name": "options",
+        "dataType": "BlossomUIOptions",
+        "description": null,
+        "comment": "Extra options to control the other aspects of the library"
+      },
+      {
+        "name": "children",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Children"
+      }
+    ],
+    "parents": [
+      "Children"
+    ],
+    "parentsDisplay": [
+      "Children"
+    ]
   },
   "TypographyValues": {
     "parents": []
   },
   "BlossomUIOptions": {
-    "parents": []
+    "properties": [
+      {
+        "name": "borderRadius",
+        "dataType": "number",
+        "description": null,
+        "comment": "Control the border radius for all components like input, button etc."
+      },
+      {
+        "name": "fontFamily",
+        "dataType": "string",
+        "description": null,
+        "comment": "Global font family applied to all text elements"
+      },
+      {
+        "name": "typography",
+        "dataType": "TypographyValues",
+        "defaultValue": "b2",
+        "description": null,
+        "comment": "Modify the font size/weight values using thish1-h6 are used for headings\ns1-s3 are used for subheadings\nb1-b3 are used for body text\nl1-l3 are used for labels\nc1-c3 are used for captions"
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
   },
   "TypographyOptions": {
     "parents": []
@@ -75,14 +137,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [],
@@ -137,7 +199,7 @@
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -445,14 +507,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -556,14 +618,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -670,14 +732,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -803,14 +865,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -893,14 +955,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -1038,14 +1100,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -1144,8 +1206,8 @@
       {
         "name": "error",
         "dataType": "string",
-        "description": "Error text in error status below caption text",
-        "comment": "TODO: TextInput will always render this and take the space to fix the flicker issue in show/hide error"
+        "description": null,
+        "comment": "TODO: TextInput will always render this and take the space to fix the flicker issue in show/hide errorError text in error status below caption text"
       },
       {
         "name": "labelStyle",
@@ -1212,14 +1274,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -1337,8 +1399,8 @@
       {
         "name": "error",
         "dataType": "string",
-        "description": "Error text in error status below caption text",
-        "comment": "TODO: TextInput will always render this and take the space to fix the flicker issue in show/hide error"
+        "description": null,
+        "comment": "TODO: TextInput will always render this and take the space to fix the flicker issue in show/hide errorError text in error status below caption text"
       },
       {
         "name": "labelStyle",
@@ -1405,14 +1467,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -1472,7 +1534,16 @@
     ]
   },
   "OtpInputRef": {
-    "parents": []
+    "properties": [
+      {
+        "name": "clear",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Clear the otp input text"
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
   },
   "DividerProps": {
     "properties": [
@@ -1917,14 +1988,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       },
       {
         "name": "children",
@@ -2024,14 +2095,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -2125,14 +2196,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -2268,14 +2339,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       },
       {
         "name": "children",
@@ -2292,7 +2363,196 @@
     ]
   },
   "ComponentPropsMap": {
-    "parents": []
+    "properties": [
+      {
+        "name": "Accordion",
+        "dataType": "AccordionProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "ActivityIndicator",
+        "dataType": "ActivityIndicatorProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Avatar",
+        "dataType": "AvatarProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "AvatarGroup",
+        "dataType": "AvatarGroupProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "BottomSheet",
+        "dataType": "ModalProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Button",
+        "dataType": "ButtonProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Card",
+        "dataType": "CardProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Checkbox",
+        "dataType": "CheckboxProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Chip",
+        "dataType": "ChipProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Divider",
+        "dataType": "DividerProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "ExpandableText",
+        "dataType": "ExpandableTextProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "FAB",
+        "dataType": "FABProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Icon",
+        "dataType": "IconProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Link",
+        "dataType": "LinkProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Modal",
+        "dataType": "ModalProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "MultiSelect",
+        "dataType": "SelectProps<unknown>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "OtpInput",
+        "dataType": "OtpInputProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Popover",
+        "dataType": "PopoverProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "ProgressBar",
+        "dataType": "ProgressBarProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Radio",
+        "dataType": "RadioProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "SearchInput",
+        "dataType": "SearchInputProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "SegmentedButton",
+        "dataType": "SegmentedButtonProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Select",
+        "dataType": "SelectProps<unknown>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "SelectItem",
+        "dataType": "SelectItemProps<unknown>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "ShimmerView",
+        "dataType": "ShimmerViewProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Spacer",
+        "dataType": "SpacerProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "View",
+        "dataType": "ViewProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Switch",
+        "dataType": "SwitchProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Text",
+        "dataType": "TextProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "TextInput",
+        "dataType": "TextInputProps",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "Tooltip",
+        "dataType": "TooltipProps",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
   },
   "ModalProps": {
     "properties": [
@@ -2533,14 +2793,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -2578,6 +2838,13 @@
         "dataType": "string",
         "description": null,
         "comment": "Set custom display value"
+      },
+      {
+        "name": "mode",
+        "dataType": "\"inline\" | \"bottom-sheet\"",
+        "defaultValue": "inline",
+        "description": null,
+        "comment": "Modal presentation styleUse 'inline' for a dropdown style select\nUse 'bottom-sheet' for a bottom sheet style select"
       },
       {
         "name": "isLoading",
@@ -2638,14 +2905,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -2746,14 +3013,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -2878,14 +3145,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       }
     ],
     "parents": [
@@ -3006,14 +3273,14 @@
         "dataType": "BlossomStatus",
         "defaultValue": "primary",
         "description": null,
-        "comment": ""
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
       },
       {
         "name": "size",
         "dataType": "BlossomSize",
         "defaultValue": "medium",
         "description": null,
-        "comment": ""
+        "comment": "Size of the component'small' | 'medium' | 'large'"
       },
       {
         "name": "minDate",

@@ -13,6 +13,8 @@ import {
   SelectUsage,
   SelectDefaultValue,
   SelectClearable,
+  SelectLoading,
+  SelectMode,
   SelectCustomItem,
   SelectCustomStyle,
   SelectCustomPickerStyle,
@@ -57,6 +59,22 @@ Enable the `clearable` prop to allow users to remove all selected options at onc
 <BlossomUIRenderer
   componentName={"SelectClearable"}
   children={<SelectClearable />}
+  fileName={"Select"}
+/>
+
+## Loading
+
+<BlossomUIRenderer
+  componentName={"SelectLoading"}
+  children={<SelectLoading />}
+  fileName={"Select"}
+/>
+
+## Mode
+
+<BlossomUIRenderer
+  componentName={"SelectMode"}
+  children={<SelectMode />}
   fileName={"Select"}
 />
 
