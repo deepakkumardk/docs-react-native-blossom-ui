@@ -38,3 +38,14 @@
     padding: 4px;
   }
 }
+
+/* Add a small BETA badge next to sidebar items that have sidebar_class_name: beta-tag */
+.menu__list-item.beta-tag > .menu__link::after {
+  content: "Beta";
+  background: #ff9800;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.6em;
+  padding: 2px 6px;
+  margin-left: 6px;
+}
