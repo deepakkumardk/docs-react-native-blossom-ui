@@ -26,6 +26,11 @@ export type PropsFields = {
    */
   dataType: string;
   /**
+   * Possible values for the prop if it's a union type.
+   * will be fetched if the datatype is a union type
+   */
+  dataTypeValues?: string[];
+  /**
    * The default value of the prop, if any.
    * will be fetched from the @default tag in the doc comment
    */

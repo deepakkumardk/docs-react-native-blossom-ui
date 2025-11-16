@@ -18,9 +18,10 @@ export const getLinkedPropPath = (sourceProp: string) => {
   let doesComponentExist = false;
   try {
     doesComponentExist = !!getComponentCode(
-      require(`!!raw-loader!@react-native-blossom-ui/showcase/src/${componentName}Showcase`)
-        .default,
-      componentName
+      require(
+        `!!raw-loader!@react-native-blossom-ui/showcase/src/${componentName}Showcase`
+      ).default,
+      componentName + "Usage"
     );
   } catch (error) {
     doesComponentExist = false;
@@ -30,6 +31,6 @@ export const getLinkedPropPath = (sourceProp: string) => {
   return doesComponentExist
     ? "/docs/components/" + componentName + "#props"
     : targetProps
-    ? "/docs/components/TypesDefinition#" + sourceProp.toLowerCase()
-    : null;
+      ? "/docs/components/TypesDefinition#" + sourceProp.toLowerCase()
+      : null;
 };

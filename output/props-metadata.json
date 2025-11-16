@@ -1,0 +1,11 @@
+{
+  "TextProps": {
+    "properties": [
+      {
+        "name": "children",
+        "dataType": "string",
+        "defaultValue": "Awesome Blossom UI"
+      }
+    ]
+  }
+}
