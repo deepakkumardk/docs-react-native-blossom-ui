@@ -9,6 +9,8 @@ import { BlossomComponentRenderer } from "./BlossomComponentRenderer";
 import styles from "./BlossomComponentPlayground.module.css";
 import { PlaygroundCodeRenderer } from "./PlaygroundCodeRenderer";
 import { PropsRenderer } from "./PropsRenderer";
+import deepmerge from "deepmerge";
+import { PropsFields } from "@site/src/components/showcase/types";
 
 /**
  * Component Playground allows users to interactively modify component props and see the changes reflected in real-time.
@@ -28,19 +30,25 @@ export const BlossomComponentPlayground = (props: {
     const parentsMetaData = parents?.flatMap((parent) => {
       return JsonSchema[parent]?.properties || [];
     });
-    const schemaProps = JsonSchema[propName]?.properties ?? [];
-    const metadataProps = MetaDataJsonSchema[propName]?.properties ?? [];
-    const inheritedProps = parentsMetaData ?? [];
+    const schemaProps: PropsFields[] = JsonSchema[propName]?.properties ?? [];
+    const metadataProps: PropsFields[] =
+      MetaDataJsonSchema[propName]?.properties ?? [];
 
-    const uniqueByName = (items: any[]) => {
-      const seen = new Set<string>();
-      return items.filter((item) => {
+    const inheritedProps: PropsFields[] = parentsMetaData ?? [];
+
+    const uniqueByName = (items: PropsFields[]) => {
+      const uniqueItems: { [name: string]: PropsFields } = {};
+
+      items.forEach((item) => {
         const name = item?.name;
-        if (!name) return true; // keep items without a name
-        if (seen.has(name)) return false;
-        seen.add(name);
-        return true;
+        if (name && !uniqueItems[name]) {
+          uniqueItems[name] = item;
+        } else {
+          // If duplicate, deep merge the properties
+          uniqueItems[name] = deepmerge(uniqueItems[name], item);
+        }
       });
+      return Object.values(uniqueItems);
     };
 
     const mergedProps = [...schemaProps, ...metadataProps, ...inheritedProps];

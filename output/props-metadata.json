@@ -1,10 +1,34 @@
 {
+  "AccordionProps": {
+    "properties": [
+      {
+        "name": "title",
+        "defaultValue": "Awesome Blossom UI"
+      },
+      {
+        "name": "description",
+        "defaultValue": "Hello from Blossom UI"
+      }
+    ]
+  },
   "TextProps": {
     "properties": [
       {
         "name": "children",
         "dataType": "string",
         "defaultValue": "Awesome Blossom UI"
+      }
+    ]
+  },
+  "CheckboxProps": {
+    "properties": [
+      {
+        "name": "label",
+        "defaultValue": "Agree to Terms & Conditions"
+      },
+      {
+        "name": "caption",
+        "defaultValue": "I have read the T&C"
       }
     ]
   }
