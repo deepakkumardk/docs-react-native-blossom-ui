@@ -2,9 +2,19 @@
 sidebar_position: 1
 ---
 
+export const COMPONENT_NAME = "AvatarGroup";
+
 # AvatarGroup
 
 Component to display multiple avatars together in a compact, overlapping group layout.
+
+The following avatars data will be used in the below demos:
+
+```tsx
+const AVATAR_GROUP_DATA = Array.from({ length: 8 }).map((_, index) => ({
+  url: `https://picsum.photos/200/300?random=${index}`,
+}));
+```
 
 import {
   BlossomUIRenderer,
@@ -16,15 +26,8 @@ import {
   AvatarGroupBringToFront,
   AvatarGroupCustomZIndex,
   AvatarGroupSpacing,
+  BlossomComponentPlayground,
 } from "@site/src/components";
-
-The following avatars data will be used in the below demos:
-
-```tsx
-const AVATAR_GROUP_DATA = Array.from({ length: 8 }).map((_, index) => ({
-  url: `https://picsum.photos/200/300?random=${index}`,
-}));
-```
 
 ## Usage
 
