@@ -36,6 +36,14 @@ export type PropsFields = {
    */
   defaultValue?: string;
   /**
+   * force override the value while merging the meta data props
+   */
+  forceOverride?: boolean;
+  /**
+   * Hides the prop from props renderer if set to true.
+   */
+  hidden?: boolean;
+  /**
    * A description of the prop's purpose.
    * will be fetched from the @description tag in the js doc
    */

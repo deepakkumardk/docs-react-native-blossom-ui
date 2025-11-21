@@ -1197,6 +1197,12 @@
         "comment": "List of props for control buttons"
       },
       {
+        "name": "defaultValue",
+        "dataType": "string | string[]",
+        "description": null,
+        "comment": "default selected value(s)"
+      },
+      {
         "name": "mode",
         "dataType": "ButtonMode",
         "dataTypeValues": [
@@ -1234,13 +1240,13 @@
       },
       {
         "name": "activeColor",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "active color when the button is selected"
       },
       {
         "name": "inactiveColor",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "inactive color when the button is unselected"
       },
@@ -1971,10 +1977,9 @@
       },
       {
         "name": "color",
-        "dataType": "string",
-        "defaultValue": "background900",
+        "dataType": "ColorValue",
         "description": null,
-        "comment": "Color of the divider"
+        "comment": "Color of the divider\ndefault vale from theme `background900`"
       },
       {
         "name": "label",
@@ -2053,71 +2058,10 @@
         "defaultValue": "fade",
         "description": null,
         "comment": "Set the mode of the animation"
-      },
-      {
-        "name": "width",
-        "dataType": "DimensionValue",
-        "dataTypeValues": [
-          "auto"
-        ],
-        "defaultValue": "100%",
-        "description": null,
-        "comment": "Control Width of the divider"
-      },
-      {
-        "name": "height",
-        "dataType": "DimensionValue",
-        "dataTypeValues": [
-          "auto"
-        ],
-        "defaultValue": "1",
-        "description": null,
-        "comment": "Control height of the divider"
-      },
-      {
-        "name": "spacing",
-        "dataType": "DimensionValue",
-        "dataTypeValues": [
-          "auto"
-        ],
-        "defaultValue": "0",
-        "description": null,
-        "comment": "Spacing around the line"
-      },
-      {
-        "name": "color",
-        "dataType": "string",
-        "defaultValue": "background900",
-        "description": null,
-        "comment": "Color of the divider"
-      },
-      {
-        "name": "label",
-        "dataType": "string",
-        "description": null,
-        "comment": "Label inside the divider"
-      },
-      {
-        "name": "labelPosition",
-        "dataType": "\"left\" | \"right\" | \"center\"",
-        "dataTypeValues": [
-          "left",
-          "right",
-          "center"
-        ],
-        "defaultValue": "center",
-        "description": null,
-        "comment": "Label position where it will be rendered"
-      },
-      {
-        "name": "row",
-        "dataType": "boolean",
-        "description": null,
-        "comment": "Set true for horizontal(flexDirection) view"
       }
     ],
     "parents": [
-      "DividerProps"
+      "Omit<DividerProps, 'spacing' | 'label' | 'labelPosition'>"
     ],
     "parentsDisplay": [
       "DividerProps"
@@ -2349,13 +2293,13 @@
         "name": "name",
         "dataType": "string",
         "description": null,
-        "comment": "Name of the icon to show"
+        "comment": "Name of the icon to show from the given family"
       },
       {
         "name": "color",
-        "dataType": "number | ColorValue",
+        "dataType": "ColorValue",
         "description": null,
-        "comment": "Set custom icon color"
+        "comment": "Set custom icon color to the icon"
       }
     ],
     "parents": [
@@ -2402,7 +2346,7 @@
       },
       {
         "name": "color",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "Set custom color"
       },
@@ -2526,7 +2470,7 @@
       },
       {
         "name": "color",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "Set custom color"
       },
@@ -2644,7 +2588,7 @@
       },
       {
         "name": "color",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "Set custom color"
       },
@@ -2804,7 +2748,7 @@
       },
       {
         "name": "color",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "Set custom color"
       },
@@ -3635,6 +3579,12 @@
         "comment": "The year the day belongs to."
       },
       {
+        "name": "weekDay",
+        "dataType": "number",
+        "description": null,
+        "comment": "The day of the week (0 = Sunday, 6 = Saturday)."
+      },
+      {
         "name": "isCurrentMonth",
         "dataType": "boolean",
         "description": null,
@@ -3789,8 +3739,36 @@
     "parents": [],
     "parentsDisplay": []
   },
+  "DatePickerMode": {
+    "dataType": "DatePickerMode",
+    "dataTypeValues": [
+      "single",
+      "multiple",
+      "range"
+    ],
+    "parents": []
+  },
   "BaseDateProps": {
     "properties": [
+      {
+        "name": "datePickerMode",
+        "dataType": "DatePickerMode",
+        "dataTypeValues": [
+          "single",
+          "multiple",
+          "range"
+        ],
+        "defaultValue": "single",
+        "description": null,
+        "comment": "Selection mode for the date picker.single - single date selection\nmultiple - multiple date selection\nrange - range date selection"
+      },
+      {
+        "name": "showAdjacentMonthDays",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Whether to show days from adjacent months to fill the weeks.If true, days from the previous and next months will be displayed to fill the calendar grid."
+      },
       {
         "name": "minDate",
         "dataType": "string | Date",
@@ -3816,11 +3794,17 @@
         "comment": "Disable past dates"
       },
       {
+        "name": "disabledDaysOfWeek",
+        "dataType": "number[]",
+        "description": null,
+        "comment": "disable the given days of the week,from 0 (Sunday) to 6 (Saturday)."
+      },
+      {
         "name": "displayDateFormat",
         "dataType": "string",
         "defaultValue": "'D MMM YYYY'",
         "description": null,
-        "comment": "The format in which the date should be displayed inside the input valueCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
+        "comment": "The format in which the date should be displayed inside the input value\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
       },
       {
         "name": "outputDateFormat",
@@ -3833,6 +3817,9 @@
     "parents": [],
     "parentsDisplay": []
   },
+  "CalendarDateChange": {
+    "parents": []
+  },
   "CalendarProps": {
     "properties": [
       {
@@ -3842,6 +3829,18 @@
         "comment": "The default selected date.Can be a string (formatted date) or a Date object."
       },
       {
+        "name": "selectedDates",
+        "dataType": "(string | Date)[]",
+        "description": null,
+        "comment": "The default selected dates for `\"multiple\"` date selection mode.Can be an array of strings (formatted dates) or Date objects."
+      },
+      {
+        "name": "selectedEndDate",
+        "dataType": "string | Date",
+        "description": null,
+        "comment": "The default selected end date for `\"range\"` date selection mode.Can be a string (formatted date) or a Date object."
+      },
+      {
         "name": "disableDates",
         "dataType": "(string | Date)[]",
         "description": null,
@@ -3849,9 +3848,9 @@
       },
       {
         "name": "onDateChange",
-        "dataType": "(date?: Date, displayDate?: string, outputDate?: string) => void",
+        "dataType": "(data: CalendarDateChange) => void",
         "description": null,
-        "comment": "Callback triggered when a date is selected."
+        "comment": "Callback triggered when a date is selected. Receives a mode-aware, type-safe payload."
       },
       {
         "name": "yearListProps",
@@ -3893,6 +3892,25 @@
         "comment": "Size of the component'small' | 'medium' | 'large'"
       },
       {
+        "name": "datePickerMode",
+        "dataType": "DatePickerMode",
+        "dataTypeValues": [
+          "single",
+          "multiple",
+          "range"
+        ],
+        "defaultValue": "single",
+        "description": null,
+        "comment": "Selection mode for the date picker.single - single date selection\nmultiple - multiple date selection\nrange - range date selection"
+      },
+      {
+        "name": "showAdjacentMonthDays",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Whether to show days from adjacent months to fill the weeks.If true, days from the previous and next months will be displayed to fill the calendar grid."
+      },
+      {
         "name": "minDate",
         "dataType": "string | Date",
         "description": null,
@@ -3917,11 +3935,17 @@
         "comment": "Disable past dates"
       },
       {
+        "name": "disabledDaysOfWeek",
+        "dataType": "number[]",
+        "description": null,
+        "comment": "disable the given days of the week,from 0 (Sunday) to 6 (Saturday)."
+      },
+      {
         "name": "displayDateFormat",
         "dataType": "string",
         "defaultValue": "'D MMM YYYY'",
         "description": null,
-        "comment": "The format in which the date should be displayed inside the input valueCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
+        "comment": "The format in which the date should be displayed inside the input value\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
       },
       {
         "name": "outputDateFormat",
@@ -3958,6 +3982,32 @@
         "comment": "Whether the date picker allows clearing the selected date."
       },
       {
+        "name": "dateDisplayDelimiter",
+        "dataType": "string",
+        "defaultValue": "to",
+        "description": null,
+        "comment": "Separator string to display for the multiple and range modes.default value is -\n' to ' for \"range\" mode and ' ... ' for \"multiple\" mode"
+      },
+      {
+        "name": "datePickerMode",
+        "dataType": "DatePickerMode",
+        "dataTypeValues": [
+          "single",
+          "multiple",
+          "range"
+        ],
+        "defaultValue": "single",
+        "description": null,
+        "comment": "Selection mode for the date picker.single - single date selection\nmultiple - multiple date selection\nrange - range date selection"
+      },
+      {
+        "name": "showAdjacentMonthDays",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Whether to show days from adjacent months to fill the weeks.If true, days from the previous and next months will be displayed to fill the calendar grid."
+      },
+      {
         "name": "minDate",
         "dataType": "string | Date",
         "description": null,
@@ -3968,6 +4018,12 @@
         "dataType": "string | Date",
         "description": null,
         "comment": "maximum selectable date inclusive.Can be a string (in `outputDateFormat`) or a Date object."
+      },
+      {
+        "name": "disabledDaysOfWeek",
+        "dataType": "number[]",
+        "description": null,
+        "comment": "disable the given days of the week,from 0 (Sunday) to 6 (Saturday)."
       }
     ],
     "parents": [

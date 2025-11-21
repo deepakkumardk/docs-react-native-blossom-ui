@@ -19,7 +19,10 @@ export const PropsRenderer = ({
   useEffect(() => {
     propMetadata.forEach((prop) => {
       if (prop.defaultValue !== undefined) {
-        onPropChange(prop.name, prop.defaultValue);
+        onPropChange(
+          prop.name,
+          parseDefaultValue(prop.defaultValue, prop.dataType)
+        );
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -28,6 +31,8 @@ export const PropsRenderer = ({
   return (
     <View style={{ gap: 8 }}>
       {propMetadata.map((prop) => {
+        if (prop.hidden) return null;
+
         let field = null;
         // Adding 1 as threshold to mark bad data like DimensionValue having single value
         if (
@@ -153,7 +158,7 @@ function renderBooleanField(
       status="primary"
       label={getComponentLabel(prop.name)}
       defaultValue={!!prop.defaultValue}
-      onValueChange={(value) => onPropChange(prop.name, value)}
+      onValueChange={(value) => onPropChange(prop.name, !!value)}
     />
   );
 }
@@ -190,3 +195,17 @@ function renderColorField(
     </>
   );
 }
+
+const parseDefaultValue = (defaultValue: any, dataType: string) => {
+  if (dataType === "number") {
+    return Number(defaultValue);
+  } else if (dataType === "DimensionValue") {
+    return typeof defaultValue === "string" && defaultValue?.includes("%")
+      ? defaultValue?.toString()
+      : Number(defaultValue);
+  } else if (dataType === "boolean") {
+    return defaultValue === "true" || defaultValue === true;
+  }
+
+  return defaultValue;
+};

@@ -45,7 +45,19 @@ export const BlossomComponentPlayground = (props: {
           uniqueItems[name] = item;
         } else {
           // If duplicate, deep merge the properties
-          uniqueItems[name] = deepmerge(uniqueItems[name], item);
+          const prevUniqueItem: PropsFields = JSON.parse(
+            JSON.stringify(uniqueItems[name])
+          );
+
+          uniqueItems[name] = deepmerge(uniqueItems[name], item, {
+            arrayMerge: combineMerge,
+          });
+          // force override defaultValue if any of the items has forceOverride set to true
+          if (item.forceOverride) {
+            uniqueItems[name].defaultValue = item.defaultValue;
+          } else if (prevUniqueItem.forceOverride) {
+            uniqueItems[name].defaultValue = prevUniqueItem.defaultValue;
+          }
         }
       });
       return Object.values(uniqueItems);
@@ -70,10 +82,12 @@ export const BlossomComponentPlayground = (props: {
   return (
     <div className={styles.componentPlaygroundOuter}>
       <div className={styles.componentPlaygroundGrid}>
-        <BlossomComponentRenderer
-          componentName={componentName}
-          {...componentProps}
-        />
+        <div>
+          <BlossomComponentRenderer
+            componentName={componentName}
+            {...componentProps}
+          />
+        </div>
 
         <PropsRenderer
           propMetadata={getComponentMetaData}
@@ -87,4 +101,20 @@ export const BlossomComponentPlayground = (props: {
       />
     </div>
   );
+};
+
+// from deepmerge docs
+const combineMerge = (target, source, options) => {
+  const destination = target.slice();
+
+  source.forEach((item, index) => {
+    if (typeof destination[index] === "undefined") {
+      destination[index] = options.cloneUnlessOtherwiseSpecified(item, options);
+    } else if (options.isMergeableObject(item)) {
+      destination[index] = deepmerge(target[index], item, options);
+    } else if (target.indexOf(item) === -1) {
+      destination.push(item);
+    }
+  });
+  return destination;
 };
