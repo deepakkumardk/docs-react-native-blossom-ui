@@ -26,10 +26,23 @@ export type PropsFields = {
    */
   dataType: string;
   /**
+   * Possible values for the prop if it's a union type.
+   * will be fetched if the datatype is a union type
+   */
+  dataTypeValues?: string[];
+  /**
    * The default value of the prop, if any.
    * will be fetched from the @default tag in the doc comment
    */
   defaultValue?: string;
+  /**
+   * force override the value while merging the meta data props
+   */
+  forceOverride?: boolean;
+  /**
+   * Hides the prop from props renderer if set to true.
+   */
+  hidden?: boolean;
   /**
    * A description of the prop's purpose.
    * will be fetched from the @description tag in the js doc

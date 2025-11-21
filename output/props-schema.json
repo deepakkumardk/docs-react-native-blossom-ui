@@ -1,29 +1,103 @@
 {
   "BlossomStatus": {
+    "dataType": "BlossomStatus",
+    "dataTypeValues": [
+      "primary",
+      "accent",
+      "success",
+      "info",
+      "warning",
+      "error"
+    ],
     "parents": []
   },
   "BlossomTransparentStatus": {
+    "dataType": "BlossomTransparentStatus",
+    "dataTypeValues": [
+      "primaryTransparent",
+      "accentTransparent",
+      "successTransparent",
+      "infoTransparent",
+      "warningTransparent",
+      "errorTransparent",
+      "backgroundTransparent"
+    ],
     "parents": []
   },
   "BlossomSize": {
+    "dataType": "BlossomSize",
+    "dataTypeValues": [
+      "small",
+      "medium",
+      "large"
+    ],
     "parents": []
   },
   "BlossomColor": {
     "parents": []
   },
   "ColorVariants": {
+    "dataType": "ColorVariants",
+    "dataTypeValues": [
+      "100",
+      "200",
+      "300",
+      "400",
+      "500",
+      "600",
+      "700",
+      "800",
+      "900"
+    ],
     "parents": []
   },
   "TransparentColorVariants": {
+    "dataType": "TransparentColorVariants",
+    "dataTypeValues": [
+      "100",
+      "200",
+      "300",
+      "400",
+      "500"
+    ],
     "parents": []
   },
   "ThemeColorNames": {
+    "dataType": "ThemeColorNames",
+    "dataTypeValues": [
+      "primary",
+      "accent",
+      "success",
+      "info",
+      "warning",
+      "error",
+      "background",
+      "text",
+      "bgLight",
+      "bgDark"
+    ],
     "parents": []
   },
   "SemanticColorNames": {
+    "dataType": "SemanticColorNames",
+    "dataTypeValues": [
+      "primary",
+      "accent",
+      "success",
+      "info",
+      "warning",
+      "error"
+    ],
     "parents": []
   },
   "SurfaceColorNames": {
+    "dataType": "SurfaceColorNames",
+    "dataTypeValues": [
+      "background",
+      "text",
+      "bgLight",
+      "bgDark"
+    ],
     "parents": []
   },
   "BlossomThemeColors": {
@@ -128,6 +202,27 @@
     "parentsDisplay": []
   },
   "TypographyOptions": {
+    "dataType": "TypographyOptions",
+    "dataTypeValues": [
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "s1",
+      "s2",
+      "s3",
+      "b1",
+      "b2",
+      "b3",
+      "l1",
+      "l2",
+      "l3",
+      "c1",
+      "c2",
+      "c3"
+    ],
     "parents": []
   },
   "BaseUIProps": {
@@ -135,6 +230,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -142,6 +245,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -151,10 +259,35 @@
     "parentsDisplay": []
   },
   "OmitSizeProps": {
-    "parents": []
+    "parents": [],
+    "properties": [
+      {
+        "name": "status",
+        "dataType": "BlossomStatus",
+        "defaultValue": null,
+        "description": null,
+        "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
+      }
+    ]
   },
   "ThemeValues": {
-    "parents": []
+    "parents": [],
+    "properties": [
+      {
+        "name": "colors",
+        "dataType": "BlossomThemeColors",
+        "defaultValue": null,
+        "description": null,
+        "comment": "App theme colors json for light and dark mode"
+      },
+      {
+        "name": "isDark",
+        "dataType": "boolean",
+        "defaultValue": null,
+        "description": null,
+        "comment": "Whether the app is in dark mode or not"
+      }
+    ]
   },
   "ComponentPropsObjectMap": {
     "parents": []
@@ -164,6 +297,26 @@
       {
         "name": "typography",
         "dataType": "TypographyOptions",
+        "dataTypeValues": [
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "s1",
+          "s2",
+          "s3",
+          "b1",
+          "b2",
+          "b3",
+          "l1",
+          "l2",
+          "l3",
+          "c1",
+          "c2",
+          "c3"
+        ],
         "defaultValue": "b3",
         "description": null,
         "comment": "Modify the font size/weight values using this- h1-h6 are used for headings\n- s1-s3 are used for subheadings\n- b1-b3 are used for body text\n- l1-l3 are used for labels\n- c1-c3 are used for captions"
@@ -183,6 +336,11 @@
       {
         "name": "mode",
         "dataType": "\"label\" | \"caption\" | \"body\"",
+        "dataTypeValues": [
+          "label",
+          "caption",
+          "body"
+        ],
         "defaultValue": "label",
         "description": null,
         "comment": "Mode of the text label or captionCaption will be used for both a caption or error text in form control inputs"
@@ -190,6 +348,26 @@
       {
         "name": "typography",
         "dataType": "TypographyOptions",
+        "dataTypeValues": [
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "s1",
+          "s2",
+          "s3",
+          "b1",
+          "b2",
+          "b3",
+          "l1",
+          "l2",
+          "l3",
+          "c1",
+          "c2",
+          "c3"
+        ],
         "defaultValue": "b3",
         "description": null,
         "comment": "Modify the font size/weight values using this- h1-h6 are used for headings\n- s1-s3 are used for subheadings\n- b1-b3 are used for body text\n- l1-l3 are used for labels\n- c1-c3 are used for captions"
@@ -197,6 +375,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -258,6 +441,26 @@
       {
         "name": "typography",
         "dataType": "TypographyOptions",
+        "dataTypeValues": [
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "s1",
+          "s2",
+          "s3",
+          "b1",
+          "b2",
+          "b3",
+          "l1",
+          "l2",
+          "l3",
+          "c1",
+          "c2",
+          "c3"
+        ],
         "defaultValue": "b3",
         "description": null,
         "comment": "Modify the font size/weight values using this- h1-h6 are used for headings\n- s1-s3 are used for subheadings\n- b1-b3 are used for body text\n- l1-l3 are used for labels\n- c1-c3 are used for captions"
@@ -301,6 +504,26 @@
       {
         "name": "typography",
         "dataType": "TypographyOptions",
+        "dataTypeValues": [
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "s1",
+          "s2",
+          "s3",
+          "b1",
+          "b2",
+          "b3",
+          "l1",
+          "l2",
+          "l3",
+          "c1",
+          "c2",
+          "c3"
+        ],
         "defaultValue": "b3",
         "description": null,
         "comment": "Modify the font size/weight values using this- h1-h6 are used for headings\n- s1-s3 are used for subheadings\n- b1-b3 are used for body text\n- l1-l3 are used for labels\n- c1-c3 are used for captions"
@@ -431,6 +654,13 @@
     "parentsDisplay": []
   },
   "ButtonMode": {
+    "dataType": "ButtonMode",
+    "dataTypeValues": [
+      "filled",
+      "tinted",
+      "outlined",
+      "plain"
+    ],
     "parents": []
   },
   "ButtonProps": {
@@ -438,6 +668,12 @@
       {
         "name": "mode",
         "dataType": "ButtonMode",
+        "dataTypeValues": [
+          "filled",
+          "tinted",
+          "outlined",
+          "plain"
+        ],
         "defaultValue": "filled",
         "description": null,
         "comment": "Change the appearance of the button using this"
@@ -505,6 +741,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -512,6 +756,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -549,6 +798,12 @@
       {
         "name": "mode",
         "dataType": "ButtonMode",
+        "dataTypeValues": [
+          "filled",
+          "tinted",
+          "outlined",
+          "plain"
+        ],
         "defaultValue": "filled",
         "description": null,
         "comment": "Change the appearance of the button using this"
@@ -616,6 +871,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -623,6 +886,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -663,6 +931,12 @@
       {
         "name": "mode",
         "dataType": "ButtonMode",
+        "dataTypeValues": [
+          "filled",
+          "tinted",
+          "outlined",
+          "plain"
+        ],
         "defaultValue": "filled",
         "description": null,
         "comment": "Change the appearance of the button using this"
@@ -730,6 +1004,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -737,6 +1019,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -796,6 +1083,12 @@
       {
         "name": "mode",
         "dataType": "ButtonMode",
+        "dataTypeValues": [
+          "filled",
+          "tinted",
+          "outlined",
+          "plain"
+        ],
         "defaultValue": "filled",
         "description": null,
         "comment": "Change the appearance of the button using this"
@@ -863,6 +1156,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -870,6 +1171,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -891,8 +1197,20 @@
         "comment": "List of props for control buttons"
       },
       {
+        "name": "defaultValue",
+        "dataType": "string | string[]",
+        "description": null,
+        "comment": "default selected value(s)"
+      },
+      {
         "name": "mode",
         "dataType": "ButtonMode",
+        "dataTypeValues": [
+          "filled",
+          "tinted",
+          "outlined",
+          "plain"
+        ],
         "description": null,
         "comment": "Mode of the button view"
       },
@@ -922,13 +1240,13 @@
       },
       {
         "name": "activeColor",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "active color when the button is selected"
       },
       {
         "name": "inactiveColor",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "inactive color when the button is unselected"
       },
@@ -953,6 +1271,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -960,6 +1286,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -1031,6 +1362,12 @@
       {
         "name": "mode",
         "dataType": "ButtonMode",
+        "dataTypeValues": [
+          "filled",
+          "tinted",
+          "outlined",
+          "plain"
+        ],
         "defaultValue": "filled",
         "description": null,
         "comment": "Change the appearance of the button using this"
@@ -1098,6 +1435,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -1105,6 +1450,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -1129,6 +1479,11 @@
       {
         "name": "size",
         "dataType": "number | BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Control the size using pre-defined options"
@@ -1162,6 +1517,11 @@
     ]
   },
   "TextInputMode": {
+    "dataType": "TextInputMode",
+    "dataTypeValues": [
+      "outlined",
+      "flat"
+    ],
     "parents": []
   },
   "TextInputProps": {
@@ -1169,6 +1529,10 @@
       {
         "name": "mode",
         "dataType": "\"outlined\" | \"flat\"",
+        "dataTypeValues": [
+          "outlined",
+          "flat"
+        ],
         "defaultValue": "outlined",
         "description": null,
         "comment": "Control the different modes of the text input"
@@ -1272,6 +1636,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -1279,6 +1651,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -1362,6 +1739,10 @@
       {
         "name": "mode",
         "dataType": "\"outlined\" | \"flat\"",
+        "dataTypeValues": [
+          "outlined",
+          "flat"
+        ],
         "defaultValue": "outlined",
         "description": null,
         "comment": "Control the different modes of the text input"
@@ -1465,6 +1846,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -1472,6 +1861,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -1502,6 +1896,10 @@
       {
         "name": "mode",
         "dataType": "\"box\" | \"dash\"",
+        "dataTypeValues": [
+          "box",
+          "dash"
+        ],
         "defaultValue": "box",
         "description": null,
         "comment": "different view based on the mode"
@@ -1550,6 +1948,9 @@
       {
         "name": "width",
         "dataType": "DimensionValue",
+        "dataTypeValues": [
+          "auto"
+        ],
         "defaultValue": "100%",
         "description": null,
         "comment": "Control Width of the divider"
@@ -1557,6 +1958,9 @@
       {
         "name": "height",
         "dataType": "DimensionValue",
+        "dataTypeValues": [
+          "auto"
+        ],
         "defaultValue": "1",
         "description": null,
         "comment": "Control height of the divider"
@@ -1564,16 +1968,18 @@
       {
         "name": "spacing",
         "dataType": "DimensionValue",
+        "dataTypeValues": [
+          "auto"
+        ],
         "defaultValue": "0",
         "description": null,
         "comment": "Spacing around the line"
       },
       {
         "name": "color",
-        "dataType": "string",
-        "defaultValue": "background900",
+        "dataType": "ColorValue",
         "description": null,
-        "comment": "Color of the divider"
+        "comment": "Color of the divider\ndefault vale from theme `background900`"
       },
       {
         "name": "label",
@@ -1584,6 +1990,11 @@
       {
         "name": "labelPosition",
         "dataType": "\"left\" | \"right\" | \"center\"",
+        "dataTypeValues": [
+          "left",
+          "right",
+          "center"
+        ],
         "defaultValue": "center",
         "description": null,
         "comment": "Label position where it will be rendered"
@@ -1640,60 +2051,17 @@
       {
         "name": "mode",
         "dataType": "\"fade\" | \"wave\"",
+        "dataTypeValues": [
+          "fade",
+          "wave"
+        ],
         "defaultValue": "fade",
         "description": null,
         "comment": "Set the mode of the animation"
-      },
-      {
-        "name": "width",
-        "dataType": "DimensionValue",
-        "defaultValue": "100%",
-        "description": null,
-        "comment": "Control Width of the divider"
-      },
-      {
-        "name": "height",
-        "dataType": "DimensionValue",
-        "defaultValue": "1",
-        "description": null,
-        "comment": "Control height of the divider"
-      },
-      {
-        "name": "spacing",
-        "dataType": "DimensionValue",
-        "defaultValue": "0",
-        "description": null,
-        "comment": "Spacing around the line"
-      },
-      {
-        "name": "color",
-        "dataType": "string",
-        "defaultValue": "background900",
-        "description": null,
-        "comment": "Color of the divider"
-      },
-      {
-        "name": "label",
-        "dataType": "string",
-        "description": null,
-        "comment": "Label inside the divider"
-      },
-      {
-        "name": "labelPosition",
-        "dataType": "\"left\" | \"right\" | \"center\"",
-        "defaultValue": "center",
-        "description": null,
-        "comment": "Label position where it will be rendered"
-      },
-      {
-        "name": "row",
-        "dataType": "boolean",
-        "description": null,
-        "comment": "Set true for horizontal(flexDirection) view"
       }
     ],
     "parents": [
-      "DividerProps"
+      "Omit<DividerProps, 'spacing' | 'label' | 'labelPosition'>"
     ],
     "parentsDisplay": [
       "DividerProps"
@@ -1726,12 +2094,22 @@
       {
         "name": "size",
         "dataType": "number | BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "description": null,
         "comment": "Size of the AvatarIt can be either number or string ('small' | 'medium' | 'large')"
       },
       {
         "name": "mode",
         "dataType": "\"circle\" | \"round\" | \"square\"",
+        "dataTypeValues": [
+          "circle",
+          "round",
+          "square"
+        ],
         "description": null,
         "comment": "Control the shape of the Avatar"
       },
@@ -1860,6 +2238,23 @@
     ]
   },
   "IconFamily": {
+    "dataType": "IconFamily",
+    "dataTypeValues": [
+      "AntDesign",
+      "Entypo",
+      "EvilIcons",
+      "Feather",
+      "FontAwesome",
+      "FontAwesome5",
+      "Fontisto",
+      "Foundation",
+      "Ionicons",
+      "MaterialCommunityIcons",
+      "MaterialIcons",
+      "Octicons",
+      "SimpleLineIcons",
+      "Zocial"
+    ],
     "parents": []
   },
   "IconProps": {
@@ -1867,6 +2262,22 @@
       {
         "name": "family",
         "dataType": "IconFamily",
+        "dataTypeValues": [
+          "AntDesign",
+          "Entypo",
+          "EvilIcons",
+          "Feather",
+          "FontAwesome",
+          "FontAwesome5",
+          "Fontisto",
+          "Foundation",
+          "Ionicons",
+          "MaterialCommunityIcons",
+          "MaterialIcons",
+          "Octicons",
+          "SimpleLineIcons",
+          "Zocial"
+        ],
         "defaultValue": "Ionicons",
         "description": null,
         "comment": "Vector icons family from vector-icons set"
@@ -1882,13 +2293,13 @@
         "name": "name",
         "dataType": "string",
         "description": null,
-        "comment": "Name of the icon to show"
+        "comment": "Name of the icon to show from the given family"
       },
       {
         "name": "color",
-        "dataType": "number | ColorValue",
+        "dataType": "ColorValue",
         "description": null,
-        "comment": "Set custom icon color"
+        "comment": "Set custom icon color to the icon"
       }
     ],
     "parents": [
@@ -1905,6 +2316,10 @@
       {
         "name": "position",
         "dataType": "\"left\" | \"right\"",
+        "dataTypeValues": [
+          "left",
+          "right"
+        ],
         "defaultValue": "right",
         "description": null,
         "comment": "Control the position of the field"
@@ -1931,7 +2346,7 @@
       },
       {
         "name": "color",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "Set custom color"
       },
@@ -1986,6 +2401,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -1993,6 +2416,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -2018,6 +2446,10 @@
       {
         "name": "position",
         "dataType": "\"left\" | \"right\"",
+        "dataTypeValues": [
+          "left",
+          "right"
+        ],
         "defaultValue": "right",
         "description": null,
         "comment": "Control the position of the field"
@@ -2038,7 +2470,7 @@
       },
       {
         "name": "color",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "Set custom color"
       },
@@ -2093,6 +2525,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -2100,6 +2540,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -2119,6 +2564,10 @@
       {
         "name": "position",
         "dataType": "\"left\" | \"right\"",
+        "dataTypeValues": [
+          "left",
+          "right"
+        ],
         "defaultValue": "right",
         "description": null,
         "comment": "Control the position of the field"
@@ -2139,7 +2588,7 @@
       },
       {
         "name": "color",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "Set custom color"
       },
@@ -2194,6 +2643,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -2201,6 +2658,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -2256,6 +2718,10 @@
       {
         "name": "position",
         "dataType": "\"left\" | \"right\"",
+        "dataTypeValues": [
+          "left",
+          "right"
+        ],
         "defaultValue": "right",
         "description": null,
         "comment": "Control the position of the field"
@@ -2282,7 +2748,7 @@
       },
       {
         "name": "color",
-        "dataType": "string",
+        "dataType": "ColorValue",
         "description": null,
         "comment": "Set custom color"
       },
@@ -2337,6 +2803,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -2344,6 +2818,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -2665,6 +3144,12 @@
       {
         "name": "position",
         "dataType": "\"left\" | \"right\" | \"top\" | \"bottom\"",
+        "dataTypeValues": [
+          "left",
+          "right",
+          "top",
+          "bottom"
+        ],
         "defaultValue": "bottom",
         "description": null,
         "comment": "Popover content position"
@@ -2791,6 +3276,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -2798,6 +3291,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -2842,6 +3340,10 @@
       {
         "name": "mode",
         "dataType": "\"inline\" | \"bottom-sheet\"",
+        "dataTypeValues": [
+          "inline",
+          "bottom-sheet"
+        ],
         "defaultValue": "inline",
         "description": null,
         "comment": "Modal presentation styleUse 'inline' for a dropdown style select\nUse 'bottom-sheet' for a bottom sheet style select"
@@ -2903,6 +3405,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -2910,6 +3420,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -3011,6 +3526,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -3018,6 +3541,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -3049,6 +3577,12 @@
         "dataType": "number",
         "description": null,
         "comment": "The year the day belongs to."
+      },
+      {
+        "name": "weekDay",
+        "dataType": "number",
+        "description": null,
+        "comment": "The day of the week (0 = Sunday, 6 = Saturday)."
       },
       {
         "name": "isCurrentMonth",
@@ -3143,6 +3677,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -3150,6 +3692,11 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
@@ -3192,8 +3739,36 @@
     "parents": [],
     "parentsDisplay": []
   },
+  "DatePickerMode": {
+    "dataType": "DatePickerMode",
+    "dataTypeValues": [
+      "single",
+      "multiple",
+      "range"
+    ],
+    "parents": []
+  },
   "BaseDateProps": {
     "properties": [
+      {
+        "name": "datePickerMode",
+        "dataType": "DatePickerMode",
+        "dataTypeValues": [
+          "single",
+          "multiple",
+          "range"
+        ],
+        "defaultValue": "single",
+        "description": null,
+        "comment": "Selection mode for the date picker.single - single date selection\nmultiple - multiple date selection\nrange - range date selection"
+      },
+      {
+        "name": "showAdjacentMonthDays",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Whether to show days from adjacent months to fill the weeks.If true, days from the previous and next months will be displayed to fill the calendar grid."
+      },
       {
         "name": "minDate",
         "dataType": "string | Date",
@@ -3219,11 +3794,17 @@
         "comment": "Disable past dates"
       },
       {
+        "name": "disabledDaysOfWeek",
+        "dataType": "number[]",
+        "description": null,
+        "comment": "disable the given days of the week,from 0 (Sunday) to 6 (Saturday)."
+      },
+      {
         "name": "displayDateFormat",
         "dataType": "string",
         "defaultValue": "'D MMM YYYY'",
         "description": null,
-        "comment": "The format in which the date should be displayed inside the input valueCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
+        "comment": "The format in which the date should be displayed inside the input value\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
       },
       {
         "name": "outputDateFormat",
@@ -3236,6 +3817,9 @@
     "parents": [],
     "parentsDisplay": []
   },
+  "CalendarDateChange": {
+    "parents": []
+  },
   "CalendarProps": {
     "properties": [
       {
@@ -3245,6 +3829,18 @@
         "comment": "The default selected date.Can be a string (formatted date) or a Date object."
       },
       {
+        "name": "selectedDates",
+        "dataType": "(string | Date)[]",
+        "description": null,
+        "comment": "The default selected dates for `\"multiple\"` date selection mode.Can be an array of strings (formatted dates) or Date objects."
+      },
+      {
+        "name": "selectedEndDate",
+        "dataType": "string | Date",
+        "description": null,
+        "comment": "The default selected end date for `\"range\"` date selection mode.Can be a string (formatted date) or a Date object."
+      },
+      {
         "name": "disableDates",
         "dataType": "(string | Date)[]",
         "description": null,
@@ -3252,9 +3848,9 @@
       },
       {
         "name": "onDateChange",
-        "dataType": "(date?: Date, displayDate?: string, outputDate?: string) => void",
+        "dataType": "(data: CalendarDateChange) => void",
         "description": null,
-        "comment": "Callback triggered when a date is selected."
+        "comment": "Callback triggered when a date is selected. Receives a mode-aware, type-safe payload."
       },
       {
         "name": "yearListProps",
@@ -3271,6 +3867,14 @@
       {
         "name": "status",
         "dataType": "BlossomStatus",
+        "dataTypeValues": [
+          "primary",
+          "accent",
+          "success",
+          "info",
+          "warning",
+          "error"
+        ],
         "defaultValue": "primary",
         "description": null,
         "comment": "Status of the component to apply color variants'primary' | 'accent' | 'success' | 'info' | 'warning' | 'error'"
@@ -3278,9 +3882,33 @@
       {
         "name": "size",
         "dataType": "BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
         "defaultValue": "medium",
         "description": null,
         "comment": "Size of the component'small' | 'medium' | 'large'"
+      },
+      {
+        "name": "datePickerMode",
+        "dataType": "DatePickerMode",
+        "dataTypeValues": [
+          "single",
+          "multiple",
+          "range"
+        ],
+        "defaultValue": "single",
+        "description": null,
+        "comment": "Selection mode for the date picker.single - single date selection\nmultiple - multiple date selection\nrange - range date selection"
+      },
+      {
+        "name": "showAdjacentMonthDays",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Whether to show days from adjacent months to fill the weeks.If true, days from the previous and next months will be displayed to fill the calendar grid."
       },
       {
         "name": "minDate",
@@ -3307,11 +3935,17 @@
         "comment": "Disable past dates"
       },
       {
+        "name": "disabledDaysOfWeek",
+        "dataType": "number[]",
+        "description": null,
+        "comment": "disable the given days of the week,from 0 (Sunday) to 6 (Saturday)."
+      },
+      {
         "name": "displayDateFormat",
         "dataType": "string",
         "defaultValue": "'D MMM YYYY'",
         "description": null,
-        "comment": "The format in which the date should be displayed inside the input valueCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
+        "comment": "The format in which the date should be displayed inside the input value\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
       },
       {
         "name": "outputDateFormat",
@@ -3348,6 +3982,32 @@
         "comment": "Whether the date picker allows clearing the selected date."
       },
       {
+        "name": "dateDisplayDelimiter",
+        "dataType": "string",
+        "defaultValue": "to",
+        "description": null,
+        "comment": "Separator string to display for the multiple and range modes.default value is -\n' to ' for \"range\" mode and ' ... ' for \"multiple\" mode"
+      },
+      {
+        "name": "datePickerMode",
+        "dataType": "DatePickerMode",
+        "dataTypeValues": [
+          "single",
+          "multiple",
+          "range"
+        ],
+        "defaultValue": "single",
+        "description": null,
+        "comment": "Selection mode for the date picker.single - single date selection\nmultiple - multiple date selection\nrange - range date selection"
+      },
+      {
+        "name": "showAdjacentMonthDays",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Whether to show days from adjacent months to fill the weeks.If true, days from the previous and next months will be displayed to fill the calendar grid."
+      },
+      {
         "name": "minDate",
         "dataType": "string | Date",
         "description": null,
@@ -3358,6 +4018,12 @@
         "dataType": "string | Date",
         "description": null,
         "comment": "maximum selectable date inclusive.Can be a string (in `outputDateFormat`) or a Date object."
+      },
+      {
+        "name": "disabledDaysOfWeek",
+        "dataType": "number[]",
+        "description": null,
+        "comment": "disable the given days of the week,from 0 (Sunday) to 6 (Saturday)."
       }
     ],
     "parents": [

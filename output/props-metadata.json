@@ -1,0 +1,315 @@
+{
+  "AccordionProps": {
+    "properties": [
+      {
+        "name": "title",
+        "defaultValue": "Awesome Blossom UI"
+      },
+      {
+        "name": "description",
+        "defaultValue": "Hello from Blossom UI"
+      },
+      {
+        "name": "content",
+        "defaultValue": "Accordion Content will be here"
+      },
+      {
+        "name": "isOpen",
+        "hidden": true
+      }
+    ]
+  },
+  "AvatarGroupProps": {
+    "properties": [
+      {
+        "name": "avatars",
+        "defaultValue": []
+      }
+    ]
+  },
+  "ButtonProps": {
+    "properties": [
+      {
+        "name": "title",
+        "defaultValue": "Click me"
+      }
+    ]
+  },
+  "CardProps": {
+    "properties": [
+      {
+        "name": "title",
+        "defaultValue": "Click me"
+      }
+    ]
+  },
+  "CheckboxProps": {
+    "properties": [
+      {
+        "name": "label",
+        "defaultValue": "Agree to Terms & Conditions"
+      },
+      {
+        "name": "caption",
+        "defaultValue": "I have read the T&C"
+      }
+    ]
+  },
+  "ChipProps": {
+    "properties": [
+      {
+        "name": "title",
+        "defaultValue": "Awesome Chip"
+      }
+    ]
+  },
+  "DividerProps": {
+    "properties": [
+      {
+        "name": "width",
+        "defaultValue": 160,
+        "forceOverride": true
+      },
+      {
+        "name": "row",
+        "hidden": true
+      }
+    ]
+  },
+  "ExpandableTextProps": {
+    "properties": [
+      {
+        "name": "children",
+        "dataType": "string",
+        "defaultValue": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+      },
+      {
+        "name": "numberOfLines",
+        "dataType": "number",
+        "defaultValue": 3
+      }
+    ]
+  },
+  "IconProps": {
+    "properties": [
+      {
+        "name": "name",
+        "defaultValue": "home"
+      }
+    ]
+  },
+  "LinkProps": {
+    "properties": [
+      {
+        "name": "title",
+        "defaultValue": "Click here"
+      },
+      {
+        "name": "href",
+        "defaultValue": "https://docs-react-native-blossom-ui.vercel.app/"
+      }
+    ]
+  },
+  "MultiSelectProps": {
+    "properties": [
+      {
+        "name": "options",
+        "hidden": true,
+        "defaultValue": [
+          {
+            "label": "Option 1",
+            "value": "option1"
+          },
+          {
+            "label": "Option 2",
+            "value": "option2",
+            "disabled": true
+          },
+          {
+            "label": "Option 3",
+            "value": "option3"
+          },
+          {
+            "label": "Option 4",
+            "value": "option4"
+          },
+          {
+            "label": "Option 5",
+            "value": "option5"
+          }
+        ]
+      }
+    ]
+  },
+  "OtpInputProps": {
+    "properties": [
+      {
+        "name": "maxLength",
+        "defaultValue": 4
+      }
+    ]
+  },
+  "ProgressBarProps": {
+    "properties": [
+      {
+        "name": "value",
+        "defaultValue": 50
+      },
+      {
+        "name": "width",
+        "defaultValue": 200
+      },
+      {
+        "name": "height",
+        "defaultValue": 10
+      }
+    ]
+  },
+
+  "RadioProps": {
+    "properties": [
+      {
+        "name": "label",
+        "defaultValue": "Agree to Terms & Conditions"
+      },
+      {
+        "name": "caption",
+        "defaultValue": "I have read the T&C"
+      }
+    ]
+  },
+  "SearchInputProps": {
+    "properties": [
+      {
+        "name": "label",
+        "defaultValue": "Search Awesome Stuff"
+      },
+      {
+        "name": "placeholder",
+        "defaultValue": "type to search"
+      },
+      {
+        "name": "shouldMockDisableState",
+        "hidden": true
+      }
+    ]
+  },
+  "SegmentedButtonProps": {
+    "properties": [
+      {
+        "name": "data",
+        "defaultValue": [
+          { "title": "Primary" },
+          { "title": "Secondary" },
+          { "title": "Tertiary" }
+        ]
+      }
+    ]
+  },
+  "SelectProps": {
+    "properties": [
+      {
+        "name": "options",
+        "hidden": true,
+        "defaultValue": [
+          {
+            "label": "Option 1",
+            "value": "option1"
+          },
+          {
+            "label": "Option 2",
+            "value": "option2",
+            "disabled": true
+          },
+          {
+            "label": "Option 3",
+            "value": "option3"
+          },
+          {
+            "label": "Option 4",
+            "value": "option4"
+          },
+          {
+            "label": "Option 5",
+            "value": "option5"
+          }
+        ]
+      },
+      {
+        "name": "pickerHeight",
+        "hidden": true
+      },
+      {
+        "name": "displayValue",
+        "hidden": true
+      }
+    ]
+  },
+  "ShimmerViewProps": {
+    "properties": [
+      {
+        "name": "width",
+        "defaultValue": 200,
+        "forceOverride": true
+      },
+      {
+        "name": "height",
+        "defaultValue": 100,
+        "forceOverride": true
+      },
+      {
+        "name": "spacing",
+        "hidden": true
+      },
+      {
+        "name": "row",
+        "hidden": true
+      },
+      {
+        "name": "label",
+        "hidden": true
+      },
+      {
+        "name": "labelPosition",
+        "hidden": true
+      }
+    ]
+  },
+  "SwitchProps": {
+    "properties": [
+      {
+        "name": "label",
+        "defaultValue": "Agree to Terms & Conditions"
+      },
+      {
+        "name": "caption",
+        "defaultValue": "I have read the T&C"
+      }
+    ]
+  },
+  "TextInputProps": {
+    "properties": [
+      {
+        "name": "label",
+        "defaultValue": "Name"
+      },
+      {
+        "name": "placeholder",
+        "defaultValue": "Enter your name"
+      },
+      {
+        "name": "shouldMockDisableState",
+        "hidden": true
+      }
+    ]
+  },
+  "TextProps": {
+    "properties": [
+      {
+        "name": "children",
+        "dataType": "string",
+        "defaultValue": "Awesome Blossom UI"
+      }
+    ]
+  }
+}
