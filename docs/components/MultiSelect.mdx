@@ -2,10 +2,24 @@
 sidebar_position: 1
 ---
 
+export const COMPONENT_NAME = "MultiSelect";
+
 # MultiSelect
 
 Component for selecting multiple options from a list of options.
 Supports clearable, controlled, and customizable behavior.
+
+The following option data will be used in the below demos:
+
+```tsx
+const OPTIONS = Array(25)
+  .fill(0)
+  .map((_, i) => ({
+    label: `Option ${i}`,
+    value: i,
+    disabled: i % 4 === 0,
+  }));
+```
 
 import {
   BlossomUIRenderer,
@@ -20,19 +34,12 @@ import {
   MultiSelectCustomPickerStyle,
   MultiSelectMaxSelect,
   MultiSelectObjectOptions,
+  BlossomComponentPlayground,
 } from "@site/src/components";
 
-The following option data will be used in the below demos:
+### Usage Playground
 
-```tsx
-const OPTIONS = Array(25)
-  .fill(0)
-  .map((_, i) => ({
-    label: `Option ${i}`,
-    value: i,
-    disabled: i % 4 === 0,
-  }));
-```
+<BlossomComponentPlayground componentName={COMPONENT_NAME} />
 
 ## Usage
 

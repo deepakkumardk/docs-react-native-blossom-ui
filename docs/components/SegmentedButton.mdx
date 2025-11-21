@@ -4,23 +4,12 @@ sidebar_label: SegmentedButton
 sidebar_class_name: beta-tag
 ---
 
+export const COMPONENT_NAME = "SegmentedButton";
+
 # SegmentedButton
 
 Button group component to select one or multiple options. Each unit Button just extends the Button component.
 Supports icons, multi-select, custom modes, sizes, statuses, and full styling customization.
-
-import {
-  BlossomUIRenderer,
-  PropsTable,
-  SegmentedButtonUsage,
-  SegmentedButtonMultiSelect,
-  SegmentedButtonIcons,
-  SegmentedButtonModes,
-  SegmentedButtonSizes,
-  SegmentedButtonStatuses,
-  SegmentedButtonDisabled,
-  SegmentedButtonCustom,
-} from "@site/src/components";
 
 Following values will be used on the following demos:
 
@@ -37,6 +26,24 @@ const iconButtons: ControlButtonProps[] = [
   { title: "Tertiary", left: <Icon name="add" /> },
 ];
 ```
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  SegmentedButtonUsage,
+  SegmentedButtonMultiSelect,
+  SegmentedButtonIcons,
+  SegmentedButtonModes,
+  SegmentedButtonSizes,
+  SegmentedButtonStatuses,
+  SegmentedButtonDisabled,
+  SegmentedButtonCustom,
+  BlossomComponentPlayground,
+} from "@site/src/components";
+
+### Usage Playground
+
+<BlossomComponentPlayground componentName={COMPONENT_NAME} />
 
 ## Usage
 
