@@ -21,7 +21,7 @@ export const PropsRenderer = ({
       if (prop.defaultValue !== undefined) {
         onPropChange(
           prop.name,
-          parseDefaultValue(prop.defaultValue, prop.dataType)
+          parseDefaultValue(prop.defaultValue, prop.dataType),
         );
       }
     });
@@ -42,7 +42,7 @@ export const PropsRenderer = ({
           field = renderSegmentButtonField(
             prop,
             onPropChange,
-            prop.dataTypeValues
+            prop.dataTypeValues,
           );
         } else if (prop.dataTypeValues?.length > 1) {
           field = renderSelectField(prop, onPropChange, prop.dataTypeValues);
@@ -50,7 +50,7 @@ export const PropsRenderer = ({
           field = renderSelectField(
             prop,
             onPropChange,
-            JsonSchema["BlossomStatus"]?.dataTypeValues || []
+            JsonSchema["BlossomStatus"]?.dataTypeValues || [],
           );
         } else if (prop.dataType === "string") {
           field = renderTextInputField(prop, onPropChange);
@@ -83,7 +83,7 @@ function getComponentLabel(propName: string) {
 function renderSelectField(
   prop: PropsFields,
   onPropChange: (propName: string, value: any) => void,
-  options: string[]
+  options: string[],
 ) {
   return (
     <Select
@@ -99,7 +99,7 @@ function renderSelectField(
 function renderSegmentButtonField(
   prop: PropsFields,
   onPropChange: (propName: string, value: any) => void,
-  options: string[]
+  options: string[],
 ) {
   return (
     <>
@@ -122,7 +122,7 @@ function renderSegmentButtonField(
 
 function renderTextInputField(
   prop: PropsFields,
-  onPropChange: (propName: string, value: any) => void
+  onPropChange: (propName: string, value: any) => void,
 ) {
   return (
     <TextInput
@@ -136,7 +136,7 @@ function renderTextInputField(
 
 function renderNumberInputField(
   prop: PropsFields,
-  onPropChange: (propName: string, value: any) => void
+  onPropChange: (propName: string, value: any) => void,
 ) {
   return (
     <TextInput
@@ -144,14 +144,19 @@ function renderNumberInputField(
       placeholder={getComponentLabel(prop.name)}
       keyboardType="numeric"
       defaultValue={prop.defaultValue || ""}
-      onChangeText={(text) => onPropChange(prop.name, Number(text))}
+      onChangeText={(text) => {
+        // Filter to only allow numeric characters, decimal point, and minus sign
+        const numericText = text.replace(/[^0-9.-]/g, "");
+        const numValue = Number(numericText);
+        onPropChange(prop.name, isNaN(numValue) ? 0 : numValue);
+      }}
     />
   );
 }
 
 function renderBooleanField(
   prop: PropsFields,
-  onPropChange: (propName: string, value: any) => void
+  onPropChange: (propName: string, value: any) => void,
 ) {
   return (
     <Checkbox
@@ -165,7 +170,7 @@ function renderBooleanField(
 
 function renderColorField(
   prop: PropsFields,
-  onPropChange: (propName: string, value: any) => void
+  onPropChange: (propName: string, value: any) => void,
 ) {
   return (
     <>

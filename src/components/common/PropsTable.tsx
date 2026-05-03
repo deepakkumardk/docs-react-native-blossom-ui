@@ -7,11 +7,16 @@ import { default as JsonSchema } from "../../../output/props-schema.json";
 import { PropsInfo, PropsTableProps } from "../showcase/types";
 import { getLinkedPropPath } from "./helper";
 
-export const PropsTable = ({ componentName, propName }: PropsTableProps) => {
+export const PropsTable = ({
+  componentName,
+  tsPropName,
+  disableExtendsLink,
+  packageName,
+}: PropsTableProps) => {
   const theme = useBlossomTheme();
 
   const data: PropsInfo =
-    JsonSchema?.[propName || `${componentName}Props`] || {};
+    JsonSchema?.[tsPropName || `${componentName}Props`] || {};
   const properties = data.properties || [];
 
   return (
@@ -28,8 +33,11 @@ export const PropsTable = ({ componentName, propName }: PropsTableProps) => {
         <tr style={{ backgroundColor: theme.colors.primary400 }}>
           <td style={{ fontStyle: "italic" }}>Extends</td>
           <td style={{ fontStyle: "italic" }} title={data.parents?.join(", ")}>
-            {getLinkedPropPath(data.parentsDisplay?.[0]) ? (
-              <Link to={getLinkedPropPath(data.parentsDisplay?.[0])}>
+            {!disableExtendsLink &&
+            getLinkedPropPath(data.parentsDisplay?.[0], packageName) ? (
+              <Link
+                to={getLinkedPropPath(data.parentsDisplay?.[0], packageName)}
+              >
                 {data.parentsDisplay?.[0]}
               </Link>
             ) : (

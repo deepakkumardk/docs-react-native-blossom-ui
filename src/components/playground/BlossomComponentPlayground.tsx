@@ -1,9 +1,10 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 
 import * as BlossomUIDates from "@react-native-blossom-ui/dates";
+import * as BlossomUIOverlays from "@react-native-blossom-ui/overlays";
 
 import { default as JsonSchema } from "../../../output/props-schema.json";
-import { default as MetaDataJsonSchema } from "../../../output/props-metadata.json";
+import { default as MetaDataJsonSchema } from "../../../output/props-default-metadata.json";
 import { BlossomComponentRenderer } from "./BlossomComponentRenderer";
 
 import styles from "./BlossomComponentPlayground.module.css";
@@ -11,6 +12,7 @@ import { PlaygroundCodeRenderer } from "./PlaygroundCodeRenderer";
 import { PropsRenderer } from "./PropsRenderer";
 import deepmerge from "deepmerge";
 import { PropsFields } from "@site/src/components/showcase/types";
+import { Button } from "@react-native-blossom-ui/components";
 
 /**
  * Component Playground allows users to interactively modify component props and see the changes reflected in real-time.
@@ -21,11 +23,14 @@ import { PropsFields } from "@site/src/components/showcase/types";
  */
 export const BlossomComponentPlayground = (props: {
   componentName: string;
+  propNameTS?: string;
+  onShowCallback?: (props: any) => void;
+  deferred?: boolean;
 }) => {
-  const { componentName } = props;
+  const { componentName, propNameTS, onShowCallback, deferred } = props;
 
   const getComponentMetaData = useMemo(() => {
-    const propName = `${componentName}Props`;
+    const propName = propNameTS || `${componentName}Props`;
     const parents = JsonSchema[propName]?.parents;
     const parentsMetaData = parents?.flatMap((parent) => {
       return JsonSchema[parent]?.properties || [];
@@ -46,7 +51,7 @@ export const BlossomComponentPlayground = (props: {
         } else {
           // If duplicate, deep merge the properties
           const prevUniqueItem: PropsFields = JSON.parse(
-            JSON.stringify(uniqueItems[name])
+            JSON.stringify(uniqueItems[name]),
           );
 
           uniqueItems[name] = deepmerge(uniqueItems[name], item, {
@@ -69,10 +74,19 @@ export const BlossomComponentPlayground = (props: {
   }, [componentName]);
 
   const [componentProps, setComponentProps] = useState<{ [key: string]: any }>(
-    {}
+    {},
   );
+  const componentPropsRef = useRef(componentProps);
 
   const handlePropChange = (propName: string, value: any) => {
+    if (deferred) {
+      componentPropsRef.current = {
+        ...componentPropsRef.current,
+        [propName]: value,
+      };
+      return;
+    }
+
     setComponentProps((prevProps) => ({
       ...prevProps,
       [propName]: value,
@@ -87,6 +101,17 @@ export const BlossomComponentPlayground = (props: {
             componentName={componentName}
             {...componentProps}
           />
+
+          {deferred || onShowCallback ? (
+            <Button
+              onPress={() => {
+                onShowCallback?.(componentProps);
+                deferred && setComponentProps(componentPropsRef.current);
+              }}
+            >
+              Show Component
+            </Button>
+          ) : null}
         </div>
 
         <PropsRenderer
@@ -97,7 +122,13 @@ export const BlossomComponentPlayground = (props: {
       <PlaygroundCodeRenderer
         componentName={componentName}
         componentProps={componentProps}
-        packageName={BlossomUIDates[componentName] ? "dates" : "components"}
+        packageName={
+          BlossomUIDates[componentName]
+            ? "dates"
+            : BlossomUIOverlays[componentName]
+              ? "overlays"
+              : "components"
+        }
       />
     </div>
   );
