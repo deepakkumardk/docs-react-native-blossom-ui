@@ -136,7 +136,7 @@ function extractTypeMetadata(symbol, checker) {
 
       const memberType = checker.getTypeOfSymbolAtLocation(
         member,
-        memberDeclaration
+        memberDeclaration,
       );
 
       const unionValues = extractUnionStringLiterals(memberType);
@@ -150,8 +150,10 @@ function extractTypeMetadata(symbol, checker) {
         name: member.getName(),
         dataType: checker.typeToString(memberType),
         ...(unionValues ? { dataTypeValues: unionValues } : {}),
-        defaultValue: jsDocTags.find((t) => t.tagName.text === "default")
-          ?.comment,
+        defaultValue: jsDocTags
+          .find((t) => t.tagName.text === "default")
+          ?.comment?.replaceAll("'", "")
+          ?.replaceAll('"', ""),
         description,
         comment: ts
           .displayPartsToString(member.getDocumentationComment(checker))
@@ -166,7 +168,7 @@ function extractTypeMetadata(symbol, checker) {
   if (ts.isInterfaceDeclaration(declaration)) {
     const metadataParents = declaration.heritageClauses
       ? declaration.heritageClauses.map((hc) =>
-          hc.types.map((t) => t.getText())
+          hc.types.map((t) => t.getText()),
         )
       : [];
 
@@ -232,12 +234,15 @@ function processTypesFile(filePath) {
 
 try {
   const resultComponents = processTypesFile(
-    "node_modules/@react-native-blossom-ui/components/dist/index.d.ts"
+    "node_modules/@react-native-blossom-ui/components/dist/index.d.ts",
   );
   const resultDates = processTypesFile(
-    "node_modules/@react-native-blossom-ui/dates/dist/index.d.ts"
+    "node_modules/@react-native-blossom-ui/dates/dist/index.d.ts",
   );
-  const result = { ...resultComponents, ...resultDates };
+  const resultOverlays = processTypesFile(
+    "node_modules/@react-native-blossom-ui/overlays/dist/index.d.ts",
+  );
+  const result = { ...resultComponents, ...resultDates, ...resultOverlays };
   console.log(JSON.stringify(result, null, 2));
 } catch (error) {
   console.log(JSON.stringify({}, null, 2));

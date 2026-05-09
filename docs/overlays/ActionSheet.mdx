@@ -1,0 +1,60 @@
+---
+sidebar_position: 2
+---
+
+export const COMPONENT_NAME = "ActionSheet";
+
+# ActionSheet
+
+The **ActionSheet** component mimics the react native [ActionSheetIOS](https://reactnative.dev/docs/actionsheetios) or [ios Action Sheet](https://developer.apple.com/design/human-interface-guidelines/action-sheets) inbuilt component, and provides all the customization for UI.
+
+This displays a sheet of actions from the bottom of the screen with animation. It's commonly used to present users with a set of choices related to a task they want to complete.
+
+It provides:
+
+- Bottom-anchored action list
+- iOS-style feel customization option
+- Customizable actions and styling
+- Built-in dismiss handling
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  ActionSheetUsage,
+  ActionSheetIosFeel,
+  ActionSheetCustom,
+} from "@site/src/components";
+
+## Usage
+
+The basic usage shows an action sheet with multiple action items. Each action can have a title and an onPress handler. The sheet automatically dismisses when an action is selected or when tapping outside.
+
+<BlossomUIRenderer
+  componentName={"ActionSheetUsage"}
+  children={<ActionSheetUsage />}
+  fileName={"ActionSheet"}
+/>
+
+## iOS Feel
+
+Create iOS-style action sheet, a more native iOS appearance by customizing the `labelStyle` prop.
+
+<BlossomUIRenderer
+  componentName={"ActionSheetIosFeel"}
+  children={<ActionSheetIosFeel />}
+  fileName={"ActionSheet"}
+/>
+
+## Custom
+
+Customize the action sheet with different colors, styles, and layouts. You can modify individual action items to have different appearances based on their purpose (e.g., destructive actions in red).
+
+<BlossomUIRenderer
+  componentName={"ActionSheetCustom"}
+  children={<ActionSheetCustom />}
+  fileName={"ActionSheet"}
+/>
+
+## Props
+
+<PropsTable tsPropName="ActionSheetOptions" disableExtendsLink />

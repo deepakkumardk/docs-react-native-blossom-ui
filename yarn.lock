@@ -2215,25 +2215,30 @@
   resolved "https://registry.yarnpkg.com/@polka/url/-/url-1.0.0-next.28.tgz#d45e01c4a56f143ee69c54dd6b12eade9e270a73"
   integrity sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==
 
-"@react-native-blossom-ui/components@0.17.2":
-  version "0.17.2"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.17.2.tgz#6468ccbb4dcee2866f38f39a8ff5a55c073cdc5e"
-  integrity sha512-3xv16DsVsC4Ty3WRIYARBcdfWLvLEfiye069mxsm+eeTjUduWC/GOFko2O4TVJhlJ+iicltKwP60EWdP6QfS8A==
+"@react-native-blossom-ui/components@0.18.2":
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/components/-/components-0.18.2.tgz#74ae42d678c32cf0a643602fb5fa6c7b53e0981d"
+  integrity sha512-o/+ptY9cheJxo+6+yinv56WA9PsZwOAymirENS2d715ICYHuSOZZH6xggGHYcrXVB2iQBQJNkX/eQnckaEFXIA==
   dependencies:
     chroma-js "3.1.1"
     deepmerge "4.3.1"
 
-"@react-native-blossom-ui/dates@0.17.2":
-  version "0.17.2"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/dates/-/dates-0.17.2.tgz#4054c379f114e8d4568ff7e6458ff3d2ddcf434f"
-  integrity sha512-t3dmZi11v8mdcbEsL/UhW1nttS4NBBtHtNeYoLjHBqw8cjm+mUJ/TUoLh2H+6/pcKQ9vOPvZ0JipmSGOSeKLTg==
+"@react-native-blossom-ui/dates@0.18.2":
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/dates/-/dates-0.18.2.tgz#423b8d2301e745479fc6bf31ba1eb827ada10136"
+  integrity sha512-mIvpB+E2FCBohSw2SmzlC3gJ3WdoNNS0e6BgFp6nFR0c1QDVNrOHMV63Q97dlXEf/9uFerlflDQgXll7oWGDpA==
   dependencies:
     dayjs "1.11.13"
 
-"@react-native-blossom-ui/showcase@0.17.2":
-  version "0.17.2"
-  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.17.2.tgz#a88dbeabd1482fa6366f7778ec82e28d45a28ebb"
-  integrity sha512-NT3x0WgYdDQSZCAMDpqk8Y074YC+HpTAY3GtKTsH3LFLB+vX1EGY/uzZMulVmBMc/InANIZ6Xk9VeDexSVen7g==
+"@react-native-blossom-ui/overlays@0.18.2":
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/overlays/-/overlays-0.18.2.tgz#6ef6ad88aa1f1713002cac5a5d01d56bc98bff91"
+  integrity sha512-51TqygRiI6tIgF1yHGIUpuR3yvL7b55UDiU9InzRqIFIdnKxjnl46SdHtNKIi4tBiI3ozrDf2kCb0d6ZXK7ELA==
+
+"@react-native-blossom-ui/showcase@0.18.2":
+  version "0.18.2"
+  resolved "https://registry.yarnpkg.com/@react-native-blossom-ui/showcase/-/showcase-0.18.2.tgz#4774908458919bf66f8aeb31f3a0637fd36dca38"
+  integrity sha512-eb75jmzOa9KPTthdVfvar2QsaaZfESH1dlb5Z6Mvx15KxuneJw07CkYGY43cF4/ZzmznObUeldoDg1gwSzHS+Q==
 
 "@react-native-community/cli-clean@11.3.10":
   version "11.3.10"

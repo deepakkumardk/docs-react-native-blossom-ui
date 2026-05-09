@@ -1,0 +1,98 @@
+---
+sidebar_position: 2
+---
+
+export const COMPONENT_NAME = "Dialog";
+
+# Dialog
+
+The **Dialog** component displays a modal dialog overlaying the app content. It's used to present important information, confirmations, or simple input forms that require immediate user attention.
+
+It provides:
+
+- Centered modal dialog with backdrop
+- Alert-style composition with icon support
+- Composable API for custom layouts
+- Multiple action buttons support
+- Block or interactive backdrop options
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  DialogAlertUsage,
+  DialogWithoutIcon,
+  DialogSingleAction,
+  DialogBlockBackdrop,
+  DialogComposedUsage,
+  DialogComposedWithForm,
+} from "@site/src/components";
+
+## Usage
+
+The `Dialog.Alert` component provides a pre-styled dialog with title, description, icon, and action buttons. This is the quickest way to show confirmation dialogs or alerts.
+
+<BlossomUIRenderer
+  componentName={"DialogAlertUsage"}
+  children={<DialogAlertUsage />}
+  fileName={"Dialog"}
+/>
+
+## Without Icon
+
+Display a dialog without an icon for simpler alerts or confirmations. The dialog automatically adjusts its layout based on the presence of an icon.
+
+<BlossomUIRenderer
+  componentName={"DialogWithoutIcon"}
+  children={<DialogWithoutIcon />}
+  fileName={"Dialog"}
+/>
+
+## Single Action
+
+Dialogs can have a single action button for simple acknowledgments or dismissals. This is useful for informational messages that only need confirmation.
+
+<BlossomUIRenderer
+  componentName={"DialogSingleAction"}
+  children={<DialogSingleAction />}
+  fileName={"Dialog"}
+/>
+
+## Block Backdrop
+
+Use the `backdropBehavior="block"` prop to prevent dismissing the dialog by tapping the backdrop. This forces users to interact with the dialog actions.
+
+<BlossomUIRenderer
+  componentName={"DialogBlockBackdrop"}
+  children={<DialogBlockBackdrop />}
+  fileName={"Dialog"}
+/>
+
+## Composed Usage
+
+For more control over the dialog layout, use the composable API with `Dialog.Root`, `Dialog.Icon`, `Dialog.Title`, `Dialog.Content`, and `Dialog.Actions` components.
+
+<BlossomUIRenderer
+  componentName={"DialogComposedUsage"}
+  children={<DialogComposedUsage />}
+  fileName={"Dialog"}
+/>
+
+## Composed with Form
+
+Create complex dialogs with forms and custom content using the composable API. This is perfect for input dialogs, confirmation forms, or any custom dialog layout.
+
+<BlossomUIRenderer
+  componentName={"DialogComposedWithForm"}
+  children={<DialogComposedWithForm />}
+  fileName={"Dialog"}
+/>
+
+## Props
+
+### DialogBaseProps
+
+<PropsTable tsPropName="DialogBaseProps" />
+
+### DialogProps
+
+<PropsTable componentName="Dialog" disableExtendsLink />

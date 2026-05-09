@@ -1,0 +1,93 @@
+---
+sidebar_position: 2
+---
+
+export const COMPONENT_NAME = "Toast";
+
+# Toast
+
+The **Toast** component displays brief, auto-dismissing messages that appear as overlays. Toasts are ideal for showing feedback about an operation, notifications, or status updates without interrupting the user's workflow.
+
+It provides:
+
+- Brief, non-intrusive notifications
+- Auto-dismiss with configurable duration
+- Customizable position (top/bottom)
+- Status colors for different message types
+- Theme support (light/dark/auto)
+- Optional description text
+
+import { Toast } from "@react-native-blossom-ui/overlays";
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  ToastUsage,
+  ToastDuration,
+  ToastPosition,
+  ToastStatuses,
+  ToastThemes,
+  BlossomComponentPlayground,
+} from "@site/src/components";
+
+### Usage Playground
+
+<BlossomComponentPlayground
+  componentName={COMPONENT_NAME}
+  propNameTS={"ToastOptions"}
+  onShowCallback={Toast.show}
+/>
+
+## Usage
+
+The basic usage shows a toast with a message and optional description. The toast automatically dismisses after a default duration and can be positioned at the top or bottom of the screen.
+
+<BlossomUIRenderer
+  componentName={"ToastUsage"}
+  children={<ToastUsage />}
+  fileName={"Toast"}
+/>
+
+## Duration
+
+Control how long the toast stays visible using the `duration` prop. Set shorter durations for simple messages or longer durations for important information that users need more time to read.
+
+<BlossomUIRenderer
+  componentName={"ToastDuration"}
+  children={<ToastDuration />}
+  fileName={"Toast"}
+/>
+
+## Position
+
+Display toasts at the top or bottom of the screen. Choose the position that best fits your app's layout and doesn't obstruct important UI elements.
+
+<BlossomUIRenderer
+  componentName={"ToastPosition"}
+  children={<ToastPosition />}
+  fileName={"Toast"}
+/>
+
+## Status
+
+Use status colors to indicate the type of message: default, info, success, warning, or error. Each status has an associated color that helps users quickly understand the nature of the notification.
+
+<BlossomUIRenderer
+  componentName={"ToastStatuses"}
+  children={<ToastStatuses />}
+  fileName={"Toast"}
+/>
+
+## Themes
+
+Choose between light, dark, or auto themes. The auto theme automatically adapts to the current app theme for consistent appearance.
+
+<BlossomUIRenderer
+  componentName={"ToastThemes"}
+  children={<ToastThemes />}
+  fileName={"Toast"}
+/>
+
+## Props
+
+<PropsTable tsPropName="ToastOptions" />

@@ -311,5 +311,66 @@
         "defaultValue": "Awesome Blossom UI"
       }
     ]
+  },
+  "ToastOptions": {
+    "properties": [
+      {
+        "name": "message",
+        "defaultValue": "Hello from Toast Message"
+      },
+      {
+        "name": "description",
+        "defaultValue": "This is a toast message"
+      },
+      {
+        "name": "status",
+        "defaultValue": "default"
+      },
+      {
+        "name": "duration",
+        "defaultValue": 3000
+      },
+      {
+        "name": "position",
+        "defaultValue": "bottom"
+      },
+      {
+        "name": "theme",
+        "defaultValue": "auto"
+      }
+    ]
+  },
+  "SnackbarOptions": {
+    "properties": [
+      {
+        "name": "text",
+        "defaultValue": "Hello from Snackbar"
+      },
+      {
+        "name": "actionText",
+        "defaultValue": "Undo"
+      },
+      {
+        "name": "duration",
+        "defaultValue": 3000
+      },
+      {
+        "name": "position",
+        "defaultValue": "bottom"
+      },
+      {
+        "name": "theme",
+        "defaultValue": "auto"
+      }
+    ]
+  },
+  "LoadingOverlayProps": {
+    "properties": [
+      {
+        "name": "visible",
+        "defaultValue": false,
+        "forceOverride": true
+      }
+    ]
   }
 }

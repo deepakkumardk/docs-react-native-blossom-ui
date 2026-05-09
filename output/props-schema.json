@@ -478,14 +478,14 @@
       {
         "name": "showLabel",
         "dataType": "string",
-        "defaultValue": "\"Read more\"",
+        "defaultValue": "Read more",
         "description": null,
         "comment": "Open/show label of the text component"
       },
       {
         "name": "hideLabel",
         "dataType": "string",
-        "defaultValue": "\"Read less\"",
+        "defaultValue": "Read less",
         "description": null,
         "comment": "Close/hide label of the text component"
       },
@@ -3036,30 +3036,56 @@
   "ModalProps": {
     "properties": [
       {
+        "name": "visible",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Whether the Modal is visible or not."
+      },
+      {
+        "name": "children",
+        "dataType": "React$1.ReactNode",
+        "description": null,
+        "comment": "The content to be displayed inside the Modal."
+      },
+      {
+        "name": "onDismiss",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback function that is called when the Modal is dismissed.This is invoked whenever the Modal becomes not visible, for example when the user taps\non the backdrop (if `backdropBehavior` is set to 'dismiss') or when it is dismissed\nprogrammatically."
+      },
+      {
+        "name": "backdropBehavior",
+        "dataType": "\"interactive\" | \"block\" | \"dismiss\"",
+        "dataTypeValues": [
+          "interactive",
+          "block",
+          "dismiss"
+        ],
+        "defaultValue": "dismiss",
+        "description": null,
+        "comment": "Control the behavior of the backdrop when the Modal is visible.- 'interactive': The backdrop will be rendered and will allow user interactions on the backdrop itself.\n- 'block': The backdrop will be rendered and will block interactions with it. Tapping on the backdrop will not do anything.\n- 'dismiss': The backdrop will be rendered and used solely as a tap-to-dismiss surface. Tapping on the backdrop will trigger the `onDismiss` callback, but no other interactions with the backdrop are allowed."
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Style for the content of the Modal."
+      },
+      {
         "name": "backdropStyle",
         "dataType": "StyleProp<ViewStyle>",
         "description": null,
-        "comment": "Style the backdrop of the modal"
+        "comment": "Style for the backdrop of the Modal."
       },
       {
-        "name": "contentStyle",
-        "dataType": "StyleProp<ViewStyle>",
+        "name": "dismissOnBackPress",
+        "dataType": "boolean",
         "description": null,
-        "comment": "content style of the Modal"
-      },
-      {
-        "name": "onBackdropPress",
-        "dataType": "() => void",
-        "description": null,
-        "comment": "Callback whenever user press on the backdrop or on the android back button press"
+        "comment": "Control whether the overlay should be dismissed when the back button is pressed on Android"
       }
     ],
-    "parents": [
-      "ModalProps$1"
-    ],
-    "parentsDisplay": [
-      "RNModalProps"
-    ]
+    "parents": [],
+    "parentsDisplay": []
   },
   "ModalContentProps": {
     "properties": [
@@ -3594,6 +3620,161 @@
     "parents": [],
     "parentsDisplay": []
   },
+  "DayItemProps": {
+    "properties": [
+      {
+        "name": "item",
+        "dataType": "MonthDayItem",
+        "description": null,
+        "comment": "Object for the given date in the month"
+      },
+      {
+        "name": "isDateDisabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "is Date disabled"
+      },
+      {
+        "name": "onItemPress",
+        "dataType": "(item: MonthDayItem) => void",
+        "description": null,
+        "comment": "Callback when day item is pressed"
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Container style for the day item"
+      },
+      {
+        "name": "textStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Text style for the day item"
+      }
+    ],
+    "parents": [
+      "Pick<BaseDateProps, 'showAdjacentMonthDays'>"
+    ],
+    "parentsDisplay": [
+      "BaseDateProps"
+    ]
+  },
+  "MonthDaysListProps": {
+    "properties": [
+      {
+        "name": "selectedDate",
+        "dataType": "Date",
+        "description": null,
+        "comment": "The currently selected date for single date selection mode."
+      },
+      {
+        "name": "selectedDates",
+        "dataType": "Date[]",
+        "description": null,
+        "comment": "The currently selected dates for multiple date selection mode."
+      },
+      {
+        "name": "selectedEndDate",
+        "dataType": "Date",
+        "description": null,
+        "comment": "The currently selected end date for range date selection mode."
+      },
+      {
+        "name": "currentMonth",
+        "dataType": "number",
+        "description": null,
+        "comment": "The month currently being displayed (0-based index)."
+      },
+      {
+        "name": "currentYear",
+        "dataType": "number",
+        "description": null,
+        "comment": "The year currently being displayed."
+      },
+      {
+        "name": "disableDates",
+        "dataType": "MonthDayItem[]",
+        "description": null,
+        "comment": "An array of disabled dates in the MonthDayItem format"
+      },
+      {
+        "name": "onItemPress",
+        "dataType": "(item: MonthDayItem) => void",
+        "description": null,
+        "comment": "Callback for when a day is pressed."
+      },
+      {
+        "name": "datePickerMode",
+        "dataType": "DatePickerMode",
+        "dataTypeValues": [
+          "single",
+          "multiple",
+          "range"
+        ],
+        "defaultValue": "single",
+        "description": null,
+        "comment": "Selection mode for the date picker.single - single date selection\nmultiple - multiple date selection\nrange - range date selection"
+      },
+      {
+        "name": "showAdjacentMonthDays",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Whether to show days from adjacent months to fill the weeks.If true, days from the previous and next months will be displayed to fill the calendar grid."
+      },
+      {
+        "name": "minDate",
+        "dataType": "string | Date",
+        "description": null,
+        "comment": "minimum selectable date inclusive.Can be a string (in `outputDateFormat`) or a Date object."
+      },
+      {
+        "name": "maxDate",
+        "dataType": "string | Date",
+        "description": null,
+        "comment": "maximum selectable date inclusive.Can be a string (in `outputDateFormat`) or a Date object."
+      },
+      {
+        "name": "disableFutureDates",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Disable future dates"
+      },
+      {
+        "name": "disablePastDates",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Disable past dates"
+      },
+      {
+        "name": "disabledDaysOfWeek",
+        "dataType": "number[]",
+        "description": null,
+        "comment": "disable the given days of the week,from 0 (Sunday) to 6 (Saturday)."
+      },
+      {
+        "name": "displayDateFormat",
+        "dataType": "string",
+        "defaultValue": "D MMM YYYY",
+        "description": null,
+        "comment": "The format in which the date should be displayed inside the input value\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
+      },
+      {
+        "name": "outputDateFormat",
+        "dataType": "string",
+        "defaultValue": "DD-MM-YYYY",
+        "description": null,
+        "comment": "The format in which the selected date should give outputAnd this format should be used whenever you are passing any date to this component\n\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
+      }
+    ],
+    "parents": [
+      "BaseDateProps"
+    ],
+    "parentsDisplay": [
+      "BaseDateProps"
+    ]
+  },
   "MonthNamesListProps": {
     "properties": [
       {
@@ -3802,14 +3983,14 @@
       {
         "name": "displayDateFormat",
         "dataType": "string",
-        "defaultValue": "'D MMM YYYY'",
+        "defaultValue": "D MMM YYYY",
         "description": null,
         "comment": "The format in which the date should be displayed inside the input value\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
       },
       {
         "name": "outputDateFormat",
         "dataType": "string",
-        "defaultValue": "'DD-MM-YYYY'",
+        "defaultValue": "DD-MM-YYYY",
         "description": null,
         "comment": "The format in which the selected date should give outputAnd this format should be used whenever you are passing any date to this component\n\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
       }
@@ -3943,14 +4124,14 @@
       {
         "name": "displayDateFormat",
         "dataType": "string",
-        "defaultValue": "'D MMM YYYY'",
+        "defaultValue": "D MMM YYYY",
         "description": null,
         "comment": "The format in which the date should be displayed inside the input value\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
       },
       {
         "name": "outputDateFormat",
         "dataType": "string",
-        "defaultValue": "'DD-MM-YYYY'",
+        "defaultValue": "DD-MM-YYYY",
         "description": null,
         "comment": "The format in which the selected date should give outputAnd this format should be used whenever you are passing any date to this component\n\nCheckout the dayjs docs for all available formats - https://day.js.org/docs/en/display/format"
       }
@@ -4033,6 +4214,1081 @@
     "parentsDisplay": [
       "BaseDatePickerProps",
       "BaseDateProps"
+    ]
+  },
+  "Listener": {
+    "parents": []
+  },
+  "OverlayUpdate": {
+    "parents": []
+  },
+  "OverlayControllerProps": {
+    "properties": [
+      {
+        "name": "subscribe",
+        "dataType": "(listener: Listener) => () => void",
+        "description": null,
+        "comment": "Subscribe to overlay state changes. The provided listener function will be called whenever there is a change in the overlay state, such as when an overlay is shown, updated, or dismissed. The function returns an unsubscribe function that can be called to stop listening for changes."
+      },
+      {
+        "name": "getState",
+        "dataType": "() => OverlayNode[]",
+        "description": null,
+        "comment": "Get the current state of all overlays. This method returns an array of overlay nodes, each representing an active overlay in the system."
+      },
+      {
+        "name": "has",
+        "dataType": "(id: string) => boolean",
+        "description": null,
+        "comment": "Check if an overlay with the specified ID exists."
+      },
+      {
+        "name": "show",
+        "dataType": "(node: Omit<OverlayNode, \"id\">) => string",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "update",
+        "dataType": "(id: string, updatedNode: Partial<Omit<OverlayNode, \"id\">>) => void",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "dismiss",
+        "dataType": "(id: string) => void",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "remove",
+        "dataType": "(id: string) => void",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "dismissLast",
+        "dataType": "(type?: OverlayType) => void",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "dismissScope",
+        "dataType": "(scope: string) => void",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "dismissAll",
+        "dataType": "() => void",
+        "description": null,
+        "comment": ""
+      }
+    ],
+    "parents": [
+      "OverlayActions"
+    ],
+    "parentsDisplay": [
+      "OverlayActions"
+    ]
+  },
+  "OverlayContextValue": {
+    "parents": []
+  },
+  "OverlayActions": {
+    "parents": []
+  },
+  "OverlayBackdropProps": {
+    "parents": []
+  },
+  "OverlayType": {
+    "dataType": "OverlayType",
+    "dataTypeValues": [
+      "dialog",
+      "menu",
+      "modal",
+      "popover",
+      "sheet",
+      "snackbar",
+      "spotlight",
+      "toast",
+      "tooltip"
+    ],
+    "parents": []
+  },
+  "OverlayBackdropBehavior": {
+    "dataType": "OverlayBackdropBehavior",
+    "dataTypeValues": [
+      "interactive",
+      "block",
+      "dismiss"
+    ],
+    "parents": []
+  },
+  "BaseOverlayNode": {
+    "properties": [
+      {
+        "name": "visible",
+        "dataType": "boolean",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "id",
+        "dataType": "string",
+        "description": null,
+        "comment": "Unique identifier for the overlay node.This is used internally to manage the overlay stack and should not be provided by the user.\nThe `show` method will return the generated id when an overlay is shown."
+      },
+      {
+        "name": "type",
+        "dataType": "OverlayType",
+        "dataTypeValues": [
+          "dialog",
+          "menu",
+          "modal",
+          "popover",
+          "sheet",
+          "snackbar",
+          "spotlight",
+          "toast",
+          "tooltip"
+        ],
+        "description": null,
+        "comment": "Type of the overlay, this can be used to categorize the overlaysno default styles or behavior are attached to the type, it's just for categorization and easier management of the overlays\nexcept for dismissLast method which can dismiss the last overlay of a specific type"
+      },
+      {
+        "name": "content",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "The content of the overlay"
+      },
+      {
+        "name": "contentStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Custom styles for the overlay content"
+      },
+      {
+        "name": "top",
+        "dataType": "number",
+        "description": null,
+        "comment": "The absolute position from the top of the screen where the overlay should appear."
+      },
+      {
+        "name": "left",
+        "dataType": "number",
+        "description": null,
+        "comment": "The absolute position from the left of the screen where the overlay should appear."
+      },
+      {
+        "name": "backdropStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": ""
+      },
+      {
+        "name": "withBackdrop",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Whether to show a backdrop behind the overlay.If true, the backdrop will be rendered and its behavior will be determined by the `backdropBehavior` property."
+      },
+      {
+        "name": "backdropBehavior",
+        "dataType": "OverlayBackdropBehavior",
+        "dataTypeValues": [
+          "interactive",
+          "block",
+          "dismiss"
+        ],
+        "defaultValue": "interactive",
+        "description": null,
+        "comment": "Control the behavior of the backdrop when the overlay is open- interactive: allows interaction with the backdrop\n- block: won't allow any interaction with the backdrop and won't trigger onDismiss when the backdrop is pressed\n- dismiss: will trigger onDismiss when the backdrop is pressed but won't allow any interaction with the backdrop"
+      },
+      {
+        "name": "dismissOnBackPress",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Control whether the overlay should be dismissed when the back button is pressed on Android"
+      },
+      {
+        "name": "scope",
+        "dataType": "string",
+        "description": null,
+        "comment": "Optional scope for grouping overlays.This can be used to dismiss all overlays within the same scope using the `dismissScope` method."
+      },
+      {
+        "name": "duration",
+        "dataType": "number",
+        "description": null,
+        "comment": "Duration in milliseconds after which the overlay will be automatically dismissed."
+      },
+      {
+        "name": "onDismiss",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback function that is called when the overlay is dismissed."
+      },
+      {
+        "name": "animationConfig",
+        "dataType": "OverlayAnimationConfig",
+        "description": null,
+        "comment": "Custom animation configuration for the overlay.This allows you to define custom enter and exit animations for the overlay."
+      },
+      {
+        "name": "animationDriver",
+        "dataType": "OverlayAnimationDriver",
+        "description": null,
+        "comment": "Custom animation driver for the overlay. This is a function that takes an Animated.Value and returns an Animated.CompositeAnimation.If `renderAnimated` is provided, this driver will be used to control the animation of the overlay.\nIf not provided, the default fade in/out animation will be used."
+      },
+      {
+        "name": "renderAnimated",
+        "dataType": "(ctx: OverlayAnimationProps) => ReactNode",
+        "description": null,
+        "comment": "Custom render function for the overlay content with animation support. This allows you to have full control over the rendering and animation of the overlay.If this is provided, the `animationDriver` will be used to control the animation of the overlay, and the `content` property will be ignored.\nThe render function receives an object with the following properties:"
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "OverlayNodeContent": {
+    "parents": []
+  },
+  "OverlayNodeAnimatedContent": {
+    "parents": []
+  },
+  "OverlayNode": {
+    "parents": []
+  },
+  "OverlayContainerProps": {
+    "properties": [
+      {
+        "name": "node",
+        "dataType": "OverlayNode",
+        "description": null,
+        "comment": "Node properties used to render the overlay content and control its behavior."
+      },
+      {
+        "name": "stackIndex",
+        "dataType": "number",
+        "description": null,
+        "comment": "The index of the overlay in the stack, used to calculate zIndex"
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "OverlayAnimationProps": {
+    "parents": []
+  },
+  "AnimationPhase": {
+    "dataType": "AnimationPhase",
+    "dataTypeValues": [
+      "entering",
+      "entered",
+      "exiting",
+      "exited"
+    ],
+    "parents": []
+  },
+  "OverlayAnimationDriver": {
+    "parents": []
+  },
+  "OverlayAnimationConfig": {
+    "parents": []
+  },
+  "ToastStatus": {
+    "dataType": "ToastStatus",
+    "dataTypeValues": [
+      "default",
+      "info",
+      "success",
+      "warning",
+      "error"
+    ],
+    "parents": []
+  },
+  "ToastTheme": {
+    "dataType": "ToastTheme",
+    "dataTypeValues": [
+      "light",
+      "dark",
+      "auto"
+    ],
+    "parents": []
+  },
+  "ToastViewProps": {
+    "properties": [
+      {
+        "name": "message",
+        "dataType": "string",
+        "description": null,
+        "comment": "The main message to be displayed in the toast."
+      },
+      {
+        "name": "description",
+        "dataType": "string",
+        "description": null,
+        "comment": "An optional description providing additional details about the toast message."
+      },
+      {
+        "name": "status",
+        "dataType": "ToastStatus",
+        "dataTypeValues": [
+          "default",
+          "info",
+          "success",
+          "warning",
+          "error"
+        ],
+        "defaultValue": "default",
+        "description": null,
+        "comment": "The status of the toast, which can be used to indicate the type of message."
+      },
+      {
+        "name": "shouldUseNativeAndroidToast",
+        "dataType": "boolean",
+        "defaultValue": "false",
+        "description": null,
+        "comment": "Whether to use the native Android toast implementation."
+      },
+      {
+        "name": "theme",
+        "dataType": "ToastTheme",
+        "dataTypeValues": [
+          "light",
+          "dark",
+          "auto"
+        ],
+        "defaultValue": "auto",
+        "description": null,
+        "comment": "The theme of the toast, which can be 'light', 'dark', or 'auto' to match the system theme."
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "AndroidToastViewProps": {
+    "parents": []
+  },
+  "ToastOptions": {
+    "properties": [
+      {
+        "name": "message",
+        "dataType": "string",
+        "description": null,
+        "comment": "The main message to be displayed in the toast."
+      },
+      {
+        "name": "description",
+        "dataType": "string",
+        "description": null,
+        "comment": "An optional description providing additional details about the toast message."
+      },
+      {
+        "name": "status",
+        "dataType": "ToastStatus",
+        "dataTypeValues": [
+          "default",
+          "info",
+          "success",
+          "warning",
+          "error"
+        ],
+        "defaultValue": "default",
+        "description": null,
+        "comment": "The status of the toast, which can be used to indicate the type of message."
+      },
+      {
+        "name": "offset",
+        "dataType": "number",
+        "description": null,
+        "comment": "The offset from the top or bottom of the screen where the toast should appear."
+      },
+      {
+        "name": "duration",
+        "dataType": "number",
+        "description": null,
+        "comment": "The duration for which the toast should be visible, in milliseconds."
+      },
+      {
+        "name": "position",
+        "dataType": "\"top\" | \"bottom\"",
+        "dataTypeValues": [
+          "top",
+          "bottom"
+        ],
+        "defaultValue": "bottom",
+        "description": null,
+        "comment": "The position of the toast on the screen."
+      },
+      {
+        "name": "theme",
+        "dataType": "ToastTheme",
+        "dataTypeValues": [
+          "light",
+          "dark",
+          "auto"
+        ],
+        "defaultValue": "auto",
+        "description": null,
+        "comment": "The theme of the toast, which can be 'light', 'dark', or 'auto' to match the system theme."
+      },
+      {
+        "name": "onShow",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback function that is called when the toast is shown."
+      },
+      {
+        "name": "onHide",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback function that is called when the toast is hidden."
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "ToastHandlerOptions": {
+    "properties": [
+      {
+        "name": "show",
+        "dataType": "(options: ToastOptions) => void",
+        "description": null,
+        "comment": "Show a toast with the given options."
+      },
+      {
+        "name": "hide",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Hide the currently visible toast, if any. If there are multiple toast visible, it will hide the most recently shown one."
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "SnackbarTheme": {
+    "dataType": "SnackbarTheme",
+    "dataTypeValues": [
+      "light",
+      "dark",
+      "auto"
+    ],
+    "parents": []
+  },
+  "SnackbarViewProps": {
+    "properties": [
+      {
+        "name": "text",
+        "dataType": "string",
+        "description": null,
+        "comment": "The main message to be displayed in the snackbar."
+      },
+      {
+        "name": "textStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Text style for the main message in the snackbar."
+      },
+      {
+        "name": "numberOfLines",
+        "dataType": "number",
+        "description": null,
+        "comment": "Control the number of lines for the main message in the snackbar."
+      },
+      {
+        "name": "theme",
+        "dataType": "SnackbarTheme",
+        "dataTypeValues": [
+          "light",
+          "dark",
+          "auto"
+        ],
+        "defaultValue": "auto",
+        "description": null,
+        "comment": "The theme of the snackbar, which can be 'light', 'dark', or 'auto' to match the system theme."
+      },
+      {
+        "name": "actionText",
+        "dataType": "string",
+        "description": null,
+        "comment": "The label for the action button in the snackbar. If not provided, the action button will not be displayed."
+      },
+      {
+        "name": "actionTextStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Text style for the action button in the snackbar."
+      },
+      {
+        "name": "onActionPress",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback function that is called when the action button in the snackbar is pressed."
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Custom style for the snackbar container."
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "SnackbarOptions": {
+    "properties": [
+      {
+        "name": "offset",
+        "dataType": "number",
+        "defaultValue": "100",
+        "description": null,
+        "comment": "The offset from the top or bottom of the screen where the snackbar should appear."
+      },
+      {
+        "name": "duration",
+        "dataType": "number",
+        "defaultValue": "2000",
+        "description": null,
+        "comment": "The duration for which the snackbar should be visible, in milliseconds.If not provided, it will default to 2000 milliseconds (2 seconds)."
+      },
+      {
+        "name": "position",
+        "dataType": "\"top\" | \"bottom\"",
+        "dataTypeValues": [
+          "top",
+          "bottom"
+        ],
+        "defaultValue": "bottom",
+        "description": null,
+        "comment": "The position of the snackbar on the screen."
+      },
+      {
+        "name": "onShow",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback when a snackbar is shown"
+      },
+      {
+        "name": "onHide",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback when a snackbar is going to hide"
+      },
+      {
+        "name": "text",
+        "dataType": "string",
+        "description": null,
+        "comment": "The main message to be displayed in the snackbar."
+      },
+      {
+        "name": "textStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Text style for the main message in the snackbar."
+      },
+      {
+        "name": "numberOfLines",
+        "dataType": "number",
+        "description": null,
+        "comment": "Control the number of lines for the main message in the snackbar."
+      },
+      {
+        "name": "theme",
+        "dataType": "SnackbarTheme",
+        "dataTypeValues": [
+          "light",
+          "dark",
+          "auto"
+        ],
+        "defaultValue": "auto",
+        "description": null,
+        "comment": "The theme of the snackbar, which can be 'light', 'dark', or 'auto' to match the system theme."
+      },
+      {
+        "name": "actionText",
+        "dataType": "string",
+        "description": null,
+        "comment": "The label for the action button in the snackbar. If not provided, the action button will not be displayed."
+      },
+      {
+        "name": "actionTextStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Text style for the action button in the snackbar."
+      },
+      {
+        "name": "onActionPress",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback function that is called when the action button in the snackbar is pressed."
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Custom style for the snackbar container."
+      }
+    ],
+    "parents": [
+      "SnackbarViewProps"
+    ],
+    "parentsDisplay": [
+      "SnackbarViewProps"
+    ]
+  },
+  "SnackbarHandlerOptions": {
+    "properties": [
+      {
+        "name": "show",
+        "dataType": "(options: SnackbarOptions) => void",
+        "description": null,
+        "comment": "Show a snackbar with the given options."
+      },
+      {
+        "name": "hide",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Hide the currently visible snackbar, if any. If there are multiple snackbar visible, it will hide the most recently shown one."
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "ActionSheetItem": {
+    "properties": [
+      {
+        "name": "key",
+        "dataType": "string",
+        "description": null,
+        "comment": "A unique key to identify the option. This will be passed to the `onItemPress` callback when the option is pressed.It is important to ensure that each option has a unique key to avoid unexpected behavior."
+      },
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": "Label to be displayed for the option in the ActionSheet."
+      },
+      {
+        "name": "icon",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "Optional icon to be displayed alongside the option label on its left side"
+      },
+      {
+        "name": "disabled",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Whether the option is disabled or not."
+      },
+      {
+        "name": "destructive",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Whether the option is destructive or not.If destructive is true, the option label will be styled with an error color to indicate that it performs a destructive action."
+      },
+      {
+        "name": "labelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Style for the option text"
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "ActionSheetViewProps": {
+    "properties": [
+      {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": "Title to be displayed at the top of the ActionSheet"
+      },
+      {
+        "name": "titleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Style for the title of the ActionSheet"
+      },
+      {
+        "name": "message",
+        "dataType": "string",
+        "description": null,
+        "comment": "Message to be displayed below the title of the ActionSheet"
+      },
+      {
+        "name": "messageStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Style for the message of the ActionSheet"
+      },
+      {
+        "name": "options",
+        "dataType": "ActionSheetItem[]",
+        "description": null,
+        "comment": "Options to be displayed in the ActionSheet"
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Style for the container of the ActionSheet"
+      },
+      {
+        "name": "withCancelButton",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Whether to show a cancel button at the bottom of the ActionSheet"
+      },
+      {
+        "name": "cancelButtonLabel",
+        "dataType": "string",
+        "defaultValue": "Cancel",
+        "description": null,
+        "comment": "Label for the cancel button. If not provided, it will default to \"Cancel\"."
+      },
+      {
+        "name": "cancelButtonTextStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Style for the cancel button text"
+      },
+      {
+        "name": "itemStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Action item style for each item in the ActionSheet"
+      },
+      {
+        "name": "onItemPress",
+        "dataType": "(key: string, index: number) => void",
+        "description": null,
+        "comment": "Callback function for option press action"
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "ActionSheetOptions": {
+    "properties": [
+      {
+        "name": "onShow",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback function that is called when the ActionSheet is shown. This can be used to perform any setup or side effects when the ActionSheet becomes visible."
+      },
+      {
+        "name": "onHide",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback function that is called when the ActionSheet is dismissed. This can be used to perform any cleanup or side effects when the ActionSheet becomes not visible."
+      },
+      {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": "Title to be displayed at the top of the ActionSheet"
+      },
+      {
+        "name": "titleStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Style for the title of the ActionSheet"
+      },
+      {
+        "name": "message",
+        "dataType": "string",
+        "description": null,
+        "comment": "Message to be displayed below the title of the ActionSheet"
+      },
+      {
+        "name": "messageStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Style for the message of the ActionSheet"
+      },
+      {
+        "name": "options",
+        "dataType": "ActionSheetItem[]",
+        "description": null,
+        "comment": "Options to be displayed in the ActionSheet"
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Style for the container of the ActionSheet"
+      },
+      {
+        "name": "withCancelButton",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Whether to show a cancel button at the bottom of the ActionSheet"
+      },
+      {
+        "name": "cancelButtonLabel",
+        "dataType": "string",
+        "defaultValue": "Cancel",
+        "description": null,
+        "comment": "Label for the cancel button. If not provided, it will default to \"Cancel\"."
+      },
+      {
+        "name": "cancelButtonTextStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Style for the cancel button text"
+      },
+      {
+        "name": "itemStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Action item style for each item in the ActionSheet"
+      },
+      {
+        "name": "onItemPress",
+        "dataType": "(key: string, index: number) => void",
+        "description": null,
+        "comment": "Callback function for option press action"
+      }
+    ],
+    "parents": [
+      "ActionSheetViewProps"
+    ],
+    "parentsDisplay": [
+      "ActionSheetViewProps"
+    ]
+  },
+  "ActionSheetHandlerOptions": {
+    "properties": [
+      {
+        "name": "show",
+        "dataType": "(options: ActionSheetOptions) => void",
+        "description": null,
+        "comment": "Show an ActionSheet with the given options. If an ActionSheet is already visible, it will be replaced with the new one."
+      },
+      {
+        "name": "hide",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Hide the currently visible ActionSheet, if any. If there are multiple ActionSheets visible, it will hide the most recently shown one."
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "BottomSheetProps": {
+    "properties": [
+      {
+        "name": "visible",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Whether the BottomSheet is visible or not."
+      },
+      {
+        "name": "children",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "The content to be displayed inside the BottomSheet."
+      },
+      {
+        "name": "onDismiss",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback function that is called when the BottomSheet requests to be dismissed.This can happen when the user taps on the backdrop (if `backdropBehavior` is set to 'dismiss') or when the `duration` expires."
+      },
+      {
+        "name": "backdropBehavior",
+        "dataType": "\"interactive\" | \"block\" | \"dismiss\"",
+        "dataTypeValues": [
+          "interactive",
+          "block",
+          "dismiss"
+        ],
+        "defaultValue": "interactive",
+        "description": null,
+        "comment": "Control the behavior of the backdrop when the BottomSheet is visible.- 'interactive': The backdrop will be rendered and will allow interactions with it. Tapping on the backdrop will trigger the `onDismiss` callback.\n- 'block': The backdrop will be rendered and will block interactions with it. Tapping on the backdrop will not do anything.\n- 'dismiss': The backdrop will be rendered and tapping on it will trigger the `onDismiss` callback, but it will not allow any interactions with the backdrop itself."
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "style for the container of the BottomSheet"
+      },
+      {
+        "name": "backdropStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "style for the backdrop of the BottomSheet"
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "LoadingOverlayProps": {
+    "properties": [
+      {
+        "name": "visible",
+        "dataType": "boolean",
+        "defaultValue": "true",
+        "description": null,
+        "comment": "Set to false to hide it"
+      },
+      {
+        "name": "size",
+        "dataType": "number | BlossomSize",
+        "dataTypeValues": [
+          "small",
+          "medium",
+          "large"
+        ],
+        "defaultValue": "medium",
+        "description": null,
+        "comment": "Control the size using pre-defined options"
+      },
+      {
+        "name": "label",
+        "dataType": "string",
+        "description": null,
+        "comment": "Label text below indicator"
+      },
+      {
+        "name": "labelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Label text style"
+      },
+      {
+        "name": "containerStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Container style wrapping both label and ActivityIndicator"
+      }
+    ],
+    "parents": [
+      "Pick<ModalProps, 'backdropStyle'>",
+      "ActivityIndicatorProps"
+    ],
+    "parentsDisplay": [
+      "ModalProps",
+      "ActivityIndicatorProps"
+    ]
+  },
+  "ProgressDialogProps": {
+    "properties": [
+      {
+        "name": "visible",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Whether the ProgressDialog is visible or not."
+      },
+      {
+        "name": "label",
+        "dataType": "string",
+        "defaultValue": "Loading...",
+        "description": null,
+        "comment": "The label to be displayed next to the ActivityIndicator. If not provided, it will default to \"Loading...\"."
+      },
+      {
+        "name": "labelStyle",
+        "dataType": "StyleProp<TextStyle>",
+        "description": null,
+        "comment": "Style for the label text"
+      },
+      {
+        "name": "activityIndicatorProps",
+        "dataType": "ActivityIndicatorProps",
+        "description": null,
+        "comment": "Customize the activity indicator shown in the progress dialog"
+      }
+    ],
+    "parents": [
+      "Omit<Partial<ModalProps>, 'children' | 'visible'>"
+    ],
+    "parentsDisplay": [
+      "Partial<ModalProps"
+    ]
+  },
+  "DialogBaseProps": {
+    "properties": [
+      {
+        "name": "visible",
+        "dataType": "boolean",
+        "description": null,
+        "comment": "Whether the Dialog is visible or not."
+      },
+      {
+        "name": "children",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "The content of the Dialog, which can be any React node."
+      },
+      {
+        "name": "onDismiss",
+        "dataType": "() => void",
+        "description": null,
+        "comment": "Callback function that is called when the Dialog is dismissed.This is invoked whenever the Dialog becomes not visible, for example when the user taps\non the backdrop (if `backdropBehavior` is set to 'dismiss') or when it is dismissed\nprogrammatically."
+      },
+      {
+        "name": "backdropBehavior",
+        "dataType": "\"interactive\" | \"block\" | \"dismiss\"",
+        "dataTypeValues": [
+          "interactive",
+          "block",
+          "dismiss"
+        ],
+        "defaultValue": "dismiss",
+        "description": null,
+        "comment": "Control the behavior of the backdrop when the Dialog is visible.- 'interactive': The backdrop will be rendered and will allow user interactions on the backdrop itself.\n- 'block': The backdrop will be rendered and will block interactions with it. Tapping on the backdrop will not do anything.\n- 'dismiss': The backdrop will be rendered and used solely as a tap-to-dismiss surface. Tapping on the backdrop will trigger the `onDismiss` callback, but no other interactions with the backdrop are allowed."
+      },
+      {
+        "name": "style",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Style for the container of the Dialog."
+      },
+      {
+        "name": "backdropStyle",
+        "dataType": "StyleProp<ViewStyle>",
+        "description": null,
+        "comment": "Style for the backdrop of the Dialog."
+      }
+    ],
+    "parents": [],
+    "parentsDisplay": []
+  },
+  "DialogProps": {
+    "properties": [
+      {
+        "name": "icon",
+        "dataType": "ReactNode",
+        "description": null,
+        "comment": "icon to be displayed at the top of the Dialog"
+      },
+      {
+        "name": "title",
+        "dataType": "string",
+        "description": null,
+        "comment": "title to be displayed below the icon"
+      },
+      {
+        "name": "description",
+        "dataType": "string",
+        "description": null,
+        "comment": "description to be displayed below the title"
+      },
+      {
+        "name": "actions",
+        "dataType": "ButtonProps[]",
+        "description": null,
+        "comment": "Actions to be displayed at the bottom of the Dialog.\nMultiple actions are rendered together in the Dialog's action area in the same order\nas they are provided in the array.\n\nIf this prop is omitted or an empty array is provided, no action buttons are rendered."
+      }
+    ],
+    "parents": [
+      "Omit<DialogBaseProps, 'children'>"
+    ],
+    "parentsDisplay": [
+      "DialogBaseProps"
     ]
   }
 }

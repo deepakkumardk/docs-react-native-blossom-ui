@@ -1,0 +1,104 @@
+---
+sidebar_position: 2
+---
+
+export const COMPONENT_NAME = "Overlay";
+
+# Overlay
+
+The **Overlay** component is a foundational system that renders content at the app root level. It provides a flexible way to display content above the normal view hierarchy with full control over positioning, backdrop, and dismissal behavior.
+
+It provides:
+
+- Root-level content rendering
+- Flexible positioning (top, left, right, bottom)
+- Backdrop with customizable behavior (interactive, block, dismiss)
+- Auto-hide with configurable duration
+- Imperative API for show, update, and dismiss operations
+- Support for multiple overlay types (popover, modal, etc.)
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  OverlayUsage,
+  OverlayBackdropBehavior,
+  OverlayDuration,
+  OverlayUpdate,
+  OverlayRandom,
+  OverlayImperativeAPI,
+  BlossomComponentPlayground,
+} from "@site/src/components";
+
+## Usage
+
+The `useOverlay` hook provides methods to show overlays with custom content and positioning. This example shows a basic overlay with backdrop that can be dismissed by tapping outside.
+
+<BlossomUIRenderer
+  componentName={"OverlayUsage"}
+  children={<OverlayUsage />}
+  fileName={"Overlay"}
+/>
+
+## Backdrop Behavior
+
+Control how the backdrop behaves with three options:
+
+- **interactive**: Allows interaction with background content while overlay is visible
+- **block**: Prevents interaction with background but doesn't dismiss on tap
+- **dismiss**: Dismisses the overlay when backdrop is tapped
+
+<BlossomUIRenderer
+  componentName={"OverlayBackdropBehavior"}
+  children={<OverlayBackdropBehavior />}
+  fileName={"Overlay"}
+/>
+
+## Auto Hide Overlay
+
+Set a duration to automatically dismiss the overlay after a specified time. This is useful for temporary notifications or tooltips.
+
+<BlossomUIRenderer
+  componentName={"OverlayDuration"}
+  children={<OverlayDuration />}
+  fileName={"Overlay"}
+/>
+
+## Update
+
+Dynamically update overlay properties after it's shown. This is useful for repositioning overlays or updating their content based on user interactions.
+
+<BlossomUIRenderer
+  componentName={"OverlayUpdate"}
+  children={<OverlayUpdate />}
+  fileName={"Overlay"}
+/>
+
+## Random Overlay Positions
+
+Demonstrates creating overlays at random positions with automatic updates. Shows the flexibility of the overlay system for dynamic positioning.
+
+<BlossomUIRenderer
+  componentName={"OverlayRandom"}
+  children={<OverlayRandom />}
+  fileName={"Overlay"}
+/>
+
+## Imperative API
+
+Use the imperative API to programmatically control overlays. This provides full control over showing, updating, and dismissing overlays from any component.
+
+<BlossomUIRenderer
+  componentName={"OverlayImperativeAPI"}
+  children={<OverlayImperativeAPI />}
+  fileName={"Overlay"}
+/>
+
+## Props
+
+### BaseOverlayNode
+
+<PropsTable tsPropName="BaseOverlayNode" />
+
+### OverlayContainerProps
+
+<PropsTable tsPropName="OverlayContainerProps" />
