@@ -101,3 +101,22 @@
   right: 0px;
   bottom: 6px;
 }
+
+.expoSnackContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  border-radius: 12px;
+  border-color: #e0e0e0;
+  border-width: 1px;
+  border: 1px solid #e0e0e0;
+  padding: 20px 40px;
+  align-self: center;
+}
+
+@media all and (max-width: 996px) {
+  .expoSnackContainer {
+    flex-direction: column;
+  }
+}
