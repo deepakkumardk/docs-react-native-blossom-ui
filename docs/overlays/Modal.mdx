@@ -1,0 +1,29 @@
+---
+sidebar_position: 2
+---
+
+export const COMPONENT_NAME = "Modal";
+
+# Modal
+
+The **ModalOverlay** component provides a modal implementation using the overlay system. It displays content in a centered overlay with backdrop, perfect for presenting focused content that requires user interaction.
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  ModalOverlayUsage,
+} from "@site/src/components";
+
+## Usage
+
+Display a modal using the overlay system. This provides consistent modal behavior with the flexibility to customize the content, animations, and backdrop behavior.
+
+<BlossomUIRenderer
+  componentName={"ModalOverlayUsage"}
+  children={<ModalOverlayUsage />}
+  fileName={"ModalOverlay"}
+/>
+
+## Props
+
+<PropsTable componentName={COMPONENT_NAME} />

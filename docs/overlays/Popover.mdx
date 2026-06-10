@@ -1,0 +1,83 @@
+---
+sidebar_position: 2
+---
+
+export const COMPONENT_NAME = "Popover";
+
+# Popover
+
+Component to display content in a floating container relative to a target element.  
+Supports custom positioning, offsets and target references.
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  PopoverOverlayUsage,
+  PopoverOverlayPosition,
+  PopoverOverlayOffset,
+  PopoverOverlayArrow,
+  PopoverOverlayArrowOffset,
+  PopoverOverlayFitTargetWidth,
+} from "@site/src/components";
+
+## Usage
+
+<BlossomUIRenderer
+  componentName={"PopoverOverlayUsage"}
+  children={<PopoverOverlayUsage />}
+  fileName={"PopoverOverlay"}
+/>
+
+## Position
+
+Use the `position` prop to control where the popover appears relative to its target (e.g., top, bottom, left, right).
+
+<BlossomUIRenderer
+  componentName={"PopoverOverlayPosition"}
+  children={<PopoverOverlayPosition />}
+  fileName={"PopoverOverlay"}
+/>
+
+## PopoverOffset
+
+Use the `offset` prop to adjust the distance between the popover and its target element.
+
+<BlossomUIRenderer
+  componentName={"PopoverOverlayOffset"}
+  children={<PopoverOverlayOffset />}
+  fileName={"PopoverOverlay"}
+/>
+
+## With Arrow
+
+Use `withArrow` prop to show an arrow pointing towards the target view
+
+<BlossomUIRenderer
+  componentName={"PopoverOverlayArrow"}
+  children={<PopoverOverlayArrow />}
+  fileName={"PopoverOverlay"}
+/>
+
+## Arrow Offset
+
+Adjust the arrow position with `arrowOffset`
+
+<BlossomUIRenderer
+  componentName={"PopoverOverlayArrowOffset"}
+  children={<PopoverOverlayArrowOffset />}
+  fileName={"PopoverOverlay"}
+/>
+
+## Fit target width
+
+Enable `fitToTargetWidth` to automatically match the popover width to the target element’s width.
+
+<BlossomUIRenderer
+  componentName={"PopoverOverlayFitTargetWidth"}
+  children={<PopoverOverlayFitTargetWidth />}
+  fileName={"PopoverOverlay"}
+/>
+
+## Props
+
+<PropsTable componentName={COMPONENT_NAME} packageName="overlays" />

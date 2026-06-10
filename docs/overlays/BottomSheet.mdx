@@ -1,0 +1,29 @@
+---
+sidebar_position: 2
+---
+
+export const COMPONENT_NAME = "BottomSheet";
+
+# BottomSheet
+
+The **BottomSheet** component provides a bottom sheet implementation using the overlay system. It combines the benefits of bottom sheet presentation with the flexibility of the overlay architecture.
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  BottomSheetOverlayUsage,
+} from "@site/src/components";
+
+## Usage
+
+Display a bottom sheet using the overlay system. This provides consistent behavior with other overlay components while maintaining the bottom sheet presentation style.
+
+<BlossomUIRenderer
+  componentName={"BottomSheetOverlayUsage"}
+  children={<BottomSheetOverlayUsage />}
+  fileName={"BottomSheetOverlay"}
+/>
+
+## Props
+
+<PropsTable componentName={COMPONENT_NAME} packageName={"overlays"} />

@@ -1,0 +1,56 @@
+---
+sidebar_position: 2
+---
+
+export const COMPONENT_NAME = "LoadingOverlay";
+
+# LoadingOverlay
+
+The **LoadingOverlay** component displays a full-screen loading indicator with an optional backdrop. It's perfect for showing loading states during asynchronous operations like API calls or data processing.
+
+It provides:
+
+- Full-screen loading indicator with transparent backdrop
+- Customizable spinner size and status colors
+- Backdrop styling options
+- Auto-dismissible after operations complete
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  LoadingOverlayUsage,
+  LoadingOverlayCustom,
+  BlossomComponentPlayground,
+} from "@site/src/components";
+
+### Usage Playground
+
+<BlossomComponentPlayground
+  componentName={COMPONENT_NAME}
+  packageName={"overlays"}
+  deferred
+/>
+
+## Usage
+
+The basic usage shows a loading spinner with a transparent backdrop. The overlay is typically displayed during asynchronous operations and dismissed when the operation completes.
+
+<BlossomUIRenderer
+  componentName={"LoadingOverlayUsage"}
+  children={<LoadingOverlayUsage />}
+  fileName={"LoadingOverlay"}
+/>
+
+## Custom
+
+Customize the loading overlay with different spinner sizes, status colors, and backdrop styles. You can adjust the backdrop opacity and color to match your app's design.
+
+<BlossomUIRenderer
+  componentName={"LoadingOverlayCustom"}
+  children={<LoadingOverlayCustom />}
+  fileName={"LoadingOverlay"}
+/>
+
+## Props
+
+<PropsTable componentName={COMPONENT_NAME} packageName={"overlays"} />

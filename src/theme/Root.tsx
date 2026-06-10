@@ -16,6 +16,7 @@ import { default as DarkTheme } from "./darkTheme.json";
 import Ionicons from "react-native-vector-icons/Fonts/Ionicons.ttf";
 // @ts-ignore
 import MaterialCommunityIcons from "react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf";
+import { OverlayProvider } from "@react-native-blossom-ui/overlays";
 
 const setupIonicons = () => {
   const IoniconsStyles = `@font-face {
@@ -84,13 +85,15 @@ const Root = ({ children }: Children) => {
       theme={isDark ? DarkTheme : LightTheme}
       isDark={isDark}
     >
-      <ColorModeProvider>
-        {children}
-        <ThemeChangeListener
-          onChange={(value) => setIsDark(value === "dark" ? true : false)}
-        />
-        <Analytics />
-      </ColorModeProvider>
+      <OverlayProvider>
+        <ColorModeProvider>
+          {children}
+          <ThemeChangeListener
+            onChange={(value) => setIsDark(value === "dark" ? true : false)}
+          />
+          <Analytics />
+        </ColorModeProvider>
+      </OverlayProvider>
     </BlossomThemeProvider>
   );
 };

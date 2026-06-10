@@ -13,7 +13,7 @@ While it’s an excellent choice for Material-based apps, **Blossom UI** focuses
 
 ### Why Blossom UI stands out:
 
-- Offers **32+ production-ready components**, exceeding Paper’s set of essentials.
+- Offers **40+ production-ready components**, exceeding Paper’s set of essentials.
 - Includes advanced components like **Select**, **MultiSelect**, **DatePicker**, and **Calendar**.
 - Provides a **custom design system** — not limited to Material Design — allowing you to tailor the look and feel for each platform.
 - Fully supports the **Web** platform, with live previews available for every documented component resulting in a great developer experience.
@@ -40,7 +40,7 @@ Blossom-UI builds upon that foundation by providing a more extensive set of comp
 
 ### Why Blossom UI stands out:
 
-- Ships with **32+ components**, covering both foundational and advanced needs.  
+- Ships with **40+ components**, covering both foundational and advanced needs.  
   Examples include **Select**, **MultiSelect**, **DatePicker**, and **Calendar**.
 - Features a **comprehensive design system**, offering **9 primary shades** and **5 semantic shades** per color — unlike Elements, which supports only a single shade per color.
 - Encourages full **theme consistency** across apps, ensuring better scalability and maintainability.

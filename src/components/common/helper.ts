@@ -10,8 +10,15 @@ export const getComponentCode = (codeblock: string, componentName: string) => {
   return code ? "function " + code : "";
 };
 
-export const getLinkedPropPath = (sourceProp: string) => {
-  const targetProps: PropsInfo = JsonSchema?.[`${sourceProp}`];
+export const getLinkedPropPath = (
+  sourceProp?: string,
+  packageName: "components" | "dates" | "overlays" = "components",
+) => {
+  if (!sourceProp) return null;
+
+  const targetProps: PropsInfo = (JsonSchema as any)?.[packageName]?.[
+    `${sourceProp}`
+  ];
 
   const componentName = sourceProp?.replace(/Props$/, "");
 
@@ -19,9 +26,9 @@ export const getLinkedPropPath = (sourceProp: string) => {
   try {
     doesComponentExist = !!getComponentCode(
       require(
-        `!!raw-loader!@react-native-blossom-ui/showcase/src/${componentName}Showcase`
+        `!!raw-loader!@react-native-blossom-ui/showcase/src/${componentName}Showcase`,
       ).default,
-      componentName + "Usage"
+      componentName + "Usage",
     );
   } catch (error) {
     doesComponentExist = false;
@@ -29,8 +36,42 @@ export const getLinkedPropPath = (sourceProp: string) => {
 
   // If component exists, link to its props page of the component; otherwise, link to generic type definition page
   return doesComponentExist
-    ? "/docs/components/" + componentName + "#props"
+    ? `/docs/${packageName}/` + componentName + "#props"
     : targetProps
-      ? "/docs/components/TypesDefinition#" + sourceProp.toLowerCase()
+      ? `/docs/${packageName}/TypesDefinition#` + sourceProp.toLowerCase()
       : null;
+};
+
+export const getJSONSchema = () => JsonSchema;
+
+export const getComponentPropsSchema = ({
+  componentName,
+  tsPropName,
+  packageName = "components",
+}: {
+  componentName?: string;
+  tsPropName?: string;
+  packageName: "components" | "dates" | "overlays";
+}) => {
+  const tsName = tsPropName || `${componentName}Props`;
+
+  const data: PropsInfo = (JsonSchema as any)?.[packageName]?.[tsName] || {};
+
+  return data;
+};
+
+export const findPropSchema = ({
+  componentName,
+  tsPropName,
+}: {
+  componentName?: string;
+  tsPropName?: string;
+}) => {
+  const tsName = tsPropName || `${componentName}Props`;
+
+  const data1: PropsInfo = (JsonSchema as any)?.components?.[tsName] || null;
+  const data2: PropsInfo = (JsonSchema as any)?.dates?.[tsName] || null;
+  const data3: PropsInfo = (JsonSchema as any)?.overlays?.[tsName] || null;
+
+  return data1 || data2 || data3 || {};
 };

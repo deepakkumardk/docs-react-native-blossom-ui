@@ -1,0 +1,109 @@
+---
+sidebar_position: 2
+---
+
+export const COMPONENT_NAME = "Snackbar";
+
+# Snackbar
+
+The **Snackbar** component provides brief messages about app processes at the bottom or top of the screen. It appears temporarily and can include an optional action button for quick interactions.
+
+It provides:
+
+- Brief, non-intrusive messages
+- Optional action button
+- Auto-dismiss with configurable duration
+- Customizable position (top/bottom)
+- Multiple line support with ellipsis
+- Theme support (light/dark/auto)
+
+import { Snackbar } from "@react-native-blossom-ui/overlays";
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  SnackbarUsage,
+  SnackbarDuration,
+  SnackbarPosition,
+  SnackbarNumberOfLines,
+  SnackbarThemes,
+  SnackbarCustom,
+  BlossomComponentPlayground,
+} from "@site/src/components";
+
+### Usage Playground
+
+<BlossomComponentPlayground
+  componentName={COMPONENT_NAME}
+  packageName={"overlays"}
+  propNameTS={"SnackbarOptions"}
+  onShowCallback={Snackbar.show}
+/>
+
+## Usage
+
+The basic usage shows a snackbar with a message and an optional action button. The snackbar automatically dismisses after a default duration.
+
+<BlossomUIRenderer
+  componentName={"SnackbarUsage"}
+  children={<SnackbarUsage />}
+  fileName={"Snackbar"}
+/>
+
+## Duration
+
+Control how long the snackbar stays visible using the `duration` prop. Set shorter durations for simple notifications or longer durations for important messages that require user attention.
+
+<BlossomUIRenderer
+  componentName={"SnackbarDuration"}
+  children={<SnackbarDuration />}
+  fileName={"Snackbar"}
+/>
+
+## Position
+
+Display snackbar at the top or bottom of the screen. Bottom positioning is the default and follows Android default snackbar UI design, while top positioning can be useful for specific UI layouts.
+
+<BlossomUIRenderer
+  componentName={"SnackbarPosition"}
+  children={<SnackbarPosition />}
+  fileName={"Snackbar"}
+/>
+
+## Number of Lines
+
+Control text wrapping with the `numberOfLines` prop. Use single-line for brief messages with ellipsis, or multiple lines for longer content that needs to be fully visible.
+
+<BlossomUIRenderer
+  componentName={"SnackbarNumberOfLines"}
+  children={<SnackbarNumberOfLines />}
+  fileName={"Snackbar"}
+/>
+
+## Themes
+
+Choose between light, dark, or auto themes. The auto theme automatically adapts to the current app theme, ensuring consistent appearance across your app.
+
+<BlossomUIRenderer
+  componentName={"SnackbarThemes"}
+  children={<SnackbarThemes />}
+  fileName={"Snackbar"}
+/>
+
+## Custom
+
+Customize the snackbar with different colors, text styles, and action button appearances to match your app's design system.
+
+<BlossomUIRenderer
+  componentName={"SnackbarCustom"}
+  children={<SnackbarCustom />}
+  fileName={"Snackbar"}
+/>
+
+## Props
+
+<PropsTable
+  tsPropName="SnackbarOptions"
+  packageName={"overlays"}
+  disableExtendsLink
+/>

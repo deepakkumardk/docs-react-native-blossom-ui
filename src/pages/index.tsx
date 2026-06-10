@@ -71,6 +71,7 @@ function HomepageHeader() {
           </Link>
           <Spacer width={20} height={2} />
           <Link to="/docs/category/components">
+            {/* @ts-ignore */}
             <Button title="Docs" status={null} />
           </Link>
         </div>
@@ -109,6 +110,42 @@ export default function Home(): JSX.Element {
           <div className={styles.notch} />
           <div className={styles.bottomBar} />
           <iframe src="https://react-native-blossom-ui-showcase-app.vercel.app" />
+        </div>
+      </div>
+
+      <div className={styles.expoSnackContainer}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            backgroundColor: "#f9f9f9",
+            padding: 12,
+            borderRadius: 8,
+          }}
+        >
+          <img
+            src="/img/snack-qr.png"
+            alt="Scan with Expo Go"
+            style={{ transform: "none", width: 180, height: 180 }}
+          />
+        </div>
+
+        <div>
+          <p>
+            Preview on your device or try it on the{" "}
+            <a
+              href="https://snack.expo.dev/@dpk950/blossom-ui-snack-"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Expo Snack
+            </a>
+          </p>
+          <p>
+            Scan with Expo Go to preview all the <b>Blossom UI</b> components on
+            your device!
+          </p>
         </div>
       </div>
 

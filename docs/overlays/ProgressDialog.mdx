@@ -1,0 +1,67 @@
+---
+sidebar_position: 2
+---
+
+export const COMPONENT_NAME = "ProgressDialog";
+
+# ProgressDialog
+
+The **ProgressDialog** component displays a modal dialog with a loading indicator and optional label text. It's ideal for showing progress during operations that require user attention, such as file uploads, downloads, or processing tasks.
+
+It provides:
+
+- Modal dialog with loading indicator
+- Optional label text for operation description
+- Customizable backdrop and animation
+- Surface-based design that respects theme colors
+
+import {
+  BlossomUIRenderer,
+  PropsTable,
+  ProgressDialogUsage,
+  ProgressDialogLabel,
+  ProgressDialogCustom,
+  BlossomComponentPlayground,
+} from "@site/src/components";
+
+### Usage Playground
+
+<BlossomComponentPlayground
+  componentName={COMPONENT_NAME}
+  packageName={"overlays"}
+  deferred
+/>
+
+## Usage
+
+The basic usage shows a progress dialog with a loading indicator. This is useful for short operations where you want to inform the user that something is happening.
+
+<BlossomUIRenderer
+  componentName={"ProgressDialogUsage"}
+  children={<ProgressDialogUsage />}
+  fileName={"ProgressDialog"}
+/>
+
+## With Label
+
+Add descriptive text to inform users about the current operation. The label appears next to the loading indicator, providing context for what's being processed.
+
+<BlossomUIRenderer
+  componentName={"ProgressDialogLabel"}
+  children={<ProgressDialogLabel />}
+  fileName={"ProgressDialog"}
+/>
+
+## Custom
+
+Customize the progress dialog with different label styles, activity indicator props, and dialog appearance. You can match the theme with status colors and adjust the visual presentation.
+
+<BlossomUIRenderer
+  componentName={"ProgressDialogCustom"}
+  children={<ProgressDialogCustom />}
+  fileName={"ProgressDialog"}
+/>
+
+## Props
+
+<PropsTable componentName="ProgressDialog" packageName="overlays" />

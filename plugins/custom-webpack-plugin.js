@@ -12,6 +12,9 @@ const config = function () {
         plugins: isServer
           ? []
           : [
+              new webpack.DefinePlugin({
+                __DEV__: JSON.stringify(process.env.NODE_ENV !== "production"),
+              }),
               new webpack.ProvidePlugin({
                 Buffer: ["buffer", "Buffer"],
                 process: "process/browser",
@@ -32,7 +35,7 @@ const config = function () {
               loader: "url-loader",
               include: path.resolve(
                 __dirname,
-                "node_modules/react-native-vector-icons"
+                "node_modules/react-native-vector-icons",
               ),
             },
             {
@@ -46,9 +49,10 @@ const config = function () {
               include: [
                 path.resolve(
                   nodeModules,
-                  "@react-native-blossom-ui/components"
+                  "@react-native-blossom-ui/components",
                 ),
                 path.resolve(nodeModules, "@react-native-blossom-ui/dates"),
+                path.resolve(nodeModules, "@react-native-blossom-ui/overlays"),
                 path.resolve(nodeModules, "@react-native-blossom-ui/showcase"),
                 path.resolve(nodeModules, "react-native-vector-icons"),
               ],
@@ -60,19 +64,23 @@ const config = function () {
             "react-native$": "react-native-web",
             "@react-native-blossom-ui/components": path.resolve(
               nodeModules,
-              "@react-native-blossom-ui/components"
+              "@react-native-blossom-ui/components",
             ),
             "@react-native-blossom-ui/dates": path.resolve(
               nodeModules,
-              "@react-native-blossom-ui/dates"
+              "@react-native-blossom-ui/dates",
+            ),
+            "@react-native-blossom-ui/overlays": path.resolve(
+              nodeModules,
+              "@react-native-blossom-ui/overlays",
             ),
             "@react-native-blossom-ui/showcase": path.resolve(
               nodeModules,
-              "@react-native-blossom-ui/showcase"
+              "@react-native-blossom-ui/showcase",
             ),
             "@react-native-vector-icons": path.resolve(
               nodeModules,
-              "@react-native-vector-icons"
+              "@react-native-vector-icons",
             ),
           },
           fallback: isServer

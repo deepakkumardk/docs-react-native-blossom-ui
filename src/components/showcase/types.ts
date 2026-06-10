@@ -9,7 +9,15 @@ export type PropsTableProps = {
   /**
    * The specific prop name to highlight or display.
    */
-  propName?: string;
+  tsPropName?: string;
+  /**
+   * Disables the link to the extended props if set to true.
+   */
+  disableExtendsLink?: boolean;
+  /**
+   * Package name to construct the link path, default is "components"
+   */
+  packageName?: "components" | "dates" | "overlays";
 };
 
 /**

@@ -13,6 +13,7 @@ import {
   Checkbox,
   Chip,
   ModalContent,
+  Spacer,
   Text,
   TextInput,
   useBlossomTheme,
@@ -58,7 +59,7 @@ function UIShowcase() {
             withCheckIcon={false}
             title={title}
             mode={selectedChip === title ? "filled" : "outlined"}
-            style={{ marginHorizontal: 2 }}
+            style={{ marginHorizontal: 6 }}
             onPress={() => setSelectedChip(title)}
           />
         ))}
@@ -93,6 +94,7 @@ function UIShowcase() {
                     size={100}
                     url={"https://picsum.photos/200/300?random=" + index}
                   />
+                  <Spacer height={8} />
                   <Text typography="b1">{value}</Text>
                   <Text>{counts[index]}</Text>
                 </View>
@@ -112,7 +114,7 @@ function UIShowcase() {
                 style={{ margin: 8 }}
               />
 
-              <View style={{ marginVertical: 6 }}>
+              <View style={{ marginHorizontal: 12, marginVertical: 6 }}>
                 <Text typography="s1">Amazing Title</Text>
                 <Text style={{ color: colors.text300 }}>Subtitle</Text>
                 <Text>Lorem Ipsum, a dummy text</Text>
@@ -125,7 +127,7 @@ function UIShowcase() {
             <Text typography="h6" style={{ marginBottom: 8 }}>
               Modal Content
             </Text>
-            <Card style={{ minWidth, maxWidth, padding: 8 }}>
+            <Card style={{ minWidth, maxWidth, padding: 12 }}>
               <ModalContent
                 title="Hello world"
                 description="Lorem ipsum"

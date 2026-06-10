@@ -6,13 +6,13 @@ export const COMPONENT_NAME = "Modal";
 
 # Modal
 
-Component to display content in an overlay above the main UI.
+The **Modal** component displays content in a centered overlay above the main UI. It provides a flexible container for dialogs, forms, or any content that needs to capture user attention.
 
 import {
   BlossomUIRenderer,
   PropsTable,
   ModalUsage,
-  BlossomComponentPlayground,
+  ModalWithScroll,
 } from "@site/src/components";
 
 ## Usage
@@ -20,6 +20,14 @@ import {
 <BlossomUIRenderer
   componentName={"ModalUsage"}
   children={<ModalUsage />}
+  fileName={"Modal"}
+/>
+
+## With Scroll
+
+<BlossomUIRenderer
+  componentName={"ModalWithScroll"}
+  children={<ModalWithScroll />}
   fileName={"Modal"}
 />
 
