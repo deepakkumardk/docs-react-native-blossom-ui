@@ -36,6 +36,7 @@ export const PropsRenderer = ({
         let field = null;
         // Adding 1 as threshold to mark bad data like DimensionValue having single value
         if (
+          prop.dataTypeValues?.length &&
           prop.dataTypeValues?.length > 1 &&
           prop.dataTypeValues?.length < 4
         ) {
@@ -44,13 +45,16 @@ export const PropsRenderer = ({
             onPropChange,
             prop.dataTypeValues,
           );
-        } else if (prop.dataTypeValues?.length > 1) {
+        } else if (
+          prop.dataTypeValues?.length &&
+          prop.dataTypeValues?.length > 1
+        ) {
           field = renderSelectField(prop, onPropChange, prop.dataTypeValues);
         } else if (prop.dataType === "BlossomStatus") {
           field = renderSelectField(
             prop,
             onPropChange,
-            JsonSchema["BlossomStatus"]?.dataTypeValues || [],
+            JsonSchema.components["BlossomStatus"]?.dataTypeValues || [],
           );
         } else if (prop.dataType === "string") {
           field = renderTextInputField(prop, onPropChange);

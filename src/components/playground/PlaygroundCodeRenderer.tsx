@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import CodeBlock from "@theme/CodeBlock";
 
 // Prettier v3 browser-compatible imports
+// @ts-ignore
 import prettier from "prettier/standalone.mjs";
+// @ts-ignore
 import pluginTS from "prettier/plugins/typescript.mjs";
+// @ts-ignore
 import pluginESTree from "prettier/plugins/estree.mjs";
 
 export const PlaygroundCodeRenderer = (props: {

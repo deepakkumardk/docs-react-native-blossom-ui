@@ -17,7 +17,7 @@ export type PropsTableProps = {
   /**
    * Package name to construct the link path, default is "components"
    */
-  packageName?: string;
+  packageName?: "components" | "dates" | "overlays";
 };
 
 /**

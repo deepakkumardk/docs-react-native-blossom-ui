@@ -11,10 +11,14 @@ export const getComponentCode = (codeblock: string, componentName: string) => {
 };
 
 export const getLinkedPropPath = (
-  sourceProp: string,
-  packageName: string = "components",
+  sourceProp?: string,
+  packageName: "components" | "dates" | "overlays" = "components",
 ) => {
-  const targetProps: PropsInfo = JsonSchema?.[`${sourceProp}`];
+  if (!sourceProp) return null;
+
+  const targetProps: PropsInfo = (JsonSchema as any)?.[packageName]?.[
+    `${sourceProp}`
+  ];
 
   const componentName = sourceProp?.replace(/Props$/, "");
 
@@ -36,4 +40,38 @@ export const getLinkedPropPath = (
     : targetProps
       ? `/docs/${packageName}/TypesDefinition#` + sourceProp.toLowerCase()
       : null;
+};
+
+export const getJSONSchema = () => JsonSchema;
+
+export const getComponentPropsSchema = ({
+  componentName,
+  tsPropName,
+  packageName = "components",
+}: {
+  componentName?: string;
+  tsPropName?: string;
+  packageName: "components" | "dates" | "overlays";
+}) => {
+  const tsName = tsPropName || `${componentName}Props`;
+
+  const data: PropsInfo = (JsonSchema as any)?.[packageName]?.[tsName] || {};
+
+  return data;
+};
+
+export const findPropSchema = ({
+  componentName,
+  tsPropName,
+}: {
+  componentName?: string;
+  tsPropName?: string;
+}) => {
+  const tsName = tsPropName || `${componentName}Props`;
+
+  const data1: PropsInfo = (JsonSchema as any)?.components?.[tsName] || null;
+  const data2: PropsInfo = (JsonSchema as any)?.dates?.[tsName] || null;
+  const data3: PropsInfo = (JsonSchema as any)?.overlays?.[tsName] || null;
+
+  return data1 || data2 || data3 || {};
 };

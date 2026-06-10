@@ -242,7 +242,11 @@ try {
   const resultOverlays = processTypesFile(
     "node_modules/@react-native-blossom-ui/overlays/dist/index.d.ts",
   );
-  const result = { ...resultComponents, ...resultDates, ...resultOverlays };
+  const result = {
+    components: resultComponents,
+    dates: resultDates,
+    overlays: resultOverlays,
+  };
   console.log(JSON.stringify(result, null, 2));
 } catch (error) {
   console.log(JSON.stringify({}, null, 2));

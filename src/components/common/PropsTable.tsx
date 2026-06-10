@@ -3,20 +3,23 @@ import { useBlossomTheme } from "@react-native-blossom-ui/components";
 
 import Link from "@docusaurus/Link";
 
-import { default as JsonSchema } from "../../../output/props-schema.json";
-import { PropsInfo, PropsTableProps } from "../showcase/types";
-import { getLinkedPropPath } from "./helper";
+import { PropsTableProps } from "../showcase/types";
+import { getLinkedPropPath, getComponentPropsSchema } from "./helper";
 
 export const PropsTable = ({
   componentName,
   tsPropName,
   disableExtendsLink,
-  packageName,
+  packageName = "components",
 }: PropsTableProps) => {
   const theme = useBlossomTheme();
 
-  const data: PropsInfo =
-    JsonSchema?.[tsPropName || `${componentName}Props`] || {};
+  const data = getComponentPropsSchema({
+    componentName: componentName ?? "",
+    tsPropName,
+    packageName,
+  });
+
   const properties = data.properties || [];
 
   return (
@@ -36,7 +39,9 @@ export const PropsTable = ({
             {!disableExtendsLink &&
             getLinkedPropPath(data.parentsDisplay?.[0], packageName) ? (
               <Link
-                to={getLinkedPropPath(data.parentsDisplay?.[0], packageName)}
+                to={
+                  getLinkedPropPath(data.parentsDisplay?.[0], packageName) ?? ""
+                }
               >
                 {data.parentsDisplay?.[0]}
               </Link>

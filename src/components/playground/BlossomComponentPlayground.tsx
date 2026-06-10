@@ -3,7 +3,6 @@ import React, { useMemo, useRef, useState } from "react";
 import * as BlossomUIDates from "@react-native-blossom-ui/dates";
 import * as BlossomUIOverlays from "@react-native-blossom-ui/overlays";
 
-import { default as JsonSchema } from "../../../output/props-schema.json";
 import { default as MetaDataJsonSchema } from "../../../output/props-default-metadata.json";
 import { BlossomComponentRenderer } from "./BlossomComponentRenderer";
 
@@ -13,6 +12,7 @@ import { PropsRenderer } from "./PropsRenderer";
 import deepmerge from "deepmerge";
 import { PropsFields } from "@site/src/components/showcase/types";
 import { Button } from "@react-native-blossom-ui/components";
+import { findPropSchema, getComponentPropsSchema } from "../common/helper";
 
 /**
  * Component Playground allows users to interactively modify component props and see the changes reflected in real-time.
@@ -25,19 +25,36 @@ export const BlossomComponentPlayground = (props: {
   componentName: string;
   propNameTS?: string;
   onShowCallback?: (props: any) => void;
+  packageName?: "components" | "dates" | "overlays";
   deferred?: boolean;
 }) => {
-  const { componentName, propNameTS, onShowCallback, deferred } = props;
+  const {
+    componentName,
+    propNameTS,
+    onShowCallback,
+    packageName = "components",
+    deferred,
+  } = props;
 
   const getComponentMetaData = useMemo(() => {
     const propName = propNameTS || `${componentName}Props`;
-    const parents = JsonSchema[propName]?.parents;
-    const parentsMetaData = parents?.flatMap((parent) => {
-      return JsonSchema[parent]?.properties || [];
+
+    const data = getComponentPropsSchema({
+      componentName: componentName ?? "",
+      tsPropName: propNameTS,
+      packageName,
     });
-    const schemaProps: PropsFields[] = JsonSchema[propName]?.properties ?? [];
+
+    const parents = data.parents;
+    const parentsMetaData = parents?.flatMap((parent) => {
+      const parentData = findPropSchema({
+        tsPropName: parent,
+      });
+      return parentData?.properties || [];
+    });
+    const schemaProps: PropsFields[] = data.properties ?? [];
     const metadataProps: PropsFields[] =
-      MetaDataJsonSchema[propName]?.properties ?? [];
+      (MetaDataJsonSchema as any)[propName]?.properties ?? [];
 
     const inheritedProps: PropsFields[] = parentsMetaData ?? [];
 
@@ -99,6 +116,7 @@ export const BlossomComponentPlayground = (props: {
         <div>
           <BlossomComponentRenderer
             componentName={componentName}
+            packageName={packageName}
             {...componentProps}
           />
 
@@ -122,23 +140,17 @@ export const BlossomComponentPlayground = (props: {
       <PlaygroundCodeRenderer
         componentName={componentName}
         componentProps={componentProps}
-        packageName={
-          BlossomUIDates[componentName]
-            ? "dates"
-            : BlossomUIOverlays[componentName]
-              ? "overlays"
-              : "components"
-        }
+        packageName={packageName}
       />
     </div>
   );
 };
 
 // from deepmerge docs
-const combineMerge = (target, source, options) => {
+const combineMerge = (target: any, source: any, options: any) => {
   const destination = target.slice();
 
-  source.forEach((item, index) => {
+  source.forEach((item: any, index: number) => {
     if (typeof destination[index] === "undefined") {
       destination[index] = options.cloneUnlessOtherwiseSpecified(item, options);
     } else if (options.isMergeableObject(item)) {
